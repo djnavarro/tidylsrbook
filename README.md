@@ -1,0 +1,1 @@
+This is the source code for the tidyverse focused revision to *Learning Statistics with R*.
