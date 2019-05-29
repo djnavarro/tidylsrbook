@@ -1,0 +1,12 @@
+# Pretty pictures {#datavis}
+
+> Let them eat cake (first)
+> &nbsp; &nbsp; - [Mine Cetinkaya-Rundel](https://speakerdeck.com/minecr/let-them-eat-cake-first)
+
+One of the primary tasks facing a scientist or any other data analyst is to *make sense of data*. There are so many different sources of data in the world, but if our goal is to learn things and make scientific progress, we need to transform data (raw information) into knowledge (human understanding). There are many different aspects to this "exploratory data analysis" process.
+
+Sometimes exploration is like cleaning the house: there are tedious jobs to be done to organise your data into a comprehensible form, to document it properly for other people to read and reuse, and so on. Just as cleaning the house and running a household are undervalued domestic job, data cleaning, data manipulation and documentation are often neglected in statistics textbooks. I don't intend to repeat that error in this book, so I'll talk a lot about that process later. 
+
+But there's something terribly depressing about starting out with the least exciting parts of the job. Because sometimes, data exploration is like eating cake. Sweet, fun and makes you feel so so good. Very much as Mine Cetinkaya-Rundel suggests, I think data visualisation is the cake. It's your reward for cleaning the house and paying the bills, but if my job is to sell you on the virtues of working with data, it makes sense to start by getting you addicted to the cake -- data visualisation is *fun*. 
+
+Okay lovely reader, let's get this party started. 
