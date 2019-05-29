@@ -23,7 +23,7 @@ When I introduced variablesx, I showed you how we can use them to store a single
 
 Let's return to the example we were working with in the previous section on variables. We're designing a survey, and we want to keep track of the responses that a participant has given. This time, let's imagine that we've finished running the survey and we're examining the data. Suppose we've administered the [Depression, Anxiety and Stress Scale](http://www2.psy.unsw.edu.au/dass/) (DASS) and as a consequence every participant has scores for on the *depression*, *anxiety* and *stress* scales provided by the DASS. One thing we might want to do is create a single variable called `scale_name` that identifies the three scales. The simplest way to do this in R is to use the *combine* function, `c`.^[Notice that I didn’t specify any argument names here. The `c` function is one of those cases where we don’t use names. We just type all the numbers, and R just dumps them all in a single variable.] To do so, all we have to do is type the values we want to store in a comma separated list, like this
 
-```{r}
+```{r combine}
 scale_name <- c("depression","anxpiety","stress")
 scale_name
 ```
@@ -31,7 +31,7 @@ scale_name
 To use the correct terminology here, we have a single variable here called `scale_name`: this variable is a **vector** that has three **elements**. 
 Because the vector contains text, it is a character vector. You can use the `length` function to check the length, and the `class` function to check what kind of vector it is:
 
-```{r}
+```{r lengthclass}
 length(scale_name)
 class(scale_name)
 ```
@@ -52,11 +52,11 @@ We'll talk about logical vectors in a moment.
 ### Extracting an element
 
 If I want to extract the first element from the vector, all I have to do is refer to the relevant numerical index, using square brackets to do so. For example, to get the first element of `scale_name` I would type this
-```{r}
+```{r indexone}
 scale_name[1]
 ```
 The second element of the vector is
-```{r}
+```{r indextwo}
 scale_name[2]
 ```
 You get the idea.^[Note that the square brackets here are used to index the elements of the vector, and that this is the same notation that we see in the R output. That's not accidental: when R prints `[1] "depression"` to the screen what it's saying is that `"depression"` is the first element of the output. When the output is long enough, you'll often see other numbers at the start of each line of the output.]
@@ -66,17 +66,17 @@ You get the idea.^[Note that the square brackets here are used to index the elem
 ### Extracting multiple elements
 
 There are a few ways to extract multiple elements of a vector. The first way is to specify a vector that contains the indices of the variables that you want to keep. To extract the first two scale names:
-```{r}
+```{r vectorindexing}
 scale_name[c(1,2)]
 ```
 Alternatively, R provides a convenient shorthand notation in which `1:2` is a vector containing the nubmers from 1 to 2, and similarly `1:10` is a vector containing the numbers from 1 to 10. So this is also the same:
-```{r}
+```{r vectorindexing2}
 scale_name[1:2]
 ```
 
 Notice that order matters here. So if I do this
 
-```{r}
+```{r orderindexing}
 scale_name[c(2,1)]
 ```
 
@@ -85,13 +85,13 @@ I get the same numbers, but in the reverse order.
 ### Removing elements
 
 Finally, when working with vectors, R allows us to use negative numbers to indicate which elements to remove. So this is yet another way of doing the same thing:
-```{r}
+```{r negativeindices}
 scale_name[-3]
 ```
 
 Notice that done of this has changed the original variable. The `scale_name` itself has remained completely untouched.
 
-```{r}
+```{r showscalename}
 scale_name
 ```
 

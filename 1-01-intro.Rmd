@@ -1,3 +1,5 @@
+# (PART) Getting started {-}
+
 # Introduction {#intro}
 
 ```{r,echo=FALSE}
@@ -162,7 +164,7 @@ To get started, open the **Rstudio** application (i.e., RStudio.exe or RStudio.a
   
   One of the easiest things you can do with R is use it as a simple calculator, so it’s a good place to start. For instance, try typing `r 10 + 20`, and hitting enter. When you do this, you’ve entered a command, and R will **execute** that command. What you see on screen now will be this:
   
-```{r}
+```{r firstcommand}
 10 + 20
 ```
 
@@ -174,14 +176,14 @@ Secondly, it’s important to understand how the output is formatted. When you l
 
 Before we go on to talk about other types of calculations that we can do with R, there’s a few other things I want to point out. The first thing is that, while R is good software, it’s still software. It’s pretty stupid, and because it’s stupid it can’t handle typos. It takes it on faith that you meant to type exactly what you did type. For example, suppose that you forgot to hit the shift key when trying to type `+`, and as a result your command ended up being `10 = 20` rather than `10 + 20`. Here’s what happens:
   
-```{r, error=TRUE}
+```{r firsterror, error=TRUE}
 10 = 20
 ```
 
 What’s happened here is that R has attempted to interpret `10 = 20` as a command, and spits out an error message because the command doesn’t make any sense to it. When a human looks at this, and then looks down at his or her keyboard and sees that + and = are on the same key, it’s pretty obvious that the command was a typo. But R doesn’t know this, so it gets upset. And, if you look at it from its perspective, this makes sense. All that R “knows” is that `10` is a legitimate number, `20` is a legitimate number, and `=` is a legitimate part of the language too. In other words, from its perspective this really does look like the user meant to type `10 = 20`, since all the individual parts of that statement are legitimate and it’s too stupid to realise that this is probably a typo. Therefore, R takes it on faith that this is exactly what you meant... it only “discovers” that the command is nonsense when it tries to follow your instructions, typo and all. And then it whinges, and spits out an error.
 
 Even more subtle is the fact that some typos won’t produce errors at all, because they happen to correspond to “well-formed” R commands. For instance, suppose that not only did I forget to hit the shift key when trying to type `10 + 20`, I also managed to press the key next to one I meant do. The resulting typo would produce the command `10 - 20`. Clearly, R has no way of knowing that you meant to add `20` to `10`, not subtract `20` from `10`, so what happens this time is this:
-```{r}
+```{r seconderror}
 10 - 20
 ```
 In this case, R produces the right answer, but to the the wrong question.
@@ -210,19 +212,20 @@ cita tion()     # doesn't work
 One more thing I should point out. If you hit enter in a situation where it’s “obvious” to R that you haven’t actually finished typing the command, R is just smart enough to keep waiting. For example, if you type `10 +` and then press enter, even R is smart enough to realise that you probably wanted to type in another number. So here’s what happens:
 ```
 > 10 +
-  +
++
 ```
 and there’s a blinking cursor next to the plus sign. What this means is that R is still waiting for you to finish. It “thinks” you’re still typing your command, so it hasn’t tried to execute it yet. In other words, this plus sign is actually another command prompt. It’s different from the usual one (i.e., the `>` symbol) to remind you that R is going to “add” whatever you type now to what you typed last time. For example, if I then go on to type `20` and hit enter, what I get is this:
 ```
 > 10 +
-  + 20
++ 20
 [1] 30
 ```
 And as far as R is concerned, this is exactly the same as if you had typed `10 + 20`. Similarly, consider the `citation()` command that we talked about in the previous section. Suppose you hit enter after typing `citation(`. Once again, R is smart enough to realise that there must be more coming – since you need to add the `)` character – so it waits. I can even hit enter several times and it will keep waiting:
 ```
-> citation( +
-              +
-              +)
+> citation( 
++
++
++)
 ```
 Sometimes when doing this, you’ll eventually get yourself in trouble (it happens to us all). Maybe you start typing a command, and then you realise you’ve screwed up. For example,
 ```
@@ -237,7 +240,7 @@ That being said, it’s not often the case that R is smart enough to tell that t
 citat
 ```
 What about if I typed `citation` and hit enter, without the parentheses? In this case we get something very odd, something that we definitely don’t want, at least not at this stage. Here’s what happens:
-```{r,output.lines=6}
+```{r firstsourcecode,output.lines=6}
 citation
 ```
 where the `BLAH BLAH BLAH` goes on for rather a long time, and you don’t know enough R yet to understand what all this gibberish actually means. This incomprehensible output can be quite intimidating to novice users, and unfortunately it’s very easy to forget to type the parentheses; so almost certainly you’ll do this by accident. Do not panic when this happens. Simply ignore the gibberish.
@@ -249,7 +252,7 @@ Okay, now that we’ve discussed some of the tedious details associated with typ
 ### Arithmetic operations
     
 So, now that we have the terminology, let’s learn how to perform some arithmetic operations. R has operators that correspond to the basic arithmetic we learned in primary school: addition is `+`, subtraction is `-`, multiplication is `*` and division ia `/`. As you can see, R uses fairly standard symbols to denote each of the different operations you might want to perform:  if I wanted to find out what `57` times `61` is (and who wouldn’t?), I can use R instead of a calculator, like so:
-```{r}
+```{r otheroperations}
 57 * 61
 ```
 So that’s handy.
@@ -257,11 +260,11 @@ So that’s handy.
 There are three other arithmetic operations that I should probably mention: taking powers, doing integer division, and calculating a modulus. Of the three, the only one that is of any real importance for the purposes of this book is taking powers, so I’ll discuss that one here: the other two are discussed later. 
   
 For those of you who can still remember your high school maths, this should be familiar. But for some people high school maths was a long time ago, and others of us didn’t listen very hard in high school. It’s not complicated. As I’m sure everyone will probably remember the moment they read this, the act of multiplying a number $x$ by itself $n$ times is called “raising $x$ to the $n$-th power”. Mathematically, this is written as $x^n$. Some values of $n$ have special names: in particular $x^2$ is called $x$-squared, and $x^3$ is called $x$-cubed. One way that we could calculate $5^4$ in R would be to type in the complete multiplication like so,
-```{r}
+```{r evenmoreoperations}
 5*5*5*5
 ```
 but that does seem a bit tedious. It would be very annoying indeed if you wanted to calculate $5^{15}$, since the command would end up being quite long. Therefore, to make our lives easier, we use the power operator instead. When we do that, our command to calculate $5^4$ goes like this:
-```{r}
+```{r takingpowers}
 5^4
 ```
 Much easier.
@@ -271,17 +274,17 @@ Much easier.
 Okay. At this point, you know how to take one of the most powerful pieces of statistical software in the world, and use it as a \$2 calculator. And as a bonus, you’ve learned a few very basic programming concepts. That’s not nothing (you could argue that you’ve just saved yourself \$2) but on the other hand, it’s not very much either. In order to use R more effectively, we need to introduce more programming concepts.
   
 In most situations where you would want to use a calculator, you might want to do multiple calcula- tions. R lets you do this, just by typing in longer commands. In fact, we’ve already seen an example of this earlier, when I typed in `5 * 5 * 5 * 5`. However, let’s try a slightly different example:
-```{r}
+```{r orderofoperations}
 1 + 2 * 4 
 ```
 Clearly, this isn’t a problem for R either. However, it’s worth stopping for a second, and thinking about what R just did. Clearly, since it gave us an answer of `9` it must have multiplied `2 * 4` (to get an interim answer of `8`) and then added `1` to that. But, suppose it had decided to just go from left to right: if R had decided instead to add `1+2` (to get an interim answer of `3`) and then multiplied by `4`, it would have come up with an answer of `12`
   
 To answer this, you need to know the **order of operations** that R uses.^[For a more precise statement, see the [operator precedence](http://stat.ethz.ch/R-manual/R-devel/library/base/html/Syntax.html) for R] If you remember back to your high school maths classes, it’s actually the same order that you got taught when you were at school: the BEDMAS order. Thatis, first calculate things inside **B**rackets, then calculate **E**xponents, then **D**ivision and **M**ultiplication, then **A**ddition and **S**ubtraction. So, to continue the example above, if we want to force R to calculate the `1 + 2` part before the multiplication, all we would have to do is enclose it in brackets:
-```{r}
+```{r usingparentheses}
 (1 + 2) * 4
 ```
 This is a fairly useful thing to be able to do. The only other thing I should point out about order of operations is what to expect when you have two operations that have the same priority: that is, how does R resolve ties? For instance, multiplication and division are actually the same priority, but what should we expect when we give R a problem like `4 / 2 * 3` to solve? If it evaluates the multiplication first and then the division, it would calculate a value of two-thirds. But if it evaluates the division first it calculates a value of siz. The answer, in this case, is that R goes from **left to right**, so in this case the division step would come first:
-```{r}
+```{r ambiguouscode}
 4 / 2 * 3
 ```
 All of the above being said, it’s helpful to remember that *brackets always come first*. So, if you’re ever unsure about what order R will do things in, an easy solution is to enclose the thing you want it to do first in brackets. There’s nothing stopping you from typing `(4 / 2) * 3`. By enclosing the division in brackets we make it clear which thing is supposed to happen first. In this instance you wouldn’t have needed to, since R would have done the division first anyway, but when you’re first starting out it’s better to make sure R does what you want!
@@ -291,7 +294,7 @@ All of the above being said, it’s helpful to remember that *brackets always co
 The symbols `+`, `-`, `*` and so on are examples of operators. As we’ve seen, you can do quite a lot of calculations just by using these operators. However, in order to do more advanced calculations (and later on, to do actual statistics), you’re going to need to start using functions.^[A side note for students with a programming background. Technically speaking, operators are functions in R: the addition operator `+` is a convenient way of calling the addition function `‘+‘()`. Thus `10+20` is equivalent to the function call `‘+‘(20, 30)`. Not surprisingly, no-one ever uses this version. Because that would be stupid.] I’ll talk in more detail about functions and how they work later, but for now let’s just dive in and use a few. To get started, suppose I wanted to take the square root of `225`. The square root, in case your high school maths is a bit rusty, is just the opposite of squaring a number. So, for instance, since “5 squared is 25” I can say that “5 is the square root of 25”. The usual notation for this is $\sqrt{25}=5$, though sometimes you’ll also see it written like this $25^{0.5} = 5$. This second way of writing it is kind of useful to “remind” you of the mathematical fact that “square root of $x$” is actually the same as “raising $x$ to the power of 0.5”. Personally, I’ve never found this to be terribly meaningful psychologically, though I have to admit it’s quite convenient mathematically. Anyway, it’s not important. What is important is that you remember what a square root is, since it's kind of useful in statistics!
 
 To calculate the square root of 25, I can do it in my head pretty easily, since I memorised my multiplication tables when I was a kid. It gets harder when the numbers get bigger, and pretty much impossible if they’re not whole numbers. This is where something like R comes in very handy. Let’s say I wanted to calculate the square root of 225. There’s two ways I could do this using R. Firstly, since the square root of 255 is the same thing as raising `225` to the power of `0.5`, I could use the power operator `^`, just like we did earlier:
-```{r}
+```{r sqrtoperator}
 225 ^ 0.5
 ```
 
@@ -300,13 +303,13 @@ However, there’s a second way to do this by using square root function `sqrt`.
 ### Using functions
 
 To calculate the square root of 255 using the `sqrt` function, the command I type is this:
-```{r}
+```{r sqrtfunction}
 sqrt(225)
 ```
 When we use a function to do something, we generally refer to this as **calling** the function, and the values that we type into the function (there can be more than one) are referred to as the **arguments** of that function.
 
 Obviously, the `sqrt` function doesn’t really give us any new functionality, since we already knew how to do square root calculations by using the power operator `^`. However, there are lots of other functions in R: in fact, almost everything of interest that I’ll talk about in this book is an R function of some kind. For example, one function that comes in handy quite often is the **absolute value** function. Compared to the square root function, it’s extremely simple: it just converts negative numbers to positive numbers, and leaves positive numbers alone.  Calculating absolute values in R is pretty easy, since R provides the `abs` function that you can use for this purpose. For instance:
-```{r}
+```{r abolutevalues}
  abs(-13)
 ```
 
@@ -314,7 +317,7 @@ Obviously, the `sqrt` function doesn’t really give us any new functionality, s
 
 Before moving on, it’s worth noting that, in the same way that R allows us to put multiple operations together into a longer command (like `1 + 2 * 4` for instance), it also lets us put functions together and even combine functions with operators if we so desire. For example, the following is a perfectly legitimate command:
 
-```{r}
+```{r nestedfunctioncalls}
 sqrt(1 + abs(-8))
 ```
 
@@ -323,11 +326,11 @@ When R executes this command, starts out by calculating the value of `abs(-8)`, 
 ### Multiple arguments
 
 There’s two more fairly important things that you need to understand about how functions work in R, and that’s the use of “named” arguments, and default values” for arguments. Not surprisingly, that’s not to say that this is the last we’ll hear about how functions work, but they are the last things we desperately need to discuss in order to get you started. To understand what these two concepts are all about, I’ll introduce another function. The `round` function can be used to round some value to the nearest whole number. For example, I could type this:
-```{r}
+```{r rounding}
 round(3.1415)
 ```
 Pretty straightforward, really. However, suppose I only wanted to round it to two decimal places: that is, I want to get `3.14` as the output. The `round` function supports this, by allowing you to input a second argument to the function that specifies the number of decimal places that you want to round the number to. In other words, I could do this:
-```{r}
+```{r multiplearguments}
 round(3.14165, 2)
 ```
 What’s happening here is that I’ve specified two arguments: the first argument is the number that needs to be rounded (i.e., `3.1415`), the second argument is the number of decimal places that it should be rounded to (i.e., `2`), and the two arguments are separated by a comma. 
@@ -335,19 +338,19 @@ What’s happening here is that I’ve specified two arguments: the first argume
 ### Argument names
 
 In this simple example, it’s not too hard to remember which argument comes first and which one comes second, but as you might imagine it starts to get very difficult once you start using complicated functions that have lots of arguments. Fortunately, most R functions use **argument names** to make your life a little easier. For the `round` function, for example the number that needs to be rounded is specified using the `x` argument, and the number of decimal points that you want it rounded to is specified using the `digits` argument. Because we have these names available to us, we can specify the arguments to the function by name. We do so like this:
-```{r}
+```{r namingarguments}
 round(x = 3.1415, digits = 2)
 ```
 Notice that this is kind of similar in spirit to variable assignment, except that I used `=` here, rather than `<-`. In both cases we’re specifying specific values to be associated with a label. However, there are some differences between what I was doing earlier on when creating variables, and what I’m doing here when specifying arguments, and so as a consequence it’s important that you use `=` in this context.
 
 As you can see, specifying the arguments by name involves a lot more typing, but it’s also a lot easier to read. Because of this, the commands in this book will usually specify arguments by name,^[The two functions discussed previously, `sqrt` and `abs`, both only have a single argument, `x`. So I could have typed something like `sqrt(x = 225)` or `abs(x = -13)` earlier. The fact that all these functions use `x` as the name of the argument that corresponds the “main” variable that you’re working with is not entirely a coincidence. That’s a fairly widely used convention. Quite often, the writers of R functions will try to use conventional names like this to make your life easier. Or at least that’s the theory. In practice... it doesn’t always work as well as you’d hope.] since that makes it clearer to you what I’m doing. However, one important thing to note is that when specifying the arguments using their names, it doesn’t matter what order you type them in. But if you don’t use the argument names, then you have to input the arguments in the correct order. In other words, these three commands all produce the same output...
-```{r,results='hold'}
+```{r variationsonrounding,results='hold'}
 round(3.14165, 2)
 round(x = 3.1415, digits = 2)
 round(digits = 2, x = 3.1415)
 ```
 but this one does not...
-```{r}
+```{r roundingmistake}
 round(2, 3.14165)
 ```
 
@@ -397,27 +400,11 @@ Two more that foreshadow where we're going...
 
 
 
-<!--
+## Project oriented workflow
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
-
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
-
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
-
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
-
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
-```
-
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
-
-
--->
+> It's not a put down
+> I put my foot down
+> And then I make some love, I put my root down
+> Like Sweetie Pie by the Stone Alliance
+> Everybody knows I'm known for dropping science
+> &nbsp; &nbsp --The Beastie Boys
