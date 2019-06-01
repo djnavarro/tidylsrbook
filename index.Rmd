@@ -2,12 +2,36 @@
 title: "Learning statistics with R"
 author: "Danielle Navarro"
 date: "`r Sys.Date()`"
+url: 'https\://djnavarro.github.io/tidylsrbook'
+github-repo: "djnavarro/tidylsrbook"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "Provides a gentle introduction to statistics and R programming in the tidyverse"
+description: "A gentle introduction to statistics and R using the tidyverse"
+output: 
+  bookdown::gitbook:
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      fontsettings:
+        theme: white
+        family: serif
+        size: 2
+      download: ["pdf", "epub"]
+    css: 
+      - style_new.css
+  bookdown::pdf_book:
+    includes:
+      in_header: preamble.tex
+    latex_engine: xelatex
+    citation_package: natbib
+    keep_tex: yes
+  bookdown::epub_book: default
 ---
 
 

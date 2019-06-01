@@ -5,33 +5,33 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A Data types in R | Learning statistics with R</title>
-  <meta name="description" content="Provides a gentle introduction to statistics and R programming in the tidyverse" />
+  <meta name="description" content="A gentle introduction to statistics and R using the tidyverse" />
   <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A Data types in R | Learning statistics with R" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://djnavarro.github.io/tidylsrbook" />
   
-  
-  <meta property="og:description" content="Provides a gentle introduction to statistics and R programming in the tidyverse" />
-  
+  <meta property="og:description" content="A gentle introduction to statistics and R using the tidyverse" />
+  <meta name="github-repo" content="djnavarro/tidylsrbook" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="A Data types in R | Learning statistics with R" />
   
-  <meta name="twitter:description" content="Provides a gentle introduction to statistics and R programming in the tidyverse" />
+  <meta name="twitter:description" content="A gentle introduction to statistics and R using the tidyverse" />
   
 
 <meta name="author" content="Danielle Navarro" />
 
 
-<meta name="date" content="2019-05-29" />
+<meta name="date" content="2019-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro.html">
+<link rel="prev" href="datavis.html">
 <link rel="next" href="programming.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -113,7 +113,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="style_new.css" type="text/css" />
 </head>
 
 <body>
@@ -126,9 +126,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Learning statistics with R</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Getting started</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
@@ -165,6 +162,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#project-oriented-workflow"><i class="fa fa-check"></i><b>1.8</b> Project oriented workflow</a></li>
 </ul></li>
 <li class="part"><span><b>II Exploring data</b></span></li>
+<li class="chapter" data-level="2" data-path="datavis.html"><a href="datavis.html"><i class="fa fa-check"></i><b>2</b> Pretty pictures</a><ul>
+<li class="chapter" data-level="2.1" data-path="datavis.html"><a href="datavis.html#r-graphics"><i class="fa fa-check"></i><b>2.1</b> R graphics</a></li>
+<li class="chapter" data-level="2.2" data-path="datavis.html"><a href="datavis.html#the-data-set"><i class="fa fa-check"></i><b>2.2</b> The data set</a></li>
+<li class="chapter" data-level="2.3" data-path="datavis.html"><a href="datavis.html#histograms"><i class="fa fa-check"></i><b>2.3</b> Histograms</a></li>
+<li class="chapter" data-level="2.4" data-path="datavis.html"><a href="datavis.html#scatter-plot"><i class="fa fa-check"></i><b>2.4</b> Scatter plot</a></li>
+<li class="chapter" data-level="2.5" data-path="datavis.html"><a href="datavis.html#bar-graphs"><i class="fa fa-check"></i><b>2.5</b> Bar graphs</a></li>
+<li class="chapter" data-level="2.6" data-path="datavis.html"><a href="datavis.html#box-plots"><i class="fa fa-check"></i><b>2.6</b> Box plots</a></li>
+<li class="chapter" data-level="2.7" data-path="datavis.html"><a href="datavis.html#violin-plots"><i class="fa fa-check"></i><b>2.7</b> Violin plots</a></li>
+<li class="chapter" data-level="2.8" data-path="datavis.html"><a href="datavis.html#facetted-plots"><i class="fa fa-check"></i><b>2.8</b> Facetted plots</a></li>
+<li class="chapter" data-level="2.9" data-path="datavis.html"><a href="datavis.html#bubble-plots"><i class="fa fa-check"></i><b>2.9</b> Bubble plots</a></li>
+<li class="chapter" data-level="2.10" data-path="datavis.html"><a href="datavis.html#error-bars"><i class="fa fa-check"></i><b>2.10</b> Error bars</a></li>
+<li class="chapter" data-level="2.11" data-path="datavis.html"><a href="datavis.html#other-possibilities"><i class="fa fa-check"></i><b>2.11</b> Other possibilities</a></li>
+<li class="chapter" data-level="2.12" data-path="datavis.html"><a href="datavis.html#saving-images"><i class="fa fa-check"></i><b>2.12</b> Saving images</a></li>
+<li class="chapter" data-level="2.13" data-path="datavis.html"><a href="datavis.html#further-reading"><i class="fa fa-check"></i><b>2.13</b> Further reading</a></li>
+</ul></li>
 <li class="part"><span><b>III Learning from data</b></span></li>
 <li class="part"><span><b>IV Tools of the trade</b></span></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -275,7 +287,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>When I introduced variablesx, I showed you how we can use them to store a single number. In this section, we’ll extend this idea and look at how to store multiple numbers within the one variable. In R the name for a variable that can store multiple values is a <strong>vector</strong>. So let’s create one.</p>
 <div id="character-vectors" class="section level3">
 <h3><span class="header-section-number">A.1.1</span> Character vectors</h3>
-<p>Let’s return to the example we were working with in the previous section on variables. We’re designing a survey, and we want to keep track of the responses that a participant has given. This time, let’s imagine that we’ve finished running the survey and we’re examining the data. Suppose we’ve administered the <a href="http://www2.psy.unsw.edu.au/dass/">Depression, Anxiety and Stress Scale</a> (DASS) and as a consequence every participant has scores for on the <em>depression</em>, <em>anxiety</em> and <em>stress</em> scales provided by the DASS. One thing we might want to do is create a single variable called <code>scale_name</code> that identifies the three scales. The simplest way to do this in R is to use the <em>combine</em> function, <code>c</code>.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> To do so, all we have to do is type the values we want to store in a comma separated list, like this</p>
+<p>Let’s return to the example we were working with in the previous section on variables. We’re designing a survey, and we want to keep track of the responses that a participant has given. This time, let’s imagine that we’ve finished running the survey and we’re examining the data. Suppose we’ve administered the <a href="http://www2.psy.unsw.edu.au/dass/">Depression, Anxiety and Stress Scale</a> (DASS) and as a consequence every participant has scores for on the <em>depression</em>, <em>anxiety</em> and <em>stress</em> scales provided by the DASS. One thing we might want to do is create a single variable called <code>scale_name</code> that identifies the three scales. The simplest way to do this in R is to use the <em>combine</em> function, <code>c</code>.<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> To do so, all we have to do is type the values we want to store in a comma separated list, like this</p>
 <pre class="sourceCode r"><code class="sourceCode r">scale_name &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;depression&quot;</span>,<span class="st">&quot;anxpiety&quot;</span>,<span class="st">&quot;stress&quot;</span>)
 scale_name</code></pre>
 <pre><code>## [1] &quot;depression&quot; &quot;anxpiety&quot;   &quot;stress&quot;</code></pre>
@@ -302,7 +314,7 @@ raw_score</code></pre>
 <p>The second element of the vector is</p>
 <pre class="sourceCode r"><code class="sourceCode r">scale_name[<span class="dv">2</span>]</code></pre>
 <pre><code>## [1] &quot;anxpiety&quot;</code></pre>
-<p>You get the idea.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<p>You get the idea.<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></p>
 </div>
 <div id="extracting-multiple-elements" class="section level3">
 <h3><span class="header-section-number">A.1.4</span> Extracting multiple elements</h3>
@@ -372,7 +384,7 @@ corrected_score</code></pre>
 <pre><code>## depression    anxiety     stress 
 ##  0.5979714  0.1461200  0.3756838</code></pre>
 <p>What this has done is multiply the first element of <code>scaled_score</code> by the first element of <code>correction_factor</code>, multiply the second element of <code>scaled_score</code> by the second element of <code>correction_factor</code>, and so on.</p>
-<p>I’ll talk more about calculations involving vectors later, because they come up a lot. In particular R has a thing called the <em>recycling rule</em> that is worth knowing about.<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> But that’s enough detail for now.</p>
+<p>I’ll talk more about calculations involving vectors later, because they come up a lot. In particular R has a thing called the <em>recycling rule</em> that is worth knowing about.<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> But that’s enough detail for now.</p>
 </div>
 <div id="logical-vectors" class="section level3">
 <h3><span class="header-section-number">A.1.9</span> Logical vectors</h3>
@@ -445,7 +457,7 @@ region</code></pre>
 </div>
 <div id="ordered-factors" class="section level3">
 <h3><span class="header-section-number">A.2.2</span> Ordered factors</h3>
-<p>There are two different types of factor in R. Until now we have been discussing <em>unordered</em> factors, in which the categories are purely nominal and there is no notion that the categories are arranged in any particular order. However, many psychologically important variables are inherently <em>ordinal</em>. Questionnaire responses often take this form, where participants might be asked to endorse a proposition using verbal categories such as <em>“strongly agree”, “agree”, “neutral”, “disagree”</em> and <em>“strongly disagree”</em>. The five response categories can’t be given any sensible numerical values<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> but they can be ordered in a sensible fashion. In this situation we may want to represent the responses as an <strong>ordered factor</strong>.</p>
+<p>There are two different types of factor in R. Until now we have been discussing <em>unordered</em> factors, in which the categories are purely nominal and there is no notion that the categories are arranged in any particular order. However, many psychologically important variables are inherently <em>ordinal</em>. Questionnaire responses often take this form, where participants might be asked to endorse a proposition using verbal categories such as <em>“strongly agree”, “agree”, “neutral”, “disagree”</em> and <em>“strongly disagree”</em>. The five response categories can’t be given any sensible numerical values<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a> but they can be ordered in a sensible fashion. In this situation we may want to represent the responses as an <strong>ordered factor</strong>.</p>
 <p>To give you a sense of how these work in R, suppose we’ve been unfortunate enough to be given a data set that encodes ordinal responses numerically. In my experience that happens quite often. Let’s suppose the original survey asked people how strongly they supported a polticial policy. Here we have a variable consisting of Likert scale data, where (let’s suppose) in the original questionnaire 1 = <em>“strongly agree”</em> and 7 = <em>“strongly disagree”</em>,</p>
 <pre class="sourceCode r"><code class="sourceCode r">support_raw &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">5</span>)</code></pre>
 <p>We can convert this to an ordered factor by specifying <code>ordered = TRUE</code> when we call the <code>factor()</code> function, like so:</p>
@@ -473,7 +485,7 @@ support</code></pre>
 </div>
 <div id="data-frames-tibbles" class="section level2">
 <h2><span class="header-section-number">A.3</span> Data frames / tibbles</h2>
-<p>We now have three variables that we might plausibly have encountered as the result of some study, <code>region</code>, <code>support</code> and <code>RT</code>.<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> At the moment, R has no understanding of how these variables are related to each other. Quite likely they’re ordered the same way, so that the data stored in <code>region[1]</code>, <code>support[1]</code> and <code>RT[1]</code> all come from the same person. That would be sensible, but R is a robot 🤖 and does not possess common sense. To help a poor little robot out (and to make our own lives easier), it’s nice to organise these three variable into a tabular format. We saw this in the last section, in which the AFL data was presented as a table. This is where <strong>data frames</strong> – and the tidyverse analog <strong>tibbles</strong> – are very useful.</p>
+<p>We now have three variables that we might plausibly have encountered as the result of some study, <code>region</code>, <code>support</code> and <code>RT</code>.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a> At the moment, R has no understanding of how these variables are related to each other. Quite likely they’re ordered the same way, so that the data stored in <code>region[1]</code>, <code>support[1]</code> and <code>RT[1]</code> all come from the same person. That would be sensible, but R is a robot 🤖 and does not possess common sense. To help a poor little robot out (and to make our own lives easier), it’s nice to organise these three variable into a tabular format. We saw this in the last section, in which the AFL data was presented as a table. This is where <strong>data frames</strong> – and the tidyverse analog <strong>tibbles</strong> – are very useful.</p>
 <div id="making-a-data-frame" class="section level3">
 <h3><span class="header-section-number">A.3.1</span> Making a data frame</h3>
 <p>So how do we create a data frame (or tibble)? One way we’ve already seen: if we import our data from a CSV file, R will create one for you. A second method is to create a data frame directly from some existing variables using the <code>data.frame</code> function. In real world data analysis this method is less common, but it’s very helpful for understanding what a data frame actually is, so that’s what we’ll do in this section.</p>
@@ -527,7 +539,7 @@ tib</code></pre>
 ##  8 in     disagree          560
 ##  9 us     weak disagree     495
 ## 10 in     weak disagree     610</code></pre>
-<p>Coercion is an important R concept, and one that we’ll talk about again at the end of this section. In the meantime, there are some nice things to note about the output when we print <code>tib</code>. It states that the variable is a tibble with 10 rows and 3 columns. Underneath the variable names it tells you what type of data they store: <code>region</code> is a factor (<code>&lt;fct&gt;</code>), <code>support</code> is an ordered factor (<code>&lt;ord&gt;</code>) and RT is numeric (<code>&lt;dbl&gt;</code>, short for “double”)<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.</p>
+<p>Coercion is an important R concept, and one that we’ll talk about again at the end of this section. In the meantime, there are some nice things to note about the output when we print <code>tib</code>. It states that the variable is a tibble with 10 rows and 3 columns. Underneath the variable names it tells you what type of data they store: <code>region</code> is a factor (<code>&lt;fct&gt;</code>), <code>support</code> is an ordered factor (<code>&lt;ord&gt;</code>) and RT is numeric (<code>&lt;dbl&gt;</code>, short for “double”)<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.</p>
 </div>
 <div id="tibbles-are-data-frames" class="section level3">
 <h3><span class="header-section-number">A.3.3</span> Tibbles are data frames</h3>
@@ -541,7 +553,7 @@ tib</code></pre>
 </div>
 <div id="using-the-operator" class="section level3">
 <h3><span class="header-section-number">A.3.4</span> Using the <code>$</code> operator</h3>
-<p>At this point our workspace contains a data frame called <code>dat</code>, a tibble called <code>tib</code>, but no longer contains the original variables. That’s okay because the tibble (data frame) is acting as a container that keeps them in a nice tidy rectangular shape. Conceptually this is very nice, but now we have a practical question … how do we get information out again? There are two qualitatively different ways to do this,<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> reflecting two different ways to think about your data:</p>
+<p>At this point our workspace contains a data frame called <code>dat</code>, a tibble called <code>tib</code>, but no longer contains the original variables. That’s okay because the tibble (data frame) is acting as a container that keeps them in a nice tidy rectangular shape. Conceptually this is very nice, but now we have a practical question … how do we get information out again? There are two qualitatively different ways to do this,<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> reflecting two different ways to think about your data:</p>
 <ul>
 <li>Your data set is a <em>list of variables</em> (…use <code>$</code>)</li>
 <li>Your data set is a <em>table of values</em> (…use <code>[ ]</code>)</li>
@@ -701,7 +713,7 @@ tib</code></pre>
 </tr>
 </tbody>
 </table>
-<p>I <strong>like</strong> tibbles.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a></p>
+<p>I <strong>like</strong> tibbles.<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a></p>
 </div>
 </div>
 <div id="matrices" class="section level2">
@@ -715,7 +727,7 @@ mattie</code></pre>
 <pre><code>##      [,1] [,2] [,3]
 ## row1    2    3    1
 ## row2    5    6    7</code></pre>
-<p>Notice that when we bound the two vectors together R turned the names of the original variables into row names.<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> To keep things fair, let’s add some exciting column names as well:</p>
+<p>Notice that when we bound the two vectors together R turned the names of the original variables into row names.<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a> To keep things fair, let’s add some exciting column names as well:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(mattie) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;col1&quot;</span>, <span class="st">&quot;col2&quot;</span>, <span class="st">&quot;col3&quot;</span>)
 mattie</code></pre>
 <pre><code>##      col1 col2 col3
@@ -723,14 +735,14 @@ mattie</code></pre>
 ## row2    5    6    7</code></pre>
 <div id="matrix-indexing" class="section level3">
 <h3><span class="header-section-number">A.4.1</span> Matrix indexing</h3>
-<p>You can use square brackets to subset a matrix in much the same way that you can for data frames, again specifying a row index and then a column index. For instance, <code>mattie[2,3]</code> pulls out the entry in the 2nd row and 3rd column of the matrix (i.e., <code>7</code>), whereas <code>mattie[2,]</code> pulls out the entire 2nd row, and <code>mattie[,3]</code> pulls out the entire 3rd column. However, it’s worth noting that when you pull out a column, R will print the results horizontally, not vertically.<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></p>
+<p>You can use square brackets to subset a matrix in much the same way that you can for data frames, again specifying a row index and then a column index. For instance, <code>mattie[2,3]</code> pulls out the entry in the 2nd row and 3rd column of the matrix (i.e., <code>7</code>), whereas <code>mattie[2,]</code> pulls out the entire 2nd row, and <code>mattie[,3]</code> pulls out the entire 3rd column. However, it’s worth noting that when you pull out a column, R will print the results horizontally, not vertically.<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r">mattie[<span class="dv">2</span>,]</code></pre>
 <pre><code>## col1 col2 col3 
 ##    5    6    7</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">mattie[,<span class="dv">3</span>]</code></pre>
 <pre><code>## row1 row2 
 ##    1    7</code></pre>
-<p>This can be a little confusing for novice users: because it is no longer a two dimensional object R treats the output as a regular vector.<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a></p>
+<p>This can be a little confusing for novice users: because it is no longer a two dimensional object R treats the output as a regular vector.<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a></p>
 </div>
 <div id="matrices-vs-data-frames" class="section level3">
 <h3><span class="header-section-number">A.4.2</span> Matrices vs data frames</h3>
@@ -754,7 +766,7 @@ mattie</code></pre>
 ## [1,]    1    4    7   10
 ## [2,]    2    5    8   11
 ## [3,]    3    6    9   12</code></pre>
-<p>The result is a <span class="math inline">\(3\times 4\)</span> matrix of the numbers 1 to 12, listed column-wise.<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a> If you need to create a matrix row-wise, you can specify <code>byrow = TRUE</code> when calling <code>matrix()</code>.</p>
+<p>The result is a <span class="math inline">\(3\times 4\)</span> matrix of the numbers 1 to 12, listed column-wise.<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> If you need to create a matrix row-wise, you can specify <code>byrow = TRUE</code> when calling <code>matrix()</code>.</p>
 </div>
 </div>
 <div id="arrays" class="section level2">
@@ -784,7 +796,7 @@ arr</code></pre>
 <p>Array indexing is a straightforward generalisation of matrix indexing, so the same logic applies. Since <code>arr</code> is a three-dimensional <span class="math inline">\(3 \times 4 \times 2\)</span> array, we need three indices to specify an element:</p>
 <pre class="sourceCode r"><code class="sourceCode r">arr[<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>]</code></pre>
 <pre><code>## [1] 8</code></pre>
-<p>Omitted indices have the same meaning that they have for matrices, so <code>arr[,,2]</code> is a two dimensional slice through the array, and as such R recognises it as a matrix even though the full three dimensional array <code>arr</code> does not count as one.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a> Here’s what <code>arr[,,2]</code> returns:</p>
+<p>Omitted indices have the same meaning that they have for matrices, so <code>arr[,,2]</code> is a two dimensional slice through the array, and as such R recognises it as a matrix even though the full three dimensional array <code>arr</code> does not count as one.<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> Here’s what <code>arr[,,2]</code> returns:</p>
 <pre class="sourceCode r"><code class="sourceCode r">arr[,,<span class="dv">2</span>]</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]   13   16   19   22
@@ -804,7 +816,7 @@ arr[8]
 </div>
 <div id="array-names" class="section level3">
 <h3><span class="header-section-number">A.5.2</span> Array names</h3>
-<p>As with other data structures, arrays can have names for specific elements. In fact, we can assign names to each of the <em>dimensions</em> too. For instance, suppose we have another array – that we affectionately call <code>cubie</code> 📥 – it is also a three dimensional array, but that has the shape that it does because it represents a (3 genders) <span class="math inline">\(\times\)</span> (4 seasons) <span class="math inline">\(\times\)</span> (2 times) structure. We could specify the dimension names for <code>cubie</code> like this:</p>
+<p>As with other data structures, arrays can have names for specific elements. In fact, we can assign names to each of the <em>dimensions</em> too. For instance, suppose we have another array – that we affectionately call <code>cubie</code> 🗳 – it is also a three dimensional array, but that has the shape that it does because it represents a (3 genders) <span class="math inline">\(\times\)</span> (4 seasons) <span class="math inline">\(\times\)</span> (2 times) structure. We could specify the dimension names for <code>cubie</code> like this:</p>
 <pre class="sourceCode r"><code class="sourceCode r">cubie &lt;-<span class="st"> </span><span class="kw">array</span>(
   <span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">24</span>, 
   <span class="dt">dim =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>), 
@@ -882,7 +894,7 @@ starks</code></pre>
 <p>I find it helps me to think of the list as a container. When we use single brackets, the result is still inside its container; when we use double brackets we remove it from the container. This intuition is illustrated nicely in the image below, <a href="https://twitter.com/hadleywickham/status/643381054758363136">tweeted</a> by Hadley Wickham:</p>
 <p><img src="./img/data_list_index.png" width=500px></p>
 <p>In this example <code>x</code> is a container (list) containing many pepper sachets (elements). When we type <code>x[1]</code> we keep only one of the sachets of pepper, but it’s still inside the container. When we type <code>x[[1]]</code> we take the sachet out of the container.</p>
-<p>The final panel highlights how lists can become more complicated.<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a> Lists are just fancy containers, and there’s no reason why lists can’t contain other lists. In the pepper shaker scenario, if each sachet is itself a list, we would need to type <code>x[[1]][[1]]</code> to extract the tasty, tasty pepper! 🌶</p>
+<p>The final panel highlights how lists can become more complicated.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> Lists are just fancy containers, and there’s no reason why lists can’t contain other lists. In the pepper shaker scenario, if each sachet is itself a list, we would need to type <code>x[[1]][[1]]</code> to extract the tasty, tasty pepper! 🌶</p>
 </div>
 </div>
 <div id="dates" class="section level2">
@@ -891,13 +903,13 @@ starks</code></pre>
 <p>To start with, let’s talk about the date. As it happens, modern operating systems are very good at keeping track of the time and date, and can even handle all those annoying timezone issues and daylight savings pretty well. So R takes the quite sensible view that it can just ask the operating system what the date is. We can pull the date using the <code>Sys.Date</code> function:</p>
 <pre class="sourceCode r"><code class="sourceCode r">today &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()  <span class="co"># ask the operating system for the date</span>
 <span class="kw">print</span>(today)         <span class="co"># display the date</span></code></pre>
-<pre><code>## [1] &quot;2019-05-29&quot;</code></pre>
-<p>Okay, that seems straightforward. But, it does rather look like today is just a character string, doesn’t it? That would be a problem, because dates really do have a quasi-numeric character to them, and it would be nice to be able to do basic addition and subtraction with them. Well, fear not. If you type in <code>class(today)</code>, R will tell you that the <code>today</code> variable is a <code>&quot;Date&quot;</code> object. What this means is that, hidden underneath this text string, R has a numeric representation.<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> What that means is that you can in fact add and subtract days. For instance, if we add <code>1</code> to <code>today</code>, R will print out the date for tomorrow:</p>
+<pre><code>## [1] &quot;2019-06-01&quot;</code></pre>
+<p>Okay, that seems straightforward. But, it does rather look like today is just a character string, doesn’t it? That would be a problem, because dates really do have a quasi-numeric character to them, and it would be nice to be able to do basic addition and subtraction with them. Well, fear not. If you type in <code>class(today)</code>, R will tell you that the <code>today</code> variable is a <code>&quot;Date&quot;</code> object. What this means is that, hidden underneath this text string, R has a numeric representation.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a> What that means is that you can in fact add and subtract days. For instance, if we add <code>1</code> to <code>today</code>, R will print out the date for tomorrow:</p>
 <pre class="sourceCode r"><code class="sourceCode r">today <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre>
-<pre><code>## [1] &quot;2019-05-30&quot;</code></pre>
+<pre><code>## [1] &quot;2019-06-02&quot;</code></pre>
 <p>Let’s see what happens when we add 365 days:</p>
 <pre class="sourceCode r"><code class="sourceCode r">today <span class="op">+</span><span class="st"> </span><span class="dv">365</span></code></pre>
-<pre><code>## [1] &quot;2020-05-28&quot;</code></pre>
+<pre><code>## [1] &quot;2020-05-31&quot;</code></pre>
 <p>R provides a number of functions for working with dates, but I don’t want to talk about them in any detail, other than to say that the <strong>lubridate</strong> package (part of the tidyverse) makes things a lot easier than they used to be. A little while back I wrote a <a href="http://djnavarro.net/post/2018-05-02-lubridate/">blog post about lubridate</a> and may fold it into these notes one day.</p>
 <!--
 
@@ -960,7 +972,7 @@ class(x)
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;15&quot;</span>,<span class="st">&quot;19&quot;</span>)  <span class="co"># the variable</span>
 <span class="kw">class</span>(x)           <span class="co"># what class is it?</span></code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<p>Obviously, if I want to do mathematical calculations using <code>x</code> in its current state R wil get very sad 😭. It thinks <code>x</code> is text and it won’t allow me to do mathematics with text! To coerce <code>x</code> from “character” to “numeric”, we use the <code>as.numeric</code> function:</p>
+<p>Obviously, if I want to do mathematical calculations using <code>x</code> in its current state R wil get very sad 😢. It thinks <code>x</code> is text and it won’t allow me to do mathematics with text! To coerce <code>x</code> from “character” to “numeric”, we use the <code>as.numeric</code> function:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x)  <span class="co"># coerce the variable</span>
 <span class="kw">class</span>(x)            <span class="co"># what class is it?</span></code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
@@ -983,22 +995,22 @@ class(x)
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p>Notice that I didn’t specify any argument names here. The <code>c</code> function is one of those cases where we don’t use names. We just type all the numbers, and R just dumps them all in a single variable.<a href="data-types.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p>Note that the square brackets here are used to index the elements of the vector, and that this is the same notation that we see in the R output. That’s not accidental: when R prints <code>[1] &quot;depression&quot;</code> to the screen what it’s saying is that <code>&quot;depression&quot;</code> is the first element of the output. When the output is long enough, you’ll often see other numbers at the start of each line of the output.<a href="data-types.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>The recycling rule: if two vectors are of unequal length, the values of shorter one will be “recycled”. To get a feel for how this works, try setting <code>x &lt;- c(1,1,1,1,1)</code> and <code>y &lt;- c(2,7)</code> and then getting R to evaluate <code>x + y</code><a href="data-types.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p>For example, suppose we decide to assign them the numbers 1 to 5. If we take these numbers literally, we’re implicitly assuming that is the psycholigical difference between <em>“strongly agree”</em> and <em>“neutral”</em> is the same in “size” as the difference between <em>“agree”</em> and <em>“disagree”</em>. In many situations this is probably okay to a first approximation, but in general it feels very strange.<a href="data-types.html#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p>Admittedly it would be a strange study that produced only these three variables, but I hope you’ll forgive the lack of realism on this point.<a href="data-types.html#fnref12" class="footnote-back">↩</a></p></li>
-<li id="fn13"><p>The origin of the term “double” comes from <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">double precision floating point</a> the format in which numeric variables are represented internally<a href="data-types.html#fnref13" class="footnote-back">↩</a></p></li>
-<li id="fn14"><p>Technically this is a lie: there are many more ways to do this, but let’s not make this any more difficult than it needs to be, yeah?<a href="data-types.html#fnref14" class="footnote-back">↩</a></p></li>
-<li id="fn15"><p>Just FYI: you can make a pure data frame behave like a tibble. If you use <code>dat[,1,drop=FALSE]</code> you can suppress this weird thing and make R return a one-column data frame instead of a vector, but that command is so unbearably cumbersome that everyone forgets to use it.<a href="data-types.html#fnref15" class="footnote-back">↩</a></p></li>
-<li id="fn16"><p>We could delete these if we wanted by typing <code>rownames(mattie)&lt;-NULL</code>, but I generally prefer having meaningful names attached to my variables, so I’ll keep them.<a href="data-types.html#fnref16" class="footnote-back">↩</a></p></li>
-<li id="fn17"><p>The reason for this relates to how matrices are implemented. The original matrix <code>mattie</code> is treated as a <em>two-dimensional</em> object, containing two rows and three columns. However, whenever you pull out a single row or a single column, the result is considered to be a vector, which has a <em>length</em> but doesn’t have dimensions. Unless you explictly coerce the vector into a matrix, R doesn’t really distinguish between row vectors and column vectors. This has implications for how matrix algebra is implemented in R (which I’ll admit I initially found odd). When multiplying a matrix by a vector using the <code>%*%</code> operator, R will attempt to interpret the vector as either a row vector or column vector, depending on whichever one makes the multiplication work. That is, suppose <span class="math inline">\(\mathbf{M}\)</span> is <span class="math inline">\(2\times 3\)</span> matrix, and <span class="math inline">\(v\)</span> is a <span class="math inline">\(1\times 3\)</span> row vector. Mathematically the matrix multiplication <span class="math inline">\(\mathbf{M}v\)</span> doesn’t make sense since the dimensions don’t conform, but you can multiply by the corresponding column vector, <span class="math inline">\(\mathbf{M}v^T\)</span>. So, if I set <code>v &lt;- mattie[2,]</code>, the object that R returns doesn’t technically have any <em>dimensions</em> only a <em>length</em>. So even though <code>v</code> was behaving like a row vector when it was part of <code>mattie</code>, R has forgotten that completely and only knows that <code>v</code> is length three. So when I try to calculate <code>mattie %*% v</code>, which you’d think would fail because I didn’t transpose <code>v</code>, it actually works. In this context R treated <code>v</code> as if it were a column vector for the purposes of matrix multiplication. Note that if both objects are vectors, this leads to ambiguity since <span class="math inline">\(vv^T\)</span> (inner product) and <span class="math inline">\(v^Tv\)</span> (outer product) yield different answers. In this situation <code>v %*% v</code> returns the inner product. You can obtain the outer product with <code>outer(v,v)</code>. The help documentation may come in handy!<a href="data-types.html#fnref17" class="footnote-back">↩</a></p></li>
-<li id="fn18"><p>You can suppress this behaviour by using a command like <code>mattie[,3,drop=FALSE]</code>. It’s unpleasant though. Also be warned: data frames do this too when you select one column using square brackets. Tibbles don’t. One of the reasons I like tibbles actually.<a href="data-types.html#fnref18" class="footnote-back">↩</a></p></li>
-<li id="fn19"><p>I won’t go into details, but note that you can refer the elements of a matrix by specifying only a single index. For a <span class="math inline">\(3\times 4\)</span> matrix <code>M</code>, <code>M[2,2]</code> and <code>M[5]</code> refer to the same cell. This method of indexing assumes column-wise ordering regardless of whether the matrix <code>M</code> was originally created in column-wise or row-wise fashion.<a href="data-types.html#fnref19" class="footnote-back">↩</a></p></li>
-<li id="fn20"><p>To see this, compare <code>is.matrix(arr)</code> to <code>is.matrix(arr[,,2])</code><a href="data-types.html#fnref20" class="footnote-back">↩</a></p></li>
-<li id="fn21"><p>Speaking of complications… Under the hood, data frames and tibbles are secretly lists, so you can use the list indexing methods for them and so, for example, <code>dat[[3]]</code> is the same as <code>dat$RT</code>. Probably best not to worry too much about that detail right now 😬<a href="data-types.html#fnref21" class="footnote-back">↩</a></p></li>
-<li id="fn22"><p>Date objects are coded internally as the number of days that have passed since January 1, 1970.<a href="data-types.html#fnref22" class="footnote-back">↩</a></p></li>
+<ol start="16">
+<li id="fn16"><p>Notice that I didn’t specify any argument names here. The <code>c</code> function is one of those cases where we don’t use names. We just type all the numbers, and R just dumps them all in a single variable.<a href="data-types.html#fnref16" class="footnote-back">↩</a></p></li>
+<li id="fn17"><p>Note that the square brackets here are used to index the elements of the vector, and that this is the same notation that we see in the R output. That’s not accidental: when R prints <code>[1] &quot;depression&quot;</code> to the screen what it’s saying is that <code>&quot;depression&quot;</code> is the first element of the output. When the output is long enough, you’ll often see other numbers at the start of each line of the output.<a href="data-types.html#fnref17" class="footnote-back">↩</a></p></li>
+<li id="fn18"><p>The recycling rule: if two vectors are of unequal length, the values of shorter one will be “recycled”. To get a feel for how this works, try setting <code>x &lt;- c(1,1,1,1,1)</code> and <code>y &lt;- c(2,7)</code> and then getting R to evaluate <code>x + y</code><a href="data-types.html#fnref18" class="footnote-back">↩</a></p></li>
+<li id="fn19"><p>For example, suppose we decide to assign them the numbers 1 to 5. If we take these numbers literally, we’re implicitly assuming that is the psycholigical difference between <em>“strongly agree”</em> and <em>“neutral”</em> is the same in “size” as the difference between <em>“agree”</em> and <em>“disagree”</em>. In many situations this is probably okay to a first approximation, but in general it feels very strange.<a href="data-types.html#fnref19" class="footnote-back">↩</a></p></li>
+<li id="fn20"><p>Admittedly it would be a strange study that produced only these three variables, but I hope you’ll forgive the lack of realism on this point.<a href="data-types.html#fnref20" class="footnote-back">↩</a></p></li>
+<li id="fn21"><p>The origin of the term “double” comes from <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">double precision floating point</a> the format in which numeric variables are represented internally<a href="data-types.html#fnref21" class="footnote-back">↩</a></p></li>
+<li id="fn22"><p>Technically this is a lie: there are many more ways to do this, but let’s not make this any more difficult than it needs to be, yeah?<a href="data-types.html#fnref22" class="footnote-back">↩</a></p></li>
+<li id="fn23"><p>Just FYI: you can make a pure data frame behave like a tibble. If you use <code>dat[,1,drop=FALSE]</code> you can suppress this weird thing and make R return a one-column data frame instead of a vector, but that command is so unbearably cumbersome that everyone forgets to use it.<a href="data-types.html#fnref23" class="footnote-back">↩</a></p></li>
+<li id="fn24"><p>We could delete these if we wanted by typing <code>rownames(mattie)&lt;-NULL</code>, but I generally prefer having meaningful names attached to my variables, so I’ll keep them.<a href="data-types.html#fnref24" class="footnote-back">↩</a></p></li>
+<li id="fn25"><p>The reason for this relates to how matrices are implemented. The original matrix <code>mattie</code> is treated as a <em>two-dimensional</em> object, containing two rows and three columns. However, whenever you pull out a single row or a single column, the result is considered to be a vector, which has a <em>length</em> but doesn’t have dimensions. Unless you explictly coerce the vector into a matrix, R doesn’t really distinguish between row vectors and column vectors. This has implications for how matrix algebra is implemented in R (which I’ll admit I initially found odd). When multiplying a matrix by a vector using the <code>%*%</code> operator, R will attempt to interpret the vector as either a row vector or column vector, depending on whichever one makes the multiplication work. That is, suppose <span class="math inline">\(\mathbf{M}\)</span> is <span class="math inline">\(2\times 3\)</span> matrix, and <span class="math inline">\(v\)</span> is a <span class="math inline">\(1\times 3\)</span> row vector. Mathematically the matrix multiplication <span class="math inline">\(\mathbf{M}v\)</span> doesn’t make sense since the dimensions don’t conform, but you can multiply by the corresponding column vector, <span class="math inline">\(\mathbf{M}v^T\)</span>. So, if I set <code>v &lt;- mattie[2,]</code>, the object that R returns doesn’t technically have any <em>dimensions</em> only a <em>length</em>. So even though <code>v</code> was behaving like a row vector when it was part of <code>mattie</code>, R has forgotten that completely and only knows that <code>v</code> is length three. So when I try to calculate <code>mattie %*% v</code>, which you’d think would fail because I didn’t transpose <code>v</code>, it actually works. In this context R treated <code>v</code> as if it were a column vector for the purposes of matrix multiplication. Note that if both objects are vectors, this leads to ambiguity since <span class="math inline">\(vv^T\)</span> (inner product) and <span class="math inline">\(v^Tv\)</span> (outer product) yield different answers. In this situation <code>v %*% v</code> returns the inner product. You can obtain the outer product with <code>outer(v,v)</code>. The help documentation may come in handy!<a href="data-types.html#fnref25" class="footnote-back">↩</a></p></li>
+<li id="fn26"><p>You can suppress this behaviour by using a command like <code>mattie[,3,drop=FALSE]</code>. It’s unpleasant though. Also be warned: data frames do this too when you select one column using square brackets. Tibbles don’t. One of the reasons I like tibbles actually.<a href="data-types.html#fnref26" class="footnote-back">↩</a></p></li>
+<li id="fn27"><p>I won’t go into details, but note that you can refer the elements of a matrix by specifying only a single index. For a <span class="math inline">\(3\times 4\)</span> matrix <code>M</code>, <code>M[2,2]</code> and <code>M[5]</code> refer to the same cell. This method of indexing assumes column-wise ordering regardless of whether the matrix <code>M</code> was originally created in column-wise or row-wise fashion.<a href="data-types.html#fnref27" class="footnote-back">↩</a></p></li>
+<li id="fn28"><p>To see this, compare <code>is.matrix(arr)</code> to <code>is.matrix(arr[,,2])</code><a href="data-types.html#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p>Speaking of complications… Under the hood, data frames and tibbles are secretly lists, so you can use the list indexing methods for them and so, for example, <code>dat[[3]]</code> is the same as <code>dat$RT</code>. Probably best not to worry too much about that detail right now 😬<a href="data-types.html#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn30"><p>Date objects are coded internally as the number of days that have passed since January 1, 1970.<a href="data-types.html#fnref30" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1006,7 +1018,7 @@ class(x)
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="datavis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="programming.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -1033,7 +1045,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "sans",
+"family": "serif",
 "size": 2
 },
 "edit": {
@@ -1046,7 +1058,8 @@ gitbook.start({
 },
 "download": ["rbook2.pdf", "rbook2.epub"],
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"scroll_highlight": true
 }
 });
 });

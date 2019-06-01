@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Pretty pictures | Learning statistics with R</title>
+  <meta name="description" content="A gentle introduction to statistics and R using the tidyverse" />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Pretty pictures | Learning statistics with R" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://djnavarro.github.io/tidylsrbook" />
+  
+  <meta property="og:description" content="A gentle introduction to statistics and R using the tidyverse" />
+  <meta name="github-repo" content="djnavarro/tidylsrbook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Pretty pictures | Learning statistics with R" />
+  
+  <meta name="twitter:description" content="A gentle introduction to statistics and R using the tidyverse" />
+  
+
+<meta name="author" content="Danielle Navarro" />
+
+
+<meta name="date" content="2019-06-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="data-types.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style_new.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Getting started</b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#whywhywhy"><i class="fa fa-check"></i><b>1.1</b> Why statistics?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#the-curse-of-belief-bias"><i class="fa fa-check"></i><b>1.1.1</b> The curse of belief bias</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#statistics-in-psychology"><i class="fa fa-check"></i><b>1.1.2</b> Statistics in psychology</a></li>
+<li class="chapter" data-level="1.1.3" data-path="intro.html"><a href="intro.html#statistics-in-everyday-life"><i class="fa fa-check"></i><b>1.1.3</b> Statistics in everyday life</a></li>
+<li class="chapter" data-level="1.1.4" data-path="intro.html"><a href="intro.html#on-the-limitations-of-statistics"><i class="fa fa-check"></i><b>1.1.4</b> On the limitations of statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#why-learn-r"><i class="fa fa-check"></i><b>1.2</b> Why learn R?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#first-steps"><i class="fa fa-check"></i><b>1.3</b> First steps</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#installing-r-rstudio"><i class="fa fa-check"></i><b>1.3.1</b> Installing R &amp; RStudio</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#r-commands"><i class="fa fa-check"></i><b>1.3.2</b> R commands</a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#avoid-typos"><i class="fa fa-check"></i><b>1.3.3</b> Avoid typos</a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#r-is-flexible-with-spacing"><i class="fa fa-check"></i><b>1.3.4</b> R is flexible with spacing?</a></li>
+<li class="chapter" data-level="1.3.5" data-path="intro.html"><a href="intro.html#r-knows-youre-not-finished"><i class="fa fa-check"></i><b>1.3.5</b> R knows you’re not finished?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#operations"><i class="fa fa-check"></i><b>1.4</b> Operations</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#arithmetic-operations"><i class="fa fa-check"></i><b>1.4.1</b> Arithmetic operations</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#order-of-operations"><i class="fa fa-check"></i><b>1.4.2</b> Order of operations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#functions"><i class="fa fa-check"></i><b>1.5</b> Functions</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="intro.html"><a href="intro.html#using-functions"><i class="fa fa-check"></i><b>1.5.1</b> Using functions</a></li>
+<li class="chapter" data-level="1.5.2" data-path="intro.html"><a href="intro.html#combining-functions"><i class="fa fa-check"></i><b>1.5.2</b> Combining functions</a></li>
+<li class="chapter" data-level="1.5.3" data-path="intro.html"><a href="intro.html#multiple-arguments"><i class="fa fa-check"></i><b>1.5.3</b> Multiple arguments</a></li>
+<li class="chapter" data-level="1.5.4" data-path="intro.html"><a href="intro.html#argument-names"><i class="fa fa-check"></i><b>1.5.4</b> Argument names</a></li>
+<li class="chapter" data-level="1.5.5" data-path="intro.html"><a href="intro.html#default-values"><i class="fa fa-check"></i><b>1.5.5</b> Default values</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#rstudio-helps"><i class="fa fa-check"></i><b>1.6</b> RStudio helps!</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#tab-autocomplete"><i class="fa fa-check"></i><b>1.6.1</b> Tab autocomplete</a></li>
+<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#the-history-pane"><i class="fa fa-check"></i><b>1.6.2</b> The history pane</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#project-oriented-workflow"><i class="fa fa-check"></i><b>1.8</b> Project oriented workflow</a></li>
+</ul></li>
+<li class="part"><span><b>II Exploring data</b></span></li>
+<li class="chapter" data-level="2" data-path="datavis.html"><a href="datavis.html"><i class="fa fa-check"></i><b>2</b> Pretty pictures</a><ul>
+<li class="chapter" data-level="2.1" data-path="datavis.html"><a href="datavis.html#r-graphics"><i class="fa fa-check"></i><b>2.1</b> R graphics</a></li>
+<li class="chapter" data-level="2.2" data-path="datavis.html"><a href="datavis.html#the-data-set"><i class="fa fa-check"></i><b>2.2</b> The data set</a></li>
+<li class="chapter" data-level="2.3" data-path="datavis.html"><a href="datavis.html#histograms"><i class="fa fa-check"></i><b>2.3</b> Histograms</a></li>
+<li class="chapter" data-level="2.4" data-path="datavis.html"><a href="datavis.html#scatter-plot"><i class="fa fa-check"></i><b>2.4</b> Scatter plot</a></li>
+<li class="chapter" data-level="2.5" data-path="datavis.html"><a href="datavis.html#bar-graphs"><i class="fa fa-check"></i><b>2.5</b> Bar graphs</a></li>
+<li class="chapter" data-level="2.6" data-path="datavis.html"><a href="datavis.html#box-plots"><i class="fa fa-check"></i><b>2.6</b> Box plots</a></li>
+<li class="chapter" data-level="2.7" data-path="datavis.html"><a href="datavis.html#violin-plots"><i class="fa fa-check"></i><b>2.7</b> Violin plots</a></li>
+<li class="chapter" data-level="2.8" data-path="datavis.html"><a href="datavis.html#facetted-plots"><i class="fa fa-check"></i><b>2.8</b> Facetted plots</a></li>
+<li class="chapter" data-level="2.9" data-path="datavis.html"><a href="datavis.html#bubble-plots"><i class="fa fa-check"></i><b>2.9</b> Bubble plots</a></li>
+<li class="chapter" data-level="2.10" data-path="datavis.html"><a href="datavis.html#error-bars"><i class="fa fa-check"></i><b>2.10</b> Error bars</a></li>
+<li class="chapter" data-level="2.11" data-path="datavis.html"><a href="datavis.html#other-possibilities"><i class="fa fa-check"></i><b>2.11</b> Other possibilities</a></li>
+<li class="chapter" data-level="2.12" data-path="datavis.html"><a href="datavis.html#saving-images"><i class="fa fa-check"></i><b>2.12</b> Saving images</a></li>
+<li class="chapter" data-level="2.13" data-path="datavis.html"><a href="datavis.html#further-reading"><i class="fa fa-check"></i><b>2.13</b> Further reading</a></li>
+</ul></li>
+<li class="part"><span><b>III Learning from data</b></span></li>
+<li class="part"><span><b>IV Tools of the trade</b></span></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>A</b> Data types in R</a><ul>
+<li class="chapter" data-level="A.1" data-path="data-types.html"><a href="data-types.html#vectors"><i class="fa fa-check"></i><b>A.1</b> Vectors</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="data-types.html"><a href="data-types.html#character-vectors"><i class="fa fa-check"></i><b>A.1.1</b> Character vectors</a></li>
+<li class="chapter" data-level="A.1.2" data-path="data-types.html"><a href="data-types.html#numeric-vectors"><i class="fa fa-check"></i><b>A.1.2</b> Numeric vectors</a></li>
+<li class="chapter" data-level="A.1.3" data-path="data-types.html"><a href="data-types.html#extracting-an-element"><i class="fa fa-check"></i><b>A.1.3</b> Extracting an element</a></li>
+<li class="chapter" data-level="A.1.4" data-path="data-types.html"><a href="data-types.html#extracting-multiple-elements"><i class="fa fa-check"></i><b>A.1.4</b> Extracting multiple elements</a></li>
+<li class="chapter" data-level="A.1.5" data-path="data-types.html"><a href="data-types.html#removing-elements"><i class="fa fa-check"></i><b>A.1.5</b> Removing elements</a></li>
+<li class="chapter" data-level="A.1.6" data-path="data-types.html"><a href="data-types.html#editing-vectors"><i class="fa fa-check"></i><b>A.1.6</b> Editing vectors</a></li>
+<li class="chapter" data-level="A.1.7" data-path="data-types.html"><a href="data-types.html#naming-elements"><i class="fa fa-check"></i><b>A.1.7</b> Naming elements</a></li>
+<li class="chapter" data-level="A.1.8" data-path="data-types.html"><a href="data-types.html#vector-operations"><i class="fa fa-check"></i><b>A.1.8</b> Vector operations</a></li>
+<li class="chapter" data-level="A.1.9" data-path="data-types.html"><a href="data-types.html#logical-vectors"><i class="fa fa-check"></i><b>A.1.9</b> Logical vectors</a></li>
+<li class="chapter" data-level="A.1.10" data-path="data-types.html"><a href="data-types.html#comment"><i class="fa fa-check"></i><b>A.1.10</b> Comment</a></li>
+<li class="chapter" data-level="A.1.11" data-path="data-types.html"><a href="data-types.html#exercises-1"><i class="fa fa-check"></i><b>A.1.11</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="data-types.html"><a href="data-types.html#factors"><i class="fa fa-check"></i><b>A.2</b> Factors</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="data-types.html"><a href="data-types.html#unordered-factors"><i class="fa fa-check"></i><b>A.2.1</b> Unordered factors</a></li>
+<li class="chapter" data-level="A.2.2" data-path="data-types.html"><a href="data-types.html#ordered-factors"><i class="fa fa-check"></i><b>A.2.2</b> Ordered factors</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="data-types.html"><a href="data-types.html#data-frames-tibbles"><i class="fa fa-check"></i><b>A.3</b> Data frames / tibbles</a><ul>
+<li class="chapter" data-level="A.3.1" data-path="data-types.html"><a href="data-types.html#making-a-data-frame"><i class="fa fa-check"></i><b>A.3.1</b> Making a data frame</a></li>
+<li class="chapter" data-level="A.3.2" data-path="data-types.html"><a href="data-types.html#making-a-tibble"><i class="fa fa-check"></i><b>A.3.2</b> Making a tibble</a></li>
+<li class="chapter" data-level="A.3.3" data-path="data-types.html"><a href="data-types.html#tibbles-are-data-frames"><i class="fa fa-check"></i><b>A.3.3</b> Tibbles are data frames</a></li>
+<li class="chapter" data-level="A.3.4" data-path="data-types.html"><a href="data-types.html#using-the-operator"><i class="fa fa-check"></i><b>A.3.4</b> Using the <code>$</code> operator</a></li>
+<li class="chapter" data-level="A.3.5" data-path="data-types.html"><a href="data-types.html#using-square-brackets"><i class="fa fa-check"></i><b>A.3.5</b> Using square brackets</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="data-types.html"><a href="data-types.html#matrices"><i class="fa fa-check"></i><b>A.4</b> Matrices</a><ul>
+<li class="chapter" data-level="A.4.1" data-path="data-types.html"><a href="data-types.html#matrix-indexing"><i class="fa fa-check"></i><b>A.4.1</b> Matrix indexing</a></li>
+<li class="chapter" data-level="A.4.2" data-path="data-types.html"><a href="data-types.html#matrices-vs-data-frames"><i class="fa fa-check"></i><b>A.4.2</b> Matrices vs data frames</a></li>
+<li class="chapter" data-level="A.4.3" data-path="data-types.html"><a href="data-types.html#other-ways-to-make-a-matrix"><i class="fa fa-check"></i><b>A.4.3</b> Other ways to make a matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="data-types.html"><a href="data-types.html#arrays"><i class="fa fa-check"></i><b>A.5</b> Arrays</a><ul>
+<li class="chapter" data-level="A.5.1" data-path="data-types.html"><a href="data-types.html#array-indexing"><i class="fa fa-check"></i><b>A.5.1</b> Array indexing</a></li>
+<li class="chapter" data-level="A.5.2" data-path="data-types.html"><a href="data-types.html#array-names"><i class="fa fa-check"></i><b>A.5.2</b> Array names</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="data-types.html"><a href="data-types.html#lists"><i class="fa fa-check"></i><b>A.6</b> Lists</a><ul>
+<li class="chapter" data-level="A.6.1" data-path="data-types.html"><a href="data-types.html#indexing-lists"><i class="fa fa-check"></i><b>A.6.1</b> Indexing lists</a></li>
+</ul></li>
+<li class="chapter" data-level="A.7" data-path="data-types.html"><a href="data-types.html#dates"><i class="fa fa-check"></i><b>A.7</b> Dates</a></li>
+<li class="chapter" data-level="A.8" data-path="data-types.html"><a href="data-types.html#coercion"><i class="fa fa-check"></i><b>A.8</b> Coercion</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="programming.html"><a href="programming.html"><i class="fa fa-check"></i><b>B</b> Programming in R</a><ul>
+<li class="chapter" data-level="B.1" data-path="programming.html"><a href="programming.html#ifelse"><i class="fa fa-check"></i><b>B.1</b> If/else</a><ul>
+<li class="chapter" data-level="B.1.1" data-path="programming.html"><a href="programming.html#example-1"><i class="fa fa-check"></i><b>B.1.1</b> Example 1:</a></li>
+<li class="chapter" data-level="B.1.2" data-path="programming.html"><a href="programming.html#example-2"><i class="fa fa-check"></i><b>B.1.2</b> Example 2:</a></li>
+<li class="chapter" data-level="B.1.3" data-path="programming.html"><a href="programming.html#exercises-2"><i class="fa fa-check"></i><b>B.1.3</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="B.2" data-path="programming.html"><a href="programming.html#loops"><i class="fa fa-check"></i><b>B.2</b> Loops</a><ul>
+<li class="chapter" data-level="B.2.1" data-path="programming.html"><a href="programming.html#the-while-loop"><i class="fa fa-check"></i><b>B.2.1</b> The <code>while</code> loop</a></li>
+<li class="chapter" data-level="B.2.2" data-path="programming.html"><a href="programming.html#a-simple-example"><i class="fa fa-check"></i><b>B.2.2</b> A simple example</a></li>
+<li class="chapter" data-level="B.2.3" data-path="programming.html"><a href="programming.html#mortgage-calculator"><i class="fa fa-check"></i><b>B.2.3</b> Mortgage calculator</a></li>
+<li class="chapter" data-level="B.2.4" data-path="programming.html"><a href="programming.html#the-for-loop"><i class="fa fa-check"></i><b>B.2.4</b> The <code>for</code> loop</a></li>
+<li class="chapter" data-level="B.2.5" data-path="programming.html"><a href="programming.html#multiplication-tables"><i class="fa fa-check"></i><b>B.2.5</b> Multiplication tables</a></li>
+<li class="chapter" data-level="B.2.6" data-path="programming.html"><a href="programming.html#looping-over-other-vectors"><i class="fa fa-check"></i><b>B.2.6</b> Looping over other vectors</a></li>
+<li class="chapter" data-level="B.2.7" data-path="programming.html"><a href="programming.html#vectorised-code"><i class="fa fa-check"></i><b>B.2.7</b> Vectorised code?</a></li>
+<li class="chapter" data-level="B.2.8" data-path="programming.html"><a href="programming.html#exercises-3"><i class="fa fa-check"></i><b>B.2.8</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="programming.html"><a href="programming.html#functions-1"><i class="fa fa-check"></i><b>B.3</b> Functions</a><ul>
+<li class="chapter" data-level="B.3.1" data-path="programming.html"><a href="programming.html#a-boring-example"><i class="fa fa-check"></i><b>B.3.1</b> A boring example</a></li>
+<li class="chapter" data-level="B.3.2" data-path="programming.html"><a href="programming.html#default-arguments"><i class="fa fa-check"></i><b>B.3.2</b> Default arguments</a></li>
+<li class="chapter" data-level="B.3.3" data-path="programming.html"><a href="programming.html#unspecified-arguments"><i class="fa fa-check"></i><b>B.3.3</b> Unspecified arguments</a></li>
+<li class="chapter" data-level="B.3.4" data-path="programming.html"><a href="programming.html#more-on-functions"><i class="fa fa-check"></i><b>B.3.4</b> More on functions?</a></li>
+</ul></li>
+<li class="chapter" data-level="B.4" data-path="programming.html"><a href="programming.html#rescorla-wagner-model"><i class="fa fa-check"></i><b>B.4</b> Rescorla-Wagner model</a><ul>
+<li class="chapter" data-level="B.4.1" data-path="programming.html"><a href="programming.html#the-model-itself"><i class="fa fa-check"></i><b>B.4.1</b> The model itself</a></li>
+<li class="chapter" data-level="B.4.2" data-path="programming.html"><a href="programming.html#r-implementation"><i class="fa fa-check"></i><b>B.4.2</b> R implementation</a></li>
+<li class="chapter" data-level="B.4.3" data-path="programming.html"><a href="programming.html#the-skeleton"><i class="fa fa-check"></i><b>B.4.3</b> The skeleton</a></li>
+<li class="chapter" data-level="B.4.4" data-path="programming.html"><a href="programming.html#make-a-plan"><i class="fa fa-check"></i><b>B.4.4</b> Make a plan</a></li>
+<li class="chapter" data-level="B.4.5" data-path="programming.html"><a href="programming.html#fill-in-the-pieces"><i class="fa fa-check"></i><b>B.4.5</b> Fill in the pieces</a></li>
+<li class="chapter" data-level="B.4.6" data-path="programming.html"><a href="programming.html#tidying"><i class="fa fa-check"></i><b>B.4.6</b> Tidying</a></li>
+<li class="chapter" data-level="B.4.7" data-path="programming.html"><a href="programming.html#model-predictions"><i class="fa fa-check"></i><b>B.4.7</b> Model predictions</a></li>
+<li class="chapter" data-level="B.4.8" data-path="programming.html"><a href="programming.html#conditioning"><i class="fa fa-check"></i><b>B.4.8</b> Conditioning</a></li>
+<li class="chapter" data-level="B.4.9" data-path="programming.html"><a href="programming.html#extinction"><i class="fa fa-check"></i><b>B.4.9</b> Extinction</a></li>
+<li class="chapter" data-level="B.4.10" data-path="programming.html"><a href="programming.html#blocking"><i class="fa fa-check"></i><b>B.4.10</b> Blocking</a></li>
+<li class="chapter" data-level="B.4.11" data-path="programming.html"><a href="programming.html#done"><i class="fa fa-check"></i><b>B.4.11</b> Done!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning statistics with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="datavis" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Pretty pictures</h1>
+<blockquote>
+<p>Let them eat cake (first) <br>
+    - <a href="https://speakerdeck.com/minecr/let-them-eat-cake-first">Mine Cetinkaya-Rundel</a></p>
+</blockquote>
+<p>One of the primary tasks facing a scientist or any other data analyst is to <em>make sense of data</em>. There are so many different sources of data in the world, but if our goal is to learn things and make scientific progress, we need to transform data (raw information) into knowledge (human understanding). There are many different aspects to this “exploratory data analysis” process.</p>
+<p>Sometimes exploration is like cleaning the house: there are tedious jobs to be done to organise your data into a comprehensible form, to document it properly for other people to read and reuse, and so on. Just as cleaning the house and running a household are undervalued domestic job, data cleaning, data manipulation and documentation are often neglected in statistics textbooks. I don’t intend to repeat that error in this book, so I’ll talk a lot about that process later.</p>
+<p>But there’s something terribly depressing about starting out with the least exciting parts of the job. Because sometimes, data exploration is like eating cake. Sweet, fun and makes you feel so so good. Very much as Mine Cetinkaya-Rundel suggests, I think data visualisation is the cake. It’s your reward for cleaning the house and paying the bills, but if my job is to sell you on the virtues of working with data, it makes sense to start by getting you addicted to the cake – data visualisation is <em>fun</em>.</p>
+<p>Okay lovely reader, let’s get this party started.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(tidylsr)</code></pre>
+<div id="r-graphics" class="section level2">
+<h2><span class="header-section-number">2.1</span> R graphics</h2>
+<p>What does it mean for a machine to draw a picture? It’s a weird question to ask, but it’s a surprisingly complicated one. Reduced to its simplest form, you can think of R graphics like a painting. You start out with an empty canvas. Every time you use a graphics function, it paints some new things onto your canvas. Later you can paint more things over the top if you want, layering new information over the old. This way of thinking about plotting data is referred to as the <strong>painter’s model</strong> - the key thing to keep in mind is because the plot is constructed sequentially, the order in which you do things matters.</p>
+<p>We can extend the painting metaphor a little. If you want to paint a picture, you need to paint it on something. In real life, you can paint on lots of different things. Painting onto canvas isn’t the same as painting onto paper, and neither is the same as painting on a wall. In R, the thing that you paint onto is called a <strong>graphics device</strong>. In RStudio, the default graphics device is <code>RStudioGD</code> and it corresponds to the “plot” pane. If you were using the basic R program for Windows (i.e., <code>R.exe</code>) the default device is <code>windows</code>, on the Mac application (<code>R.app</code>) it’s called <code>quartz</code>, etc. However, from the computer’s perspective there’s nothing terribly special about drawing pictures on screen, and so R is quite happy to paint pictures directly into a file. R can paint several different types of image files: <code>jpeg</code>, <code>png</code>, <code>pdf</code>, <code>postscript</code>, <code>tiff</code> and <code>bmp</code> files are all available as graphics devices and you can write plots directly to those using those<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
+<p>Secondly, when you paint a picture you need to paint it with something. Maybe you want to do an oil painting, but maybe you want to use watercolour. And, generally speaking, you pretty much have to pick one or the other. The analog to this in R is a “graphics system”. A graphics system defines a collection of graphics commands about what to draw and where to draw it. Something that surprises most new R users is the discovery that R actually has several mutually incompatible graphics systems. The two of most interest to us are the <strong>base graphics</strong> system that comes with R and the <strong>ggplot2</strong> system<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> that forms part of <strong>tidyverse</strong>. There’s quite a difference of opinion among R users about the relative merits of these two systems. You can get started in base graphics really easily. To see just how easy it is, let’s load a new data set and try to draw a picture.</p>
+</div>
+<div id="the-data-set" class="section level2">
+<h2><span class="header-section-number">2.2</span> The data set</h2>
+<p>The <code>tidylsr</code> package comes with a data set called <code>samplingframes</code>, a relatively simple experiment I ran a little while ago (it’s experiment two from <a href="https://psyarxiv.com/2m83v/">this paper</a>). What we were interested in was understanding how people use statistical information to guide inductive inferences. For example, suppose you observe a sample of “robins” that have “plaxium blood” (whatever that is). How likely is it that “sparrows” will possess plaxium blood? Or “cows”? Does it matter how many robins you have seen? Does it matter whether you specifically selected robins and they turned out to have plaxium blood (category sampling) as opposed to detecting animals with plaxium blood that then turned out to all be robins (property sampling)? In that paper we had a computational model of inductive reasoning that made specific predictions about how the sample size (number of robins) and sampling method (property or category) would inflence people’s judgments.</p>
+<p>In this particular experiment we didn’t show people animals (though we have done those too!) we just showed them small “alien rocks” called “sodor spheres”, and asked people to make guesses about new rocks of different sizes: <code>test_loc</code> values of 1 and 2 were very similar to the items they were shown during training, whereas value 7 was quite dissimilar. The number of training observations ranged from 2 (<code>sample_size = &quot;small&quot;</code>) to 12 (<code>sample_size = &quot;large&quot;</code>) and was varied within-subject. So everyone saw two observations, made some generalization judgments (<code>response</code> on a scale from 0 to 9), then saw more training observations and so on. Participants were randomly assigned to a <code>&quot;property&quot;</code> sampling <code>condition</code> or to a category sampling one. We also recorded <code>age</code>, <code>gender</code>, and assigned each person a unique <code>id</code>. So here’s the data</p>
+<pre class="sourceCode r"><code class="sourceCode r">samplingframes</code></pre>
+<pre><code>## # A tibble: 4,725 x 8
+##       id gender   age condition sample_size n_obs test_item response
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+##  1     1 male      36 category  small           2         1        8
+##  2     1 male      36 category  small           2         2        7
+##  3     1 male      36 category  small           2         3        6
+##  4     1 male      36 category  small           2         4        6
+##  5     1 male      36 category  small           2         5        5
+##  6     1 male      36 category  small           2         6        6
+##  7     1 male      36 category  small           2         7        3
+##  8     1 male      36 category  medium          6         1        9
+##  9     1 male      36 category  medium          6         2        7
+## 10     1 male      36 category  medium          6         3        5
+## # … with 4,715 more rows</code></pre>
+<p>Oh dear this has rather a lot of observations. Every single response by every single participant is recorded as a separate row, and there are several thousand of those in total. Drawing pretty pictures might require us to simplify this a little bit… but I promised you cake, so I don’t want to bore you (yet!) with the data wrangling operations required to do this. But it’s not too hard… to foreshadow the content to come in the next chapter, here’s the code I use to create a <code>frames_small</code> data set that contains one row per <em>person</em>…</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small &lt;-<span class="st"> </span>samplingframes <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(id, gender, age, condition) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">response =</span> <span class="kw">mean</span>(response)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>()</code></pre>
+<p>and here’s what that data set looks like…</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small</code></pre>
+<pre><code>## # A tibble: 225 x 5
+##       id gender   age condition response
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;
+##  1     1 male      36 category      5.33
+##  2     2 male      46 category      7.05
+##  3     3 female    33 property      4.86
+##  4     4 female    71 property      3.86
+##  5     5 female    23 property      9   
+##  6     6 female    31 category      7.90
+##  7     7 male      23 property      3.76
+##  8     8 female    31 property      4   
+##  9     9 female    37 category      3.38
+## 10    10 female    46 category      5.86
+## # … with 215 more rows</code></pre>
+<p>Let’s see if we can understand what’s going on with this data set by drawing pictures, and also learn about R graphics in the process.</p>
+</div>
+<div id="histograms" class="section level2">
+<h2><span class="header-section-number">2.3</span> Histograms</h2>
+<p>When analysing the data from this kind of experiment, one of the first things I check is that the <code>age</code> and <code>gender</code> variables are actually irrelevant. Honestly, I only bother to measure them at all because people seem to expect it in the literature but for the kind of questions I care about there’s never any effects of age or gender. Still, you have to check just to make sure nothing weird is goind on.</p>
+<p>With that in mind, let’s give ourselves the task of drawing a histogram of the <code>age</code> variable in this data frame. We don’t need to make it pretty, we just want to plot the frequency distribution for the number of points scored by the home team. As I mentioned earlier, we could do this using base graphics or we could do it the tidyverse way. Let’s see how it plays out both ways.</p>
+<p>The function to do this in base graphics is called <code>hist</code> and here it is:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(frames_small<span class="op">$</span>age)</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+It’s not exactly pretty – though it’s way nicer than the default plots that I remember seeing when I was younger – but it gets the job done.</p>
+<p>Okay, how do I create a histogram the tidyverse way? Much like base graphics, <strong>ggplot2</strong> recognises that histograms are such a fundamentally useful thing that there exists a “geom” (a term I’ll explain in a moment) for them, but there’s no way to draw a plot without going through a somewhat more convoluted process:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+The output is prettier, admittedly, but our goal here wasn’t to be pretty. Our goal was to be simple. For this comparison, the tidyverse approach is not as straightforward as base graphics.</p>
+<p>Where the tidyverse versions shines is when we want to do something a little bit more complicated. Suppose I wanted two histograms side by side, plotting the age distribution separately by <code>condition</code>. In base graphics, it’s a little cumbersome. What I have to do here is manually control the “layout” of the plot, dividing it into two separate panels and then drawing the histogram separately into each panel. That gives me code that looks like this:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">hist</span>(frames_small<span class="op">$</span>age[samplingframes<span class="op">$</span>condition <span class="op">==</span><span class="st"> &quot;category&quot;</span>])
+<span class="kw">hist</span>(frames_small<span class="op">$</span>age[samplingframes<span class="op">$</span>condition <span class="op">==</span><span class="st"> &quot;property&quot;</span>])</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>I need a lot more code as I did for the original version and I’ve ended up with an ugly plot. Of course, base graphics absolutely does allow me to do a better job than this, but I hope you can see that it will take quite a bit of effort to turn this into something readable.</p>
+<p>What about the <strong>ggplot2</strong> version? It turns out that it’s extremely easy. Splitting an existing plot into “facets” is a basic operation within <strong>ggplot2</strong> so all I need to do is add one line of code that specifies which variable to use to make the facets!
+The result is actually kind of nice:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>condition)</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>For me at least, this is the big advantage to the <strong>ggplot2</strong> approach. There’s a certain amount of effort required to construct the basic plot, but once that is done, you can modify or manipulate that plot in an extremely flexible fashion with very little effort indeed. What I’ve found in practice is that the low-effort to making changes makes me much more willing to “play around” with different ways of visualising the data. So, while I’ll admit that there are some situations where I resort to using base graphics (mostly when I have a very unconventional graph to draw), I tend to find the tidyverse approach works better in the majority of cases.</p>
+<p>As far as what the data visualisation is telling us: the distribution of ages was mostly in the 20-40 age range with a modest positive skew. That’s pretty typical of these studies. More importantly, it’s pretty clear from inspection that there’s not much of a difference in the age distribition across conditions, which is what I’d hope to see given that people were assigned randomly.</p>
+</div>
+<div id="scatter-plot" class="section level2">
+<h2><span class="header-section-number">2.4</span> Scatter plot</h2>
+<p>The second kind of plot I’ll talk about is a scatter plot, in which each observation is drawn as a point, and the graph shows the values on one variable against the values on another. It’s such a simply plot that I’ll use it as a mechanism to illustrate the key ideas in <strong>ggplot2</strong>.</p>
+<p>Lets build our plot piece by piece. The data we want to use here come from <code>frames_small</code>, so the first thing we’ll do is pipe this data set to the <code>ggplot()</code> function and see what it produces:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-12-1.png" width="384" /></p>
+<p>In retrospect that’s unsurprising. Although we’ve passed the data to <code>ggplot()</code>, we haven’t told R what it ought to <em>do</em> with these data, so the output is simply a blank canvas! To make some progress, the next step is to specify a <code>mapping</code> for the plot that will tell R something about what roles the different variables play. In <strong>ggplot2</strong> these mappings are described as a set of “<em>aesthetics</em>”, defined using the <code>aes()</code> function. There are many different aesthetics that can be used, but for a scatter plot the only things we really <em>need</em> to specify as aesthetics are the variable on the <code>x</code> axis and the variable on the <code>y</code> axis. So if we wanted to plot <code>y = response</code> against <code>x = age</code>, this is the mapping we would need:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response))</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-13-1.png" width="384" /></p>
+<p>Hm. That’s clearly some progress. The canvas now has the axis labels and gridlines reflecting the fact that R now knows which variables we’re hoping to ploy. However, we still don’t have any data, because we haven’t told R what it should <em>do</em> to render the data. This is the role played by <em>geoms</em>, which specify different ways in which data can be displayed. Since we’re trying to draw a scatter plot, I’m going to use the simplest possible <em>geom</em> function, namely <code>geom_point()</code>. All it does is draw a dot for each data point:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Now we have our scatter plot! From visual inspection there doesn’t seem to be any strong relationship between the <code>age</code> of a participant and the <code>response</code> they give. Again, that’s not surprising, but useful to check.</p>
+<p>It’s worth highlighting the different roles played by aesthetics and geoms. For instance, I could have expanded the list of aesthetics to include <code>colour = condition</code>, which would indicate that the colour of each dot should indicated which condition the participant in question was assigned to:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response, <span class="dt">colour =</span> condition)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-15-1.png" width="480" /></p>
+<p>However, I can also add new geoms that will draw new layers to the plot. For example, <code>geom_rug</code> adds a visual representation of the marginal distribution of the data on both axes, like this:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response, <span class="dt">colour =</span> condition)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_rug</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-16-1.png" width="480" /></p>
+<p>Notice the style here. A pretty typical way to build a visualisation is to construct it in layers, <em>adding</em> new geoms, aesthetics and other plot customisations as you go. So you’ll often end up with code structured like this:<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p>
+<pre><code>DATA %&gt;%
+  ggplot(aes( LIST_OF_AESTHETICS )) +
+  A_GEOM +
+  ANOTHER_GEOM +
+  ETC</code></pre>
+<p>In any case, looking at these scatter plots there’s nothing that immediately suggests and differential patterns of responding as a function of age but there is a hint that responses are lower in the property sampling condition (blue) than in the category sampling condition (red).</p>
+</div>
+<div id="bar-graphs" class="section level2">
+<h2><span class="header-section-number">2.5</span> Bar graphs</h2>
+<p>The humble bar graph is a staple in the scientific literature, and can be rendered by <strong>ggplot2</strong> with the assistance of the <code>geom_bar()</code> function. Suppose I want to check that the gender distribution for this study was relatively even across conditions.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> To do that, I’ll set up my mapping with <code>gender</code> on the x-axis (using <code>ggplot</code> to initialise the plot and <code>aes</code> to specify the aesthetics), create separate panels for each <code>condition</code> (using <code>facet_wrap</code> which I’ll explain in more detail below), and then use <code>geom_bar()</code> to draw the plot:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> gender)) <span class="op">+</span><span class="st">  </span><span class="co"># set up the mapping</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>condition) <span class="op">+</span><span class="st">   </span><span class="co"># split it into plots</span>
+<span class="st">  </span><span class="kw">geom_bar</span>()                 <span class="co"># add the bars!</span></code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>As one would expect for random assignment there’s a little unevenness but not very much. That looks totally fine to me, and at this point I’ve convinced myself that the <code>age</code> and <code>gender</code> variables really don’t matter very much, so I can start digging into the details about how the manipulated variables of theoretical interest (<code>sample_size</code>, <code>condition</code> and <code>test_loc</code>) relate to the inductive generalisation <code>response</code> judgment that people make…</p>
+</div>
+<div id="box-plots" class="section level2">
+<h2><span class="header-section-number">2.6</span> Box plots</h2>
+<p>Another classic data visualisation used in psychology is the box plot (due to John Tukey), which presents a schematic representation of the distribution of responses. Box plots can be drawn in many different forms, but the most conventional version the median value (50th percentile) as a thick horizontal line, contained within a box that spans the range from 25th percentile to the 75th percentile. Above and below the box are the “whiskers” which extend to cover the full range of the data (after excluding outliers).
+Outliers are plotted as individual dots. Note that in this context an outlier is conventionally defined as a point that lies more than 1.5 times the interquartile range from the median: this is often a convenient heuristic to use but it’s not magical. Don’t read too much into the fact that a data set includes outliers!</p>
+<p>To construct a boxplot using <strong>ggplot2</strong> all we need to do is add a <code>geom_boxplot()</code> to the graph. So if I want to plot the distribution of <code>response</code> values across participants (averaged across test items) separately for each <code>condition</code>, I could do this:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> condition, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>This plot is easy to interpret and provides our first hint that there is in fact something of interest going on in these data. On a first pass, it rather looks like people are less willing to make inductive generalisations (i.e., give lower scores) in the property sampling condition than in the category sampling condition!</p>
+</div>
+<div id="violin-plots" class="section level2">
+<h2><span class="header-section-number">2.7</span> Violin plots</h2>
+<p>Although the box plot is an old method for visualising the key characteristics of distribution it’s a very good one. It’s visually simple, meaning that you can put a lot of box plots in a single graph without causing too much clutter, yet it still conveys a lot of information about the distribution. So there are many situations in which they are worth including (we’ll see a good example in a moment)</p>
+<p>On the other hand, for the specific situation here where there are only two disributions to be displayed, it does seem like we could do better. With the state of computing having advanced quite dramatically over recent decades, it is extremely easy to construct more complicated <em>kernel density estimates</em> of the shape of the population from which the sample is drawn. The <em>violin plot</em> provides a method for visually displaying a kernel density estimate. If we switch from <code>geom_boxplot()</code> to <code>geom_violin()</code> the resulting plot looks like this:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> condition, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_violin</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>It’s intuitively obvious what this plot is doing: the “width” of the violin<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> at each point shows the estimated “density” of the population distribution at that point. To make it a little clearer what this is showing, let’s overlay the raw data on the plot, using the <code>geom_jitter()</code> method to make it a little easier to see:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> condition, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>As you can see, in the property sampling condition the data are concentrated pretty tightly around 4.5, whereas in the category sampling condition the data are shifted upwards and spread out. That’s what produces the different shapes in the violin plots.</p>
+</div>
+<div id="facetted-plots" class="section level2">
+<h2><span class="header-section-number">2.8</span> Facetted plots</h2>
+<p>The big problem I have with the data visualisations we’ve drawn so far is that we’re really not getting a very fine grained story. When we constructed the <code>response</code> variable for the <code>frames_small</code> data frame we averaged over all three values of <code>sample_size</code> and across all seven values of <code>test_loc</code>. That’s fine as a first pass if we want to take a quick look at the difference across <code>condition</code>, but in real world data analysis we need to hold ourselves to higher standards! So lets go back to the raw <code>frames</code> data, and see if we can find a better visualisation. This brings us naturally to the topic of <em>faceting</em> a plot…</p>
+<p>A common task in data visualisation is to construct facet plots that display an existing plot separately for each group. We’ve seen this twice already, once in the histogram at the start of this section and previously in the <a href="./prelude-to-data.html">prelude</a>. In both cases I used <code>facet_wrap()</code> to do the work, using the <code>~</code> operator to specify a one-sided formula (e.g., <code>~condition</code>). This function splits the plot by the levels of a factor, and then “wraps” them around to keep the plot tidy. For example, if there were 16 levels of the <code>condition</code> variable then <code>facet_wrap()</code> would probably give us a 4x4 grid.</p>
+<p>If you want more precise control over the faceting, an alternative approach is to use <code>facet_grid()</code>. For instance, let’s suppose I want to draw separate boxplots for the <code>response</code> variable for every possible <code>test_item</code>, broken down by <code>condition</code> and <code>sample_size</code>. That’s going to give us 42 boxplots, so some degree of care is required here! Here’s my first attempt:</p>
+<pre class="sourceCode r"><code class="sourceCode r">samplingframes <span class="op">%&gt;%</span><span class="st">                               </span><span class="co"># start with the full data set!</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(
+    <span class="dt">x =</span> <span class="kw">factor</span>(test_item),               <span class="co"># treat &quot;test_item&quot; as categorical</span>
+    <span class="dt">y =</span> response)) <span class="op">+</span><span class="st">                     </span><span class="co"># y variable is &quot;response&quot;</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(sample_size <span class="op">~</span><span class="st"> </span>condition) <span class="op">+</span><span class="st">  </span><span class="co"># add faceting</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>()                         <span class="co"># oh, right... add the boxplots :-)</span></code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>That’s not bad as a first pass. There’s a few things I’d like to do to tidy it though:</p>
+<ul>
+<li>Flip the grid by changing the formula to <code>condition ~ sample_size</code></li>
+<li>Reorder the sample size facets by changing <code>sample_size</code> to a factor</li>
+<li>Adding nicer axis labels using <code>xlab()</code> and <code>ylab()</code></li>
+<li>Make the “outliers” less obtrusive using transparency</li>
+</ul>
+<p>To do this, the first thing I’m going to do is use <code>dplyr::mutate</code> – discussed in the previous section – to convert the <code>sample_size</code> variable to a factor, and make sure the levels are specified in the order I want them to appear in the plot:</p>
+<pre class="sourceCode r"><code class="sourceCode r">samplingframes &lt;-<span class="st"> </span>samplingframes <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sample_size =</span> <span class="kw">factor</span>(sample_size, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;small&quot;</span>,<span class="st">&quot;medium&quot;</span>,<span class="st">&quot;large&quot;</span>)))</code></pre>
+<p>Now my command to draw the plot looks like this:</p>
+<pre class="sourceCode r"><code class="sourceCode r">samplingframes <span class="op">%&gt;%</span><span class="st">                               </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(
+    <span class="dt">x =</span> <span class="kw">factor</span>(test_item),               
+    <span class="dt">y =</span> response)) <span class="op">+</span><span class="st">                     </span>
+<span class="st">  </span><span class="kw">facet_grid</span>(condition <span class="op">~</span><span class="st"> </span>sample_size) <span class="op">+</span><span class="st">  </span><span class="co"># reversed faceting</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">outlier.alpha =</span> <span class="fl">0.1</span>) <span class="op">+</span><span class="st">    </span><span class="co"># alpha sets the transparency</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Location of Test Stimulus&quot;</span>) <span class="op">+</span><span class="st">    </span><span class="co"># add x-label</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Response&quot;</span>)                       <span class="co"># add y-label</span></code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-23-1.png" width="576" /></p>
+<p>It’s essentially the same as before, but we’ve switched the ordering of variables in <code>facet_grid()</code>, added the <code>outlier.alpha = 0.1</code> argument to <code>geom_boxplot()</code> to make the outliers fade into the background, and then specified some nicer axis titles. The resulting plot is a fair bit more readable.</p>
+<p>As for what we’re seeing in the data, there are a few different things to notice:</p>
+<ul>
+<li>Within every facet the responses tend to shift <em>downwards</em> from left to right: as the test item becomes less similar to the training items, people are less willing to make generalisations. This pattern of similarity-based generalisation is unsurprising and it’s a finding that has been replicated many, many times in the literature.</li>
+<li>The effect of sample size is inhomogeneous. For stimuli that are very similar to the training items (test locations 1 and 2), increasing the sample size pushes the generalisation <em>upwards</em>, regardless of whether category sampling or property sampling is applied</li>
+<li>For stimuli that are very dissimilar (especially test items 6 and 7), the effect of sample size depends on the sampling method. For category sampling, basically <em>nothing happens</em>: the box plots for large sample sizes aren’t any different to those for small sample sizes. Yet for property sampling, there’s a systematic tendency for these to shift <em>downwards</em></li>
+</ul>
+<p>Assuming that these findings replicate<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> it looks like we have a three-way interaction of some kind!</p>
+<p>To be honest though, I’m still not pleased with this graph. I think we can do better.</p>
+</div>
+<div id="bubble-plots" class="section level2">
+<h2><span class="header-section-number">2.9</span> Bubble plots</h2>
+<p>One difficulty with box plots is that they only work as distributional summaries when the data are unimodal. If most people respond with extreme values, the box plot ends up being a little misleading. Violin plots are often better at capturing multimodality, but they’re designed to work for continuous variables and often behave poorly when applied to data that fall in a small number of ordered categories. Psychological data from questionnaires or – as in the <code>frames</code> data set - other ordinal response methods often have exactly this characteristic. Neither box plots nor violin plots are ideally suited to this situation.</p>
+<p>Fortunately a bubble plot can help out here. This takes the form of a scatter plot, but instead of plotting every data point as a unique dot, we plot dots at every location whose size (area) is proportional to the number of cases at that location.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> To do this with <strong>ggplot2</strong> all we need to do is use the <code>geom_count()</code> function. When applied to the <code>frames</code> data, we get this:</p>
+<pre class="sourceCode r"><code class="sourceCode r">samplingframes <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> test_item, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_grid</span>(condition <span class="op">~</span><span class="st"> </span>sample_size) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_count</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-24-1.png" width="576" /></p>
+<p>This version of the plot highlights a failure of the box plot version. Compare the distribution of responses to test item 7 in the category sampling condition (top row). In the <code>small</code> sample size, the modal response is 4, with most people using the middle category, whereas for the <code>large</code> sample size most people are using the extremes, responding with either 0 or 9. However, both cases have the same median and very similar inter-quartile ranges, so the box plots look almost the same!</p>
+<p>On the other hand, this plot is a little hard to read. We’ve added a lot of new detail about the low frequency responses and in doing so learned more about the overall distribution of responding, but that’s come at the cost of making it harder to see what the most typical responses are! A compromise that I am often fond of is using shading to slightly de-emphasize the low frequency cases. Larger bubbles should stand out (dark colour), but low frequency responses should fade into the light grey background. It’s actually pretty easy to do that: <code>geom_count()</code> keeps track of the number of observations in each cell, and so we can add a new aesthetic to the <code>geom_count()</code> layer, simply by specifying <code>colour = ..n..</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">samplingframes <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> test_item, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_grid</span>(condition <span class="op">~</span><span class="st"> </span>sample_size) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_count</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> ..n..))</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
+<p>That’s a little nicer, but in this case I don’t want or need the pretty blue colouring. What I want to do is specify my own grey scale, where larger dots are coloured closer to black (e.g., upper bound is <code>&quot;grey20&quot;</code>) and the smaller dots are coloured in a light grey (e.g., lower bound is <code>&quot;grey80&quot;</code>).<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> Then all I have to do is this:</p>
+<pre class="sourceCode r"><code class="sourceCode r">samplingframes <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> test_item, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_grid</span>(condition <span class="op">~</span><span class="st"> </span>sample_size) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_count</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> ..n..)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">scale_colour_gradient</span>(<span class="dt">low =</span> <span class="st">&quot;grey80&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;grey20&quot;</span>)</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
+<p>To my mind that’s much more readable! It captures the multimodality of the responding without overwhelming the viewer with too much detail. There are still some issues that you might want to care about in real life – the figure is a little too low contrast for people with less than perfect vision, for instance. But it comes a lot closer to what we need.</p>
+</div>
+<div id="error-bars" class="section level2">
+<h2><span class="header-section-number">2.10</span> Error bars</h2>
+<p>As much as I love the bubble plot above, academic journals often expect a more compressed representation of the data, especially when the manuscript you’re submitting involves a large number of experiments. It’s often the case that we want to summarise the data from a single condition using a “mean plus error bar” style plot. A common format is to plot the mean for every experimental condition and have error bars plotting the 95% confidence interval for the mean. To do that for the <code>frames</code> data, let’s begin by constructing a summary data set</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_mean &lt;-<span class="st"> </span>samplingframes <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(condition,sample_size,test_item) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(
+    <span class="dt">mean_response =</span> <span class="kw">mean</span>(response),
+    <span class="dt">lower =</span> lsr<span class="op">::</span><span class="kw">ciMean</span>(response)[<span class="dv">1</span>],
+    <span class="dt">upper =</span> lsr<span class="op">::</span><span class="kw">ciMean</span>(response)[<span class="dv">2</span>]
+  )
+frames_mean</code></pre>
+<pre><code>## # A tibble: 42 x 6
+## # Groups:   condition, sample_size [6]
+##    condition sample_size test_item mean_response lower upper
+##    &lt;chr&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 category  small               1          6.07  5.55  6.59
+##  2 category  small               2          6.26  5.84  6.69
+##  3 category  small               3          5.87  5.50  6.24
+##  4 category  small               4          5.11  4.74  5.49
+##  5 category  small               5          4.55  4.12  4.99
+##  6 category  small               6          4.16  3.69  4.63
+##  7 category  small               7          3.98  3.44  4.52
+##  8 category  medium              1          7.32  6.85  7.78
+##  9 category  medium              2          7.17  6.80  7.54
+## 10 category  medium              3          5.98  5.54  6.42
+## # … with 32 more rows</code></pre>
+<p>In this case I’m using the <code>ciMean()</code> function from the <strong>lsr</strong> package to compute the 95% confidence intervals. Just so that you can see how this function works – without all the additional complications from calling it within the <code>summarise()</code> operation – here’s a simple example. I’ll generate 20 numbers from a normal distribution with true mean 100 and true standard deviation 15 (following the convention used for IQ scores), and then use the <code>ciMean()</code> function to calculate a 95% confidence interval:</p>
+<pre class="sourceCode r"><code class="sourceCode r">fake_iq &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">100</span>, <span class="dt">sd =</span> <span class="dv">15</span>)  <span class="co"># normally distributed data</span>
+lsr<span class="op">::</span><span class="kw">ciMean</span>(fake_iq)                           <span class="co"># 95% confidence interval </span></code></pre>
+<pre><code>##             2.5%    97.5%
+## fake_iq 91.85642 112.8777</code></pre>
+<p>So the <code>lower</code> variable in <code>frames_mean</code> is the lower bound on the 95% confidence interval, and <code>upper</code> is the upper bound. In any case, now that we have data in an appropriate format we can create the plot.</p>
+<p>To add error bars is no more difficult than anything else in <strong>ggplot2</strong>. There is a geom called <code>geom_errorbar()</code> that will draw those for us. However, it does need some new information. In our previous graphs we’ve specifed three aesthetics at the beginning of our graphing exercise, namely <code>x = test_item</code>, <code>y = mean_response</code> and <code>colour = condition</code>. That works fine for <code>geom_point()</code> because doesn’t need anything else, but <code>geom_errorbar()</code> also needs to know which variables specify the <code>ymin</code> and <code>ymax</code> values that will be displayed in the error bars. If I wanted to, I could could include these aesthetics within the original call to <code>ggplot()</code> but I’ll do something a little different this time. Individual geoms can have their own unique aesthetics, so I can insert a new call to <code>aes()</code> within the <code>geom_errorbar()</code> call. Conceptually I find this neater, because it makes clear that <code>ymin</code> and <code>ymax</code> are aesthetics that apply to the error bars, but not to other geoms in the plot. Anyway here’s the command:</p>
+<pre class="sourceCode r"><code class="sourceCode r">my_pic &lt;-<span class="st"> </span>frames_mean <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> test_item, <span class="dt">y =</span> mean_response, <span class="dt">colour =</span> condition)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymin =</span> lower, <span class="dt">ymax =</span> upper)) <span class="op">+</span><span class="st">  </span><span class="co"># add the error bars!</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sample_size)</code></pre>
+<p>Hey, where’s my plot? Oh right… notice that I assigned the result to a variable called <code>my_pic</code>. Under the hood, <code>my_pic</code> is essentially a big list of information that specifies everything R needs to know to draw the plot. So if we want to <em>see</em> the plot, all we need to do is call <code>print(my_pic)</code> or <code>plot(my_pic)</code>, or even more simply I can do this:</p>
+<pre class="sourceCode r"><code class="sourceCode r">my_pic</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-30-1.png" width="576" /></p>
+<p>Clearly, when compared to the bubble plot we are losing a lot of information – all we have left is information about the distributional mean – but it’s still fairly informative about what is going on across the diferent conditions.</p>
+<p>Another thing worth noting. Because the test items vary along a continuous scale, it’s appropriate to connect the points with lines. I can do this in a straightforward way simply by adding <code>geom_line()</code> to the plot:</p>
+<pre class="sourceCode r"><code class="sourceCode r">my_pic <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>()</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-31-1.png" width="576" /></p>
+<p>Notice that I can add <code>geom_line()</code> directly to <code>my_pic</code>. That can be extremely handy if you’ve worked out what the core features of your plot will be and want to play around with a few possible additions to the plot.</p>
+</div>
+<div id="other-possibilities" class="section level2">
+<h2><span class="header-section-number">2.11</span> Other possibilities</h2>
+<p>As you can see, there are quite a few things you can do with this package. However, the <strong>ggplot2</strong> package provides many more plotting tools than I’ve described so far, and it was designed to be extensible so there are many other packages that extend it in interesting ways. Even without looking at other packages, there are various neat possibilities. Just to give you a bit of a sense of this, here are a few more! If I want to add contouring to a scatter plot, I can do this using the <code>geom_density_2d()</code> function:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response, <span class="dt">colour =</span> condition)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_density_2d</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>condition) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylim</span>(<span class="dv">0</span>,<span class="dv">9</span>)</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-32-1.png" width="576" /></p>
+<p>Alternatively, if I want to add regression lines to this plot I can use <code>geom_smooth()</code>. By default the <code>geom_smooth()</code> function applies a non-linear method (loess regression), which we saw previously in the <a href="./prelude-to-data.html">prelude</a>. This is also customisable. If I want to use a simpler linear model to provide my regression line, all I need to do is specify <code>method = &quot;lm&quot;</code> and I get a plot like this:</p>
+<pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response, <span class="dt">colour =</span> condition)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>condition) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylim</span>(<span class="dv">0</span>,<span class="dv">9</span>)</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p>Similarly, plots are customisable in other ways. We can use <code>theme_dark()</code> to switch to a dark theme or <code>theme_bw()</code> to switch to a black and white scheme. We can add horizontal lines to plots with <code>geom_hline()</code>, vertical lines with <code>geom_vline()</code> and diagonal lines with <code>geom_abline()</code>. The colour palette can be adapted in arbitrary ways (e.g. with <code>scale_color_brewer</code>). We can control the axis scales with <code>xlim()</code> and <code>ylim()</code>. We can add text to a plot with <code>geom_text()</code>. Here’s an example showing some of those customisation:</p>
+<pre class="sourceCode r"><code class="sourceCode r">my_new_pic &lt;-<span class="st"> </span>my_pic <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">theme_dark</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Pastel2&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylim</span>(<span class="dv">0</span>, <span class="dv">9</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="fl">2.5</span>, <span class="dt">colour =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">lty =</span> <span class="st">&quot;dotted&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Location of Test Stimulus&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Mean Response&quot;</span>)
+
+my_new_pic</code></pre>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-34-1.png" width="576" /></p>
+<p>The possibilities are limited mostly by your imagination, and by common sense. The <strong>ggplot2</strong> system is so rich and flexible that it’s easy to go overboard with creating pretty pictures. Always remember that there’s a human reader at the other end of your picture, and they’re more interested in what your data visualisation can tell them about <em>the data</em>, not what it says about your R skills! 😀</p>
+</div>
+<div id="saving-images" class="section level2">
+<h2><span class="header-section-number">2.12</span> Saving images</h2>
+<p>The last topic I want to cover here is how to save your plot to an image file. Suppose I want to take <code>my_new_plot</code> and save it to a PNG file that is 16cm wide and 8cm high. The <code>ggsave()</code> function allows me to do that, and the command is pretty intuitive:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsave</span>(
+  <span class="dt">filename =</span> <span class="st">&quot;./output/frame_pic.png&quot;</span>,
+  <span class="dt">plot =</span> my_new_pic,
+  <span class="dt">width =</span> <span class="dv">16</span>,
+  <span class="dt">height =</span> <span class="dv">8</span>,
+  <span class="dt">units =</span> <span class="st">&quot;cm&quot;</span>
+)</code></pre>
+<p>The function is smart enough to guess from the <code>filename</code> argument what kind of image file to create (e.g., PNG, JPG, etc), and so as long as the filename specifies a file extension that <code>ggsave()</code> can handle it will automatically create the right kind of image. The result in this case is <a href="./output/frame_pic.png">this image file</a>.</p>
+</div>
+<div id="further-reading" class="section level2">
+<h2><span class="header-section-number">2.13</span> Further reading</h2>
+<ul>
+<li><a href="https://socviz.co/">Data visualisation: A practical introduction</a>. Kieran Healy</li>
+<li>ggplot2: Elegant graphics for data analysis. Hadley Wickham.</li>
+</ul>
+
+</div>
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>If you are interested, take a look at the various <code>dev</code> functions for working with graphics devces, such as <code>dev.new</code>, <code>dev.print</code>, <code>dev.off</code> etc. I won’t talk about those here because I’m focusing on <strong>tidyverse</strong> but they’re handy in other situations<a href="datavis.html#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>It’s worth acknowledging that <strong>ggplot2</strong> and builds off the <strong>grid</strong> graphics system that we very briefly encountered when using <strong>TurtleGraphics</strong><a href="datavis.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>There is a little bit of weirdness to this. Once you’ve gotten accustomed to using the pipe operator <code>%&gt;%</code> it starts to feel like we should be writing code like <code>data %&gt;% ggplot() %&gt;% geom() %&gt;% etc</code> rather than <code>data %&gt;% (ggplot() + geom() + etc)</code>. This is purely for historical reasons: <strong>ggplot2</strong> predates the pipe operator and so unlike everything else in <strong>tidyverse</strong> it’s not very compatible with <code>%&gt;%</code>.<a href="datavis.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>In this study I asked people to respond with a three value questionnaire, with options for “male”, “female” and “other” as possible gender identities. I’m not entirely satisfied with this as a measurement method though, and the question wasn’t compulsory to answer.<a href="datavis.html#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p>Yeah, they never actually look like violins. We should just give up and call them blob plots<a href="datavis.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p>They appear to – we ran 9 experiments in total and while some effects are a little fragile and I wouldn’t put too much faith in their ability to replicate, the core effect in which there are systematic differences in how statistical information (e.g., sample size, base rate, auxiliary data) interacts with the sampling mechanism replicated every time; oh and if you go read the paper the model predictions correlate with human data very highly, always produce the same qualitative patterns regardless of parametre values… etc, etc. This isn’t a cognitive science paper so I won’t bore you with details, but the reason this works as cleanly as it does is that we didn’t choose these manipulations arbitrarily. We had a proper theory to guide us!<a href="datavis.html#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>There are drawbacks to bubble plots. The psychophysical function for area isn’t linear, so subjective area doesn’t scale perfectly with actual area. If you need people to be able to make fine-grained comparisons between quantities don’t use bubble plots. However, my goal here is different - I don’t mind if we can’t quite see the “perfect” relationship, I just want the “gist” to come through properly.<a href="datavis.html#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p>R is quite flexible in how it handles colours. For most purposes you can use an English colour word and R will have a rough idea what you mean. Type <code>colours()</code> at the console to see a list of the colour names it knows: there are a lot! Alternatively you can specify a hexadecimal string like <code>#88398A</code>, or use a function like <code>rgb()</code> or <code>hsv()</code> to construct the colour you want.<a href="datavis.html#fnref15" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-types.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["rbook2.pdf", "rbook2.epub"],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

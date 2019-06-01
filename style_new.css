@@ -1,0 +1,61 @@
+.book.font-family-0 {
+  font-family: Crimson Text, Palatino, Georgia, serif;
+}
+
+.book.font-family-1 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+
+.book .book-summary{left:-260px;width:260px;}
+
+.book .book-body .page-wrapper .page-inner{max-width:840px;}
+
+@media (min-width: 600px) {
+  .book.with-summary .book-header.fixed {left: 260px;}
+  .book.with-summary .book-body{left:260px}
+}
+
+@media (max-width: 600px) {
+  .book.with-summary .book-header.fixed {min-width: 260px;}
+  .book.with-summary .book-body {min-width: 260px;}
+}
+
+.book .book-body .page-wrapper .page-inner .normal {
+  line-height: 1.1em;
+}
+
+h2 {
+  border-bottom-color: black;
+  border-bottom-style: dotted;
+  border-bottom-width: 2px;
+}
+
+/*
+blockquote {
+  font-style: italic;
+  margin-left: 10px;
+  padding: 3px 1em 3px;
+  border-left-color: #dddddd;
+  border-left-width: 1px;
+  border-left-style: dotted;
+}
+*/
+
+
+/*
+.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+*/

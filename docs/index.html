@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Learning statistics with R</title>
-  <meta name="description" content="Provides a gentle introduction to statistics and R programming in the tidyverse" />
+  <meta name="description" content="A gentle introduction to statistics and R using the tidyverse" />
   <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Learning statistics with R" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://djnavarro.github.io/tidylsrbook" />
   
-  
-  <meta property="og:description" content="Provides a gentle introduction to statistics and R programming in the tidyverse" />
-  
+  <meta property="og:description" content="A gentle introduction to statistics and R using the tidyverse" />
+  <meta name="github-repo" content="djnavarro/tidylsrbook" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Learning statistics with R" />
   
-  <meta name="twitter:description" content="Provides a gentle introduction to statistics and R programming in the tidyverse" />
+  <meta name="twitter:description" content="A gentle introduction to statistics and R using the tidyverse" />
   
 
 <meta name="author" content="Danielle Navarro" />
 
 
-<meta name="date" content="2019-05-29" />
+<meta name="date" content="2019-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -113,7 +113,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="style_new.css" type="text/css" />
 </head>
 
 <body>
@@ -126,9 +126,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Learning statistics with R</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Getting started</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
@@ -165,6 +162,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#project-oriented-workflow"><i class="fa fa-check"></i><b>1.8</b> Project oriented workflow</a></li>
 </ul></li>
 <li class="part"><span><b>II Exploring data</b></span></li>
+<li class="chapter" data-level="2" data-path="datavis.html"><a href="datavis.html"><i class="fa fa-check"></i><b>2</b> Pretty pictures</a><ul>
+<li class="chapter" data-level="2.1" data-path="datavis.html"><a href="datavis.html#r-graphics"><i class="fa fa-check"></i><b>2.1</b> R graphics</a></li>
+<li class="chapter" data-level="2.2" data-path="datavis.html"><a href="datavis.html#the-data-set"><i class="fa fa-check"></i><b>2.2</b> The data set</a></li>
+<li class="chapter" data-level="2.3" data-path="datavis.html"><a href="datavis.html#histograms"><i class="fa fa-check"></i><b>2.3</b> Histograms</a></li>
+<li class="chapter" data-level="2.4" data-path="datavis.html"><a href="datavis.html#scatter-plot"><i class="fa fa-check"></i><b>2.4</b> Scatter plot</a></li>
+<li class="chapter" data-level="2.5" data-path="datavis.html"><a href="datavis.html#bar-graphs"><i class="fa fa-check"></i><b>2.5</b> Bar graphs</a></li>
+<li class="chapter" data-level="2.6" data-path="datavis.html"><a href="datavis.html#box-plots"><i class="fa fa-check"></i><b>2.6</b> Box plots</a></li>
+<li class="chapter" data-level="2.7" data-path="datavis.html"><a href="datavis.html#violin-plots"><i class="fa fa-check"></i><b>2.7</b> Violin plots</a></li>
+<li class="chapter" data-level="2.8" data-path="datavis.html"><a href="datavis.html#facetted-plots"><i class="fa fa-check"></i><b>2.8</b> Facetted plots</a></li>
+<li class="chapter" data-level="2.9" data-path="datavis.html"><a href="datavis.html#bubble-plots"><i class="fa fa-check"></i><b>2.9</b> Bubble plots</a></li>
+<li class="chapter" data-level="2.10" data-path="datavis.html"><a href="datavis.html#error-bars"><i class="fa fa-check"></i><b>2.10</b> Error bars</a></li>
+<li class="chapter" data-level="2.11" data-path="datavis.html"><a href="datavis.html#other-possibilities"><i class="fa fa-check"></i><b>2.11</b> Other possibilities</a></li>
+<li class="chapter" data-level="2.12" data-path="datavis.html"><a href="datavis.html#saving-images"><i class="fa fa-check"></i><b>2.12</b> Saving images</a></li>
+<li class="chapter" data-level="2.13" data-path="datavis.html"><a href="datavis.html#further-reading"><i class="fa fa-check"></i><b>2.13</b> Further reading</a></li>
+</ul></li>
 <li class="part"><span><b>III Learning from data</b></span></li>
 <li class="part"><span><b>IV Tools of the trade</b></span></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -265,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Learning statistics with R</h1>
 <p class="author"><em>Danielle Navarro</em></p>
-<p class="date"><em>2019-05-29</em></p>
+<p class="date"><em>2019-06-01</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -307,7 +319,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "sans",
+"family": "serif",
 "size": 2
 },
 "edit": {
@@ -320,7 +332,8 @@ gitbook.start({
 },
 "download": ["rbook2.pdf", "rbook2.epub"],
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"scroll_highlight": true
 }
 });
 });

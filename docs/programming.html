@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>B Programming in R | Learning statistics with R</title>
-  <meta name="description" content="Provides a gentle introduction to statistics and R programming in the tidyverse" />
+  <meta name="description" content="A gentle introduction to statistics and R using the tidyverse" />
   <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
   <meta property="og:title" content="B Programming in R | Learning statistics with R" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://djnavarro.github.io/tidylsrbook" />
   
-  
-  <meta property="og:description" content="Provides a gentle introduction to statistics and R programming in the tidyverse" />
-  
+  <meta property="og:description" content="A gentle introduction to statistics and R using the tidyverse" />
+  <meta name="github-repo" content="djnavarro/tidylsrbook" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="B Programming in R | Learning statistics with R" />
   
-  <meta name="twitter:description" content="Provides a gentle introduction to statistics and R programming in the tidyverse" />
+  <meta name="twitter:description" content="A gentle introduction to statistics and R using the tidyverse" />
   
 
 <meta name="author" content="Danielle Navarro" />
 
 
-<meta name="date" content="2019-05-29" />
+<meta name="date" content="2019-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -113,7 +113,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="style_new.css" type="text/css" />
 </head>
 
 <body>
@@ -126,9 +126,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Learning statistics with R</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Getting started</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
@@ -165,6 +162,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#project-oriented-workflow"><i class="fa fa-check"></i><b>1.8</b> Project oriented workflow</a></li>
 </ul></li>
 <li class="part"><span><b>II Exploring data</b></span></li>
+<li class="chapter" data-level="2" data-path="datavis.html"><a href="datavis.html"><i class="fa fa-check"></i><b>2</b> Pretty pictures</a><ul>
+<li class="chapter" data-level="2.1" data-path="datavis.html"><a href="datavis.html#r-graphics"><i class="fa fa-check"></i><b>2.1</b> R graphics</a></li>
+<li class="chapter" data-level="2.2" data-path="datavis.html"><a href="datavis.html#the-data-set"><i class="fa fa-check"></i><b>2.2</b> The data set</a></li>
+<li class="chapter" data-level="2.3" data-path="datavis.html"><a href="datavis.html#histograms"><i class="fa fa-check"></i><b>2.3</b> Histograms</a></li>
+<li class="chapter" data-level="2.4" data-path="datavis.html"><a href="datavis.html#scatter-plot"><i class="fa fa-check"></i><b>2.4</b> Scatter plot</a></li>
+<li class="chapter" data-level="2.5" data-path="datavis.html"><a href="datavis.html#bar-graphs"><i class="fa fa-check"></i><b>2.5</b> Bar graphs</a></li>
+<li class="chapter" data-level="2.6" data-path="datavis.html"><a href="datavis.html#box-plots"><i class="fa fa-check"></i><b>2.6</b> Box plots</a></li>
+<li class="chapter" data-level="2.7" data-path="datavis.html"><a href="datavis.html#violin-plots"><i class="fa fa-check"></i><b>2.7</b> Violin plots</a></li>
+<li class="chapter" data-level="2.8" data-path="datavis.html"><a href="datavis.html#facetted-plots"><i class="fa fa-check"></i><b>2.8</b> Facetted plots</a></li>
+<li class="chapter" data-level="2.9" data-path="datavis.html"><a href="datavis.html#bubble-plots"><i class="fa fa-check"></i><b>2.9</b> Bubble plots</a></li>
+<li class="chapter" data-level="2.10" data-path="datavis.html"><a href="datavis.html#error-bars"><i class="fa fa-check"></i><b>2.10</b> Error bars</a></li>
+<li class="chapter" data-level="2.11" data-path="datavis.html"><a href="datavis.html#other-possibilities"><i class="fa fa-check"></i><b>2.11</b> Other possibilities</a></li>
+<li class="chapter" data-level="2.12" data-path="datavis.html"><a href="datavis.html#saving-images"><i class="fa fa-check"></i><b>2.12</b> Saving images</a></li>
+<li class="chapter" data-level="2.13" data-path="datavis.html"><a href="datavis.html#further-reading"><i class="fa fa-check"></i><b>2.13</b> Further reading</a></li>
+</ul></li>
 <li class="part"><span><b>III Learning from data</b></span></li>
 <li class="part"><span><b>IV Tools of the trade</b></span></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -267,7 +279,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>When I introduced the idea of working with scripts I said that R starts at the top of the file and runs straight through to the end of the file. That was a tiny bit of a lie. It is true that unless you insert commands to explicitly alter how the script runs, that is what will happen. However, you actually have quite a lot of flexibility in this respect. Depending on how you write the script, you can have R repeat several commands, or skip over different commands, and so on. This topic is referred to as <strong>flow control</strong>.</p>
 <div id="ifelse" class="section level2">
 <h2><span class="header-section-number">B.1</span> If/else</h2>
-<p>One kind of flow control that programming languages provide is the ability to evaluate <strong>conditional statements</strong>. Unlike loops, which can repeat over and over again, a conditional statement only executes once, but it can switch between different possible commands depending on a condition that is specified by the programmer. The power of these commands is that they allow the program itself to make choices, and in particular, to make different choices depending on the context in which the program is run. The most prominent of example of a conditional statement is the <code>if</code> statement, and the accompanying <code>else</code> statement.<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a></p>
+<p>One kind of flow control that programming languages provide is the ability to evaluate <strong>conditional statements</strong>. Unlike loops, which can repeat over and over again, a conditional statement only executes once, but it can switch between different possible commands depending on a condition that is specified by the programmer. The power of these commands is that they allow the program itself to make choices, and in particular, to make different choices depending on the context in which the program is run. The most prominent of example of a conditional statement is the <code>if</code> statement, and the accompanying <code>else</code> statement.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a></p>
 <p>The basic format of an <code>if</code> statement in R is as follows:</p>
 <pre><code>if ( CONDITION ) {
   STATEMENT1
@@ -662,7 +674,7 @@ strength</code></pre>
 ##  [8] 0.4832390 0.5297475 0.5720702 0.6105839 0.6456313 0.6775245 0.7065473
 ## [15] 0.7329580 0.7569918 0.7788626 0.7987649 0.8168761 0.8333572</code></pre>
 <p>You can see in the output that with repeated stimulus presentations, the strength of the association rises quickly. It’s a little easier to see what’s going on if we draw a picture though:</p>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
 <p>I’ve hidden the R command that produces the plot, because we haven’t covered data visualisation yet. However, if you are interested in a sneak peek, the source code for all the analyses in this section are <a href="./scripts/rescorla_wagner.R">here</a>.</p>
 </div>
 <div id="extinction" class="section level3">
@@ -698,12 +710,12 @@ lambda &lt;-<span class="st"> </span><span class="fl">.3</span> <span class="co"
 ## [43] 0.04922423 0.04479405 0.04076259 0.03709395 0.03375550 0.03071750
 ## [49] 0.02795293 0.02543716</code></pre>
 <p>Here they are as a pretty picture:</p>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
 <p>That looks right to me! Extinction is initially effective at removing the association, but it’s effectiveness declines over time, so that by the end of the task there’s still some association left.</p>
 </div>
 <div id="blocking" class="section level3">
 <h3><span class="header-section-number">B.4.10</span> Blocking</h3>
-<p>For the final example, consider a blocking paradigm. In this design we might initially pair a tone with a shock (A+ trials) for a number of trials until an association is learned. Then we present a compound stimulus AB (tone plus light) together with a shock (AB+). During the first phase, the learner quickly acquires a strong association between A and the shock, but then during the second phase they don’t learn very much about B, because A already predicts the shock.<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a></p>
+<p>For the final example, consider a blocking paradigm. In this design we might initially pair a tone with a shock (A+ trials) for a number of trials until an association is learned. Then we present a compound stimulus AB (tone plus light) together with a shock (AB+). During the first phase, the learner quickly acquires a strong association between A and the shock, but then during the second phase they don’t learn very much about B, because A already predicts the shock.<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a></p>
 <p>Because we are presenting a compound stimulus, the values that we pass to the <code>update_RW</code> function can be vectors. But that’s okay, we designed our function to be able to handle that. So let’s start by setting up our modelling exercise:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of trials across </span>
 <span class="co"># both phases of the task</span>
@@ -734,9 +746,9 @@ strength_B &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class
   strength_A[trial] &lt;-<span class="st"> </span>v_new[<span class="dv">1</span>]
   strength_B[trial] &lt;-<span class="st"> </span>v_new[<span class="dv">2</span>]
 }</code></pre>
-<p>It’s a little more complex this time because we have read off two strength values and pass them to the <code>update_RW</code> function.<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a> Hopefully it is clear what this code is doing.</p>
+<p>It’s a little more complex this time because we have read off two strength values and pass them to the <code>update_RW</code> function.<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> Hopefully it is clear what this code is doing.</p>
 <p>As with the previous two examples we could print out <code>strength_A</code> and <code>strength_B</code>, but realistically no-one likes looking at long lists of numbers so let’s just draw the picture. In the plot below, the blue line shows the associative strength to A and the red line shows the associative strength to B:</p>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-143-1.png" width="672" /></p>
 <p>That’s the blocking effect, right there 😀. The model learns a strong association between the tone and the shock (blue) but the association it learns between the light and the shock (red) is much weaker.</p>
 </div>
 <div id="done" class="section level3">
@@ -748,10 +760,10 @@ strength_B &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class
 </div>
 <div class="footnotes">
 <hr />
-<ol start="23">
-<li id="fn23"><p>There are other ways of making conditional statements in R. In particular, the <code>ifelse</code> function and the <code>switch</code> functions can be very useful in different contexts.<a href="programming.html#fnref23" class="footnote-back">↩</a></p></li>
-<li id="fn24"><p>In a real blocking study there would be various control conditions but I’m not going to bother modelling those here. I just want to show how our code works for the important one!<a href="programming.html#fnref24" class="footnote-back">↩</a></p></li>
-<li id="fn25"><p>In fact, we could make this code a lot simpler if we’d recorded the strengths as a <strong>matrix</strong> rather than two vectors, but since I haven’t introduced matrices yet I’ve left it in this slightly more clunky form with vectors<a href="programming.html#fnref25" class="footnote-back">↩</a></p></li>
+<ol start="31">
+<li id="fn31"><p>There are other ways of making conditional statements in R. In particular, the <code>ifelse</code> function and the <code>switch</code> functions can be very useful in different contexts.<a href="programming.html#fnref31" class="footnote-back">↩</a></p></li>
+<li id="fn32"><p>In a real blocking study there would be various control conditions but I’m not going to bother modelling those here. I just want to show how our code works for the important one!<a href="programming.html#fnref32" class="footnote-back">↩</a></p></li>
+<li id="fn33"><p>In fact, we could make this code a lot simpler if we’d recorded the strengths as a <strong>matrix</strong> rather than two vectors, but since I haven’t introduced matrices yet I’ve left it in this slightly more clunky form with vectors<a href="programming.html#fnref33" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -786,7 +798,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "sans",
+"family": "serif",
 "size": 2
 },
 "edit": {
@@ -799,7 +811,8 @@ gitbook.start({
 },
 "download": ["rbook2.pdf", "rbook2.epub"],
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"scroll_highlight": true
 }
 });
 });
