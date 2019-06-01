@@ -18,13 +18,14 @@ output:
         scroll_highlight: yes
         before: null
         after: null
-      fontsettings:
-        theme: white
-        family: serif
-        size: 2
       download: ["pdf", "epub"]
-    css: 
-      - style_new.css
+    includes:
+      in_header: my_header.html
+  bookdown::html_book:
+    theme: flatly
+    toc: yes
+    css: toc2.css
+    split_by: chapter
   bookdown::pdf_book:
     includes:
       in_header: preamble.tex

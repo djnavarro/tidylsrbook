@@ -24,7 +24,7 @@
 <meta name="author" content="Danielle Navarro" />
 
 
-<meta name="date" content="2019-06-01" />
+<meta name="date" content="2019-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,6 +47,8 @@
 
 
 
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Heebo&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style_new.css" type="text/css" />
 
 
 <style type="text/css">
@@ -113,7 +115,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style_new.css" type="text/css" />
 </head>
 
 <body>
@@ -534,7 +535,7 @@ frames_mean</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">fake_iq &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">100</span>, <span class="dt">sd =</span> <span class="dv">15</span>)  <span class="co"># normally distributed data</span>
 lsr<span class="op">::</span><span class="kw">ciMean</span>(fake_iq)                           <span class="co"># 95% confidence interval </span></code></pre>
 <pre><code>##             2.5%    97.5%
-## fake_iq 91.85642 112.8777</code></pre>
+## fake_iq 95.59198 110.5396</code></pre>
 <p>So the <code>lower</code> variable in <code>frames_mean</code> is the lower bound on the 95% confidence interval, and <code>upper</code> is the upper bound. In any case, now that we have data in an appropriate format we can create the plot.</p>
 <p>To add error bars is no more difficult than anything else in <strong>ggplot2</strong>. There is a geom called <code>geom_errorbar()</code> that will draw those for us. However, it does need some new information. In our previous graphs we’ve specifed three aesthetics at the beginning of our graphing exercise, namely <code>x = test_item</code>, <code>y = mean_response</code> and <code>colour = condition</code>. That works fine for <code>geom_point()</code> because doesn’t need anything else, but <code>geom_errorbar()</code> also needs to know which variables specify the <code>ymin</code> and <code>ymax</code> values that will be displayed in the error bars. If I wanted to, I could could include these aesthetics within the original call to <code>ggplot()</code> but I’ll do something a little different this time. Individual geoms can have their own unique aesthetics, so I can insert a new call to <code>aes()</code> within the <code>geom_errorbar()</code> call. Conceptually I find this neater, because it makes clear that <code>ymin</code> and <code>ymax</code> are aesthetics that apply to the error bars, but not to other geoms in the plot. Anyway here’s the command:</p>
 <pre class="sourceCode r"><code class="sourceCode r">my_pic &lt;-<span class="st"> </span>frames_mean <span class="op">%&gt;%</span>
@@ -661,7 +662,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "sans",
 "size": 2
 },
 "edit": {

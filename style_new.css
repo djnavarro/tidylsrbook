@@ -1,9 +1,9 @@
 .book.font-family-0 {
-  font-family: Crimson Text, Palatino, Georgia, serif;
+  font-family: Crimson Text, Palatino, Georgia, serif; /* originally the serif fonts */
 }
 
 .book.font-family-1 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Heebo, Helvetica, Arial, sans-serif; /* originally san serif */
 }
 
 
@@ -22,13 +22,42 @@
 }
 
 .book .book-body .page-wrapper .page-inner .normal {
-  line-height: 1.1em;
+  line-height: 1.7em;
 }
 
+/* hide the font settings button */
+.font-settings {
+  display: none;
+}
+
+p {
+  line-height: 1.4em;
+  text-align: justify;
+}
+
+h1 {
+  font-family: Crimson Text;
+  font-size: 175%;
+  background-image: url("img/jasmine-flat.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+}
+
+
 h2 {
-  border-bottom-color: black;
-  border-bottom-style: dotted;
-  border-bottom-width: 2px;
+  font-family: Crimson Text;
+  border-bottom-color: #cccccc;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+h3 {
+  font-family: Crimson Text;
 }
 
 /*

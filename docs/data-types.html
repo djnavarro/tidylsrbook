@@ -24,7 +24,7 @@
 <meta name="author" content="Danielle Navarro" />
 
 
-<meta name="date" content="2019-06-01" />
+<meta name="date" content="2019-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,6 +47,8 @@
 
 
 
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Heebo&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style_new.css" type="text/css" />
 
 
 <style type="text/css">
@@ -113,7 +115,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style_new.css" type="text/css" />
 </head>
 
 <body>
@@ -903,13 +904,13 @@ starks</code></pre>
 <p>To start with, let’s talk about the date. As it happens, modern operating systems are very good at keeping track of the time and date, and can even handle all those annoying timezone issues and daylight savings pretty well. So R takes the quite sensible view that it can just ask the operating system what the date is. We can pull the date using the <code>Sys.Date</code> function:</p>
 <pre class="sourceCode r"><code class="sourceCode r">today &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()  <span class="co"># ask the operating system for the date</span>
 <span class="kw">print</span>(today)         <span class="co"># display the date</span></code></pre>
-<pre><code>## [1] &quot;2019-06-01&quot;</code></pre>
+<pre><code>## [1] &quot;2019-06-02&quot;</code></pre>
 <p>Okay, that seems straightforward. But, it does rather look like today is just a character string, doesn’t it? That would be a problem, because dates really do have a quasi-numeric character to them, and it would be nice to be able to do basic addition and subtraction with them. Well, fear not. If you type in <code>class(today)</code>, R will tell you that the <code>today</code> variable is a <code>&quot;Date&quot;</code> object. What this means is that, hidden underneath this text string, R has a numeric representation.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a> What that means is that you can in fact add and subtract days. For instance, if we add <code>1</code> to <code>today</code>, R will print out the date for tomorrow:</p>
 <pre class="sourceCode r"><code class="sourceCode r">today <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre>
-<pre><code>## [1] &quot;2019-06-02&quot;</code></pre>
+<pre><code>## [1] &quot;2019-06-03&quot;</code></pre>
 <p>Let’s see what happens when we add 365 days:</p>
 <pre class="sourceCode r"><code class="sourceCode r">today <span class="op">+</span><span class="st"> </span><span class="dv">365</span></code></pre>
-<pre><code>## [1] &quot;2020-05-31&quot;</code></pre>
+<pre><code>## [1] &quot;2020-06-01&quot;</code></pre>
 <p>R provides a number of functions for working with dates, but I don’t want to talk about them in any detail, other than to say that the <strong>lubridate</strong> package (part of the tidyverse) makes things a lot easier than they used to be. A little while back I wrote a <a href="http://djnavarro.net/post/2018-05-02-lubridate/">blog post about lubridate</a> and may fold it into these notes one day.</p>
 <!--
 
@@ -972,7 +973,7 @@ class(x)
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;15&quot;</span>,<span class="st">&quot;19&quot;</span>)  <span class="co"># the variable</span>
 <span class="kw">class</span>(x)           <span class="co"># what class is it?</span></code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<p>Obviously, if I want to do mathematical calculations using <code>x</code> in its current state R wil get very sad 😢. It thinks <code>x</code> is text and it won’t allow me to do mathematics with text! To coerce <code>x</code> from “character” to “numeric”, we use the <code>as.numeric</code> function:</p>
+<p>Obviously, if I want to do mathematical calculations using <code>x</code> in its current state R wil get very sad 🙍. It thinks <code>x</code> is text and it won’t allow me to do mathematics with text! To coerce <code>x</code> from “character” to “numeric”, we use the <code>as.numeric</code> function:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x)  <span class="co"># coerce the variable</span>
 <span class="kw">class</span>(x)            <span class="co"># what class is it?</span></code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
@@ -1045,7 +1046,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "sans",
 "size": 2
 },
 "edit": {
