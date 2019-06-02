@@ -341,19 +341,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>With that in mind, let’s give ourselves the task of drawing a histogram of the <code>age</code> variable in this data frame. We don’t need to make it pretty, we just want to plot the frequency distribution for the number of points scored by the home team. As I mentioned earlier, we could do this using base graphics or we could do it the tidyverse way. Let’s see how it plays out both ways.</p>
 <p>The function to do this in base graphics is called <code>hist</code> and here it is:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(frames_small<span class="op">$</span>age)</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<p><img src="rbook2_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 It’s not exactly pretty – though it’s way nicer than the default plots that I remember seeing when I was younger – but it gets the job done.</p>
 <p>Okay, how do I create a histogram the tidyverse way? Much like base graphics, <strong>ggplot2</strong> recognises that histograms are such a fundamentally useful thing that there exists a “geom” (a term I’ll explain in a moment) for them, but there’s no way to draw a plot without going through a somewhat more convoluted process:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_histogram</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<p><img src="rbook2_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 The output is prettier, admittedly, but our goal here wasn’t to be pretty. Our goal was to be simple. For this comparison, the tidyverse approach is not as straightforward as base graphics.</p>
 <p>Where the tidyverse versions shines is when we want to do something a little bit more complicated. Suppose I wanted two histograms side by side, plotting the age distribution separately by <code>condition</code>. In base graphics, it’s a little cumbersome. What I have to do here is manually control the “layout” of the plot, dividing it into two separate panels and then drawing the histogram separately into each panel. That gives me code that looks like this:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>))
 <span class="kw">hist</span>(frames_small<span class="op">$</span>age[samplingframes<span class="op">$</span>condition <span class="op">==</span><span class="st"> &quot;category&quot;</span>])
 <span class="kw">hist</span>(frames_small<span class="op">$</span>age[samplingframes<span class="op">$</span>condition <span class="op">==</span><span class="st"> &quot;property&quot;</span>])</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>I need a lot more code as I did for the original version and I’ve ended up with an ugly plot. Of course, base graphics absolutely does allow me to do a better job than this, but I hope you can see that it will take quite a bit of effort to turn this into something readable.</p>
 <p>What about the <strong>ggplot2</strong> version? It turns out that it’s extremely easy. Splitting an existing plot into “facets” is a basic operation within <strong>ggplot2</strong> so all I need to do is add one line of code that specifies which variable to use to make the facets!
 The result is actually kind of nice:</p>
@@ -361,7 +361,7 @@ The result is actually kind of nice:</p>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>condition)</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>For me at least, this is the big advantage to the <strong>ggplot2</strong> approach. There’s a certain amount of effort required to construct the basic plot, but once that is done, you can modify or manipulate that plot in an extremely flexible fashion with very little effort indeed. What I’ve found in practice is that the low-effort to making changes makes me much more willing to “play around” with different ways of visualising the data. So, while I’ll admit that there are some situations where I resort to using base graphics (mostly when I have a very unconventional graph to draw), I tend to find the tidyverse approach works better in the majority of cases.</p>
 <p>As far as what the data visualisation is telling us: the distribution of ages was mostly in the 20-40 age range with a modest positive skew. That’s pretty typical of these studies. More importantly, it’s pretty clear from inspection that there’s not much of a difference in the age distribition across conditions, which is what I’d hope to see given that people were assigned randomly.</p>
 </div>
@@ -371,28 +371,28 @@ The result is actually kind of nice:</p>
 <p>Lets build our plot piece by piece. The data we want to use here come from <code>frames_small</code>, so the first thing we’ll do is pipe this data set to the <code>ggplot()</code> function and see what it produces:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggplot</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-12-1.png" width="384" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-13-1.png" width="384" /></p>
 <p>In retrospect that’s unsurprising. Although we’ve passed the data to <code>ggplot()</code>, we haven’t told R what it ought to <em>do</em> with these data, so the output is simply a blank canvas! To make some progress, the next step is to specify a <code>mapping</code> for the plot that will tell R something about what roles the different variables play. In <strong>ggplot2</strong> these mappings are described as a set of “<em>aesthetics</em>”, defined using the <code>aes()</code> function. There are many different aesthetics that can be used, but for a scatter plot the only things we really <em>need</em> to specify as aesthetics are the variable on the <code>x</code> axis and the variable on the <code>y</code> axis. So if we wanted to plot <code>y = response</code> against <code>x = age</code>, this is the mapping we would need:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response))</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-13-1.png" width="384" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-14-1.png" width="384" /></p>
 <p>Hm. That’s clearly some progress. The canvas now has the axis labels and gridlines reflecting the fact that R now knows which variables we’re hoping to ploy. However, we still don’t have any data, because we haven’t told R what it should <em>do</em> to render the data. This is the role played by <em>geoms</em>, which specify different ways in which data can be displayed. Since we’re trying to draw a scatter plot, I’m going to use the simplest possible <em>geom</em> function, namely <code>geom_point()</code>. All it does is draw a dot for each data point:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Now we have our scatter plot! From visual inspection there doesn’t seem to be any strong relationship between the <code>age</code> of a participant and the <code>response</code> they give. Again, that’s not surprising, but useful to check.</p>
 <p>It’s worth highlighting the different roles played by aesthetics and geoms. For instance, I could have expanded the list of aesthetics to include <code>colour = condition</code>, which would indicate that the colour of each dot should indicated which condition the participant in question was assigned to:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response, <span class="dt">colour =</span> condition)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-15-1.png" width="480" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-16-1.png" width="480" /></p>
 <p>However, I can also add new geoms that will draw new layers to the plot. For example, <code>geom_rug</code> adds a visual representation of the marginal distribution of the data on both axes, like this:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response, <span class="dt">colour =</span> condition)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_rug</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-16-1.png" width="480" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-17-1.png" width="480" /></p>
 <p>Notice the style here. A pretty typical way to build a visualisation is to construct it in layers, <em>adding</em> new geoms, aesthetics and other plot customisations as you go. So you’ll often end up with code structured like this:<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p>
 <pre><code>DATA %&gt;%
   ggplot(aes( LIST_OF_AESTHETICS )) +
@@ -408,7 +408,7 @@ The result is actually kind of nice:</p>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> gender)) <span class="op">+</span><span class="st">  </span><span class="co"># set up the mapping</span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>condition) <span class="op">+</span><span class="st">   </span><span class="co"># split it into plots</span>
 <span class="st">  </span><span class="kw">geom_bar</span>()                 <span class="co"># add the bars!</span></code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p>As one would expect for random assignment there’s a little unevenness but not very much. That looks totally fine to me, and at this point I’ve convinced myself that the <code>age</code> and <code>gender</code> variables really don’t matter very much, so I can start digging into the details about how the manipulated variables of theoretical interest (<code>sample_size</code>, <code>condition</code> and <code>test_loc</code>) relate to the inductive generalisation <code>response</code> judgment that people make…</p>
 </div>
 <div id="box-plots" class="section level2">
@@ -419,7 +419,7 @@ Outliers are plotted as individual dots. Note that in this context an outlier is
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> condition, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_boxplot</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <p>This plot is easy to interpret and provides our first hint that there is in fact something of interest going on in these data. On a first pass, it rather looks like people are less willing to make inductive generalisations (i.e., give lower scores) in the property sampling condition than in the category sampling condition!</p>
 </div>
 <div id="violin-plots" class="section level2">
@@ -429,13 +429,13 @@ Outliers are plotted as individual dots. Note that in this context an outlier is
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> condition, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_violin</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>It’s intuitively obvious what this plot is doing: the “width” of the violin<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> at each point shows the estimated “density” of the population distribution at that point. To make it a little clearer what this is showing, let’s overlay the raw data on the plot, using the <code>geom_jitter()</code> method to make it a little easier to see:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> condition, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_jitter</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>As you can see, in the property sampling condition the data are concentrated pretty tightly around 4.5, whereas in the category sampling condition the data are shifted upwards and spread out. That’s what produces the different shapes in the violin plots.</p>
 </div>
 <div id="facetted-plots" class="section level2">
@@ -449,7 +449,7 @@ Outliers are plotted as individual dots. Note that in this context an outlier is
     <span class="dt">y =</span> response)) <span class="op">+</span><span class="st">                     </span><span class="co"># y variable is &quot;response&quot;</span>
 <span class="st">  </span><span class="kw">facet_grid</span>(sample_size <span class="op">~</span><span class="st"> </span>condition) <span class="op">+</span><span class="st">  </span><span class="co"># add faceting</span>
 <span class="st">  </span><span class="kw">geom_boxplot</span>()                         <span class="co"># oh, right... add the boxplots :-)</span></code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <p>That’s not bad as a first pass. There’s a few things I’d like to do to tidy it though:</p>
 <ul>
 <li>Flip the grid by changing the formula to <code>condition ~ sample_size</code></li>
@@ -469,7 +469,7 @@ Outliers are plotted as individual dots. Note that in this context an outlier is
 <span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">outlier.alpha =</span> <span class="fl">0.1</span>) <span class="op">+</span><span class="st">    </span><span class="co"># alpha sets the transparency</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Location of Test Stimulus&quot;</span>) <span class="op">+</span><span class="st">    </span><span class="co"># add x-label</span>
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Response&quot;</span>)                       <span class="co"># add y-label</span></code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-23-1.png" width="576" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-24-1.png" width="576" /></p>
 <p>It’s essentially the same as before, but we’ve switched the ordering of variables in <code>facet_grid()</code>, added the <code>outlier.alpha = 0.1</code> argument to <code>geom_boxplot()</code> to make the outliers fade into the background, and then specified some nicer axis titles. The resulting plot is a fair bit more readable.</p>
 <p>As for what we’re seeing in the data, there are a few different things to notice:</p>
 <ul>
@@ -488,21 +488,21 @@ Outliers are plotted as individual dots. Note that in this context an outlier is
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> test_item, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_grid</span>(condition <span class="op">~</span><span class="st"> </span>sample_size) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_count</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-24-1.png" width="576" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
 <p>This version of the plot highlights a failure of the box plot version. Compare the distribution of responses to test item 7 in the category sampling condition (top row). In the <code>small</code> sample size, the modal response is 4, with most people using the middle category, whereas for the <code>large</code> sample size most people are using the extremes, responding with either 0 or 9. However, both cases have the same median and very similar inter-quartile ranges, so the box plots look almost the same!</p>
 <p>On the other hand, this plot is a little hard to read. We’ve added a lot of new detail about the low frequency responses and in doing so learned more about the overall distribution of responding, but that’s come at the cost of making it harder to see what the most typical responses are! A compromise that I am often fond of is using shading to slightly de-emphasize the low frequency cases. Larger bubbles should stand out (dark colour), but low frequency responses should fade into the light grey background. It’s actually pretty easy to do that: <code>geom_count()</code> keeps track of the number of observations in each cell, and so we can add a new aesthetic to the <code>geom_count()</code> layer, simply by specifying <code>colour = ..n..</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r">samplingframes <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> test_item, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_grid</span>(condition <span class="op">~</span><span class="st"> </span>sample_size) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_count</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> ..n..))</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
 <p>That’s a little nicer, but in this case I don’t want or need the pretty blue colouring. What I want to do is specify my own grey scale, where larger dots are coloured closer to black (e.g., upper bound is <code>&quot;grey20&quot;</code>) and the smaller dots are coloured in a light grey (e.g., lower bound is <code>&quot;grey80&quot;</code>).<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> Then all I have to do is this:</p>
 <pre class="sourceCode r"><code class="sourceCode r">samplingframes <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> test_item, <span class="dt">y =</span> response)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_grid</span>(condition <span class="op">~</span><span class="st"> </span>sample_size) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_count</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> ..n..)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">scale_colour_gradient</span>(<span class="dt">low =</span> <span class="st">&quot;grey80&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;grey20&quot;</span>)</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
 <p>To my mind that’s much more readable! It captures the multimodality of the responding without overwhelming the viewer with too much detail. There are still some issues that you might want to care about in real life – the figure is a little too low contrast for people with less than perfect vision, for instance. But it comes a lot closer to what we need.</p>
 </div>
 <div id="error-bars" class="section level2">
@@ -535,7 +535,7 @@ frames_mean</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">fake_iq &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">100</span>, <span class="dt">sd =</span> <span class="dv">15</span>)  <span class="co"># normally distributed data</span>
 lsr<span class="op">::</span><span class="kw">ciMean</span>(fake_iq)                           <span class="co"># 95% confidence interval </span></code></pre>
 <pre><code>##             2.5%    97.5%
-## fake_iq 95.59198 110.5396</code></pre>
+## fake_iq 98.94391 114.7528</code></pre>
 <p>So the <code>lower</code> variable in <code>frames_mean</code> is the lower bound on the 95% confidence interval, and <code>upper</code> is the upper bound. In any case, now that we have data in an appropriate format we can create the plot.</p>
 <p>To add error bars is no more difficult than anything else in <strong>ggplot2</strong>. There is a geom called <code>geom_errorbar()</code> that will draw those for us. However, it does need some new information. In our previous graphs we’ve specifed three aesthetics at the beginning of our graphing exercise, namely <code>x = test_item</code>, <code>y = mean_response</code> and <code>colour = condition</code>. That works fine for <code>geom_point()</code> because doesn’t need anything else, but <code>geom_errorbar()</code> also needs to know which variables specify the <code>ymin</code> and <code>ymax</code> values that will be displayed in the error bars. If I wanted to, I could could include these aesthetics within the original call to <code>ggplot()</code> but I’ll do something a little different this time. Individual geoms can have their own unique aesthetics, so I can insert a new call to <code>aes()</code> within the <code>geom_errorbar()</code> call. Conceptually I find this neater, because it makes clear that <code>ymin</code> and <code>ymax</code> are aesthetics that apply to the error bars, but not to other geoms in the plot. Anyway here’s the command:</p>
 <pre class="sourceCode r"><code class="sourceCode r">my_pic &lt;-<span class="st"> </span>frames_mean <span class="op">%&gt;%</span>
@@ -545,11 +545,11 @@ lsr<span class="op">::</span><span class="kw">ciMean</span>(fake_iq)            
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sample_size)</code></pre>
 <p>Hey, where’s my plot? Oh right… notice that I assigned the result to a variable called <code>my_pic</code>. Under the hood, <code>my_pic</code> is essentially a big list of information that specifies everything R needs to know to draw the plot. So if we want to <em>see</em> the plot, all we need to do is call <code>print(my_pic)</code> or <code>plot(my_pic)</code>, or even more simply I can do this:</p>
 <pre class="sourceCode r"><code class="sourceCode r">my_pic</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-30-1.png" width="576" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-31-1.png" width="576" /></p>
 <p>Clearly, when compared to the bubble plot we are losing a lot of information – all we have left is information about the distributional mean – but it’s still fairly informative about what is going on across the diferent conditions.</p>
 <p>Another thing worth noting. Because the test items vary along a continuous scale, it’s appropriate to connect the points with lines. I can do this in a straightforward way simply by adding <code>geom_line()</code> to the plot:</p>
 <pre class="sourceCode r"><code class="sourceCode r">my_pic <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>()</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-31-1.png" width="576" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-32-1.png" width="576" /></p>
 <p>Notice that I can add <code>geom_line()</code> directly to <code>my_pic</code>. That can be extremely handy if you’ve worked out what the core features of your plot will be and want to play around with a few possible additions to the plot.</p>
 </div>
 <div id="other-possibilities" class="section level2">
@@ -562,7 +562,7 @@ lsr<span class="op">::</span><span class="kw">ciMean</span>(fake_iq)            
 <span class="st">  </span><span class="kw">geom_density_2d</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>condition) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ylim</span>(<span class="dv">0</span>,<span class="dv">9</span>)</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-32-1.png" width="576" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-33-1.png" width="576" /></p>
 <p>Alternatively, if I want to add regression lines to this plot I can use <code>geom_smooth()</code>. By default the <code>geom_smooth()</code> function applies a non-linear method (loess regression), which we saw previously in the <a href="./prelude-to-data.html">prelude</a>. This is also customisable. If I want to use a simpler linear model to provide my regression line, all I need to do is specify <code>method = &quot;lm&quot;</code> and I get a plot like this:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frames_small <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> response, <span class="dt">colour =</span> condition)) <span class="op">+</span>
@@ -570,7 +570,7 @@ lsr<span class="op">::</span><span class="kw">ciMean</span>(fake_iq)            
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>condition) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ylim</span>(<span class="dv">0</span>,<span class="dv">9</span>)</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 <p>Similarly, plots are customisable in other ways. We can use <code>theme_dark()</code> to switch to a dark theme or <code>theme_bw()</code> to switch to a black and white scheme. We can add horizontal lines to plots with <code>geom_hline()</code>, vertical lines with <code>geom_vline()</code> and diagonal lines with <code>geom_abline()</code>. The colour palette can be adapted in arbitrary ways (e.g. with <code>scale_color_brewer</code>). We can control the axis scales with <code>xlim()</code> and <code>ylim()</code>. We can add text to a plot with <code>geom_text()</code>. Here’s an example showing some of those customisation:</p>
 <pre class="sourceCode r"><code class="sourceCode r">my_new_pic &lt;-<span class="st"> </span>my_pic <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">theme_dark</span>() <span class="op">+</span>
@@ -581,7 +581,7 @@ lsr<span class="op">::</span><span class="kw">ciMean</span>(fake_iq)            
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Mean Response&quot;</span>)
 
 my_new_pic</code></pre>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-34-1.png" width="576" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-35-1.png" width="576" /></p>
 <p>The possibilities are limited mostly by your imagination, and by common sense. The <strong>ggplot2</strong> system is so rich and flexible that it’s easy to go overboard with creating pretty pictures. Always remember that there’s a human reader at the other end of your picture, and they’re more interested in what your data visualisation can tell them about <em>the data</em>, not what it says about your R skills! 😀</p>
 </div>
 <div id="saving-images" class="section level2">
@@ -673,7 +673,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["rbook2.pdf", "rbook2.epub"],
+"download": ["rbook2.pdf"],
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

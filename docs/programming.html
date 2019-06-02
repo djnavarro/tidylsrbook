@@ -675,7 +675,7 @@ strength</code></pre>
 ##  [8] 0.4832390 0.5297475 0.5720702 0.6105839 0.6456313 0.6775245 0.7065473
 ## [15] 0.7329580 0.7569918 0.7788626 0.7987649 0.8168761 0.8333572</code></pre>
 <p>You can see in the output that with repeated stimulus presentations, the strength of the association rises quickly. It’s a little easier to see what’s going on if we draw a picture though:</p>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
 <p>I’ve hidden the R command that produces the plot, because we haven’t covered data visualisation yet. However, if you are interested in a sneak peek, the source code for all the analyses in this section are <a href="./scripts/rescorla_wagner.R">here</a>.</p>
 </div>
 <div id="extinction" class="section level3">
@@ -711,7 +711,7 @@ lambda &lt;-<span class="st"> </span><span class="fl">.3</span> <span class="co"
 ## [43] 0.04922423 0.04479405 0.04076259 0.03709395 0.03375550 0.03071750
 ## [49] 0.02795293 0.02543716</code></pre>
 <p>Here they are as a pretty picture:</p>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-140-1.png" width="672" /></p>
 <p>That looks right to me! Extinction is initially effective at removing the association, but it’s effectiveness declines over time, so that by the end of the task there’s still some association left.</p>
 </div>
 <div id="blocking" class="section level3">
@@ -749,7 +749,7 @@ strength_B &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class
 }</code></pre>
 <p>It’s a little more complex this time because we have read off two strength values and pass them to the <code>update_RW</code> function.<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> Hopefully it is clear what this code is doing.</p>
 <p>As with the previous two examples we could print out <code>strength_A</code> and <code>strength_B</code>, but realistically no-one likes looking at long lists of numbers so let’s just draw the picture. In the plot below, the blue line shows the associative strength to A and the red line shows the associative strength to B:</p>
-<p><img src="rbook2_files/figure-html/unnamed-chunk-143-1.png" width="672" /></p>
+<p><img src="rbook2_files/figure-html/unnamed-chunk-144-1.png" width="672" /></p>
 <p>That’s the blocking effect, right there 😀. The model learns a strong association between the tone and the shock (blue) but the association it learns between the light and the shock (red) is much weaker.</p>
 </div>
 <div id="done" class="section level3">
@@ -810,7 +810,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["rbook2.pdf", "rbook2.epub"],
+"download": ["rbook2.pdf"],
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

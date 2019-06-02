@@ -1,7 +1,7 @@
 --- 
 title: "Learning statistics with R"
 author: "Danielle Navarro"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.Date(), format='%d %B %Y')`"
 url: 'https\://djnavarro.github.io/tidylsrbook'
 github-repo: "djnavarro/tidylsrbook"
 site: bookdown::bookdown_site
@@ -18,21 +18,15 @@ output:
         scroll_highlight: yes
         before: null
         after: null
-      download: ["pdf", "epub"]
+      download: ["pdf"]
     includes:
       in_header: my_header.html
-  bookdown::html_book:
-    theme: flatly
-    toc: yes
-    css: toc2.css
-    split_by: chapter
   bookdown::pdf_book:
     includes:
       in_header: preamble.tex
     latex_engine: xelatex
     citation_package: natbib
     keep_tex: yes
-  bookdown::epub_book: default
 ---
 
 
@@ -45,5 +39,9 @@ This is a book. It contains things. Lots of exciting things.
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
+```
+
+```{r, include=FALSE}
+options(tinytex.verbose = TRUE)
 ```
 

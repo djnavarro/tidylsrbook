@@ -1,41 +1,43 @@
-.book.font-family-0 {
-  font-family: Crimson Text, Palatino, Georgia, serif; /* originally the serif fonts */
+/* font families */
+.book.font-family-0 { /* serif */
+  font-family: Crimson Text, Palatino, Georgia, serif; 
+}
+.book.font-family-1 { /* san serif */
+  font-family: Heebo, Helvetica, Arial, sans-serif; 
+}
+.font-settings {  /* hide the font settings button */
+  display: none;
 }
 
-.book.font-family-1 {
-  font-family: Heebo, Helvetica, Arial, sans-serif; /* originally san serif */
-}
 
 
+/* specify content and sidebar width */
 .book .book-summary{left:-260px;width:260px;}
-
 .book .book-body .page-wrapper .page-inner{max-width:840px;}
-
 @media (min-width: 600px) {
   .book.with-summary .book-header.fixed {left: 260px;}
   .book.with-summary .book-body{left:260px}
 }
-
 @media (max-width: 600px) {
   .book.with-summary .book-header.fixed {min-width: 260px;}
   .book.with-summary .book-body {min-width: 260px;}
 }
 
+
+
+
+/* specify the line spacing */
 .book .book-body .page-wrapper .page-inner .normal {
   line-height: 1.7em;
 }
-
-/* hide the font settings button */
-.font-settings {
-  display: none;
-}
-
 p {
   line-height: 1.4em;
   text-align: justify;
 }
 
-h1 {
+
+/* header 1 inside section divs */
+.section > h1 {
   font-family: Crimson Text;
   font-size: 175%;
   background-image: url("img/jasmine-flat.jpg");
@@ -48,7 +50,48 @@ h1 {
   border-radius: 10px;
 }
 
+/* make an exception for the "preface" and style it
+as if it were h2 */
+#preface > h1 {
+font-family: Crimson Text;
+  font-size: 175%;
+  background-image: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  border-bottom-color: #cccccc;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
 
+/* the book header */
+#header {
+  font-family: Crimson Text;
+  background-image: url("img/jasmine-flat.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+#header > .author > em,
+#header > .date > em {
+  font-family: Crimson Text;
+  font-size: 150%;
+  font-style: normal;
+  font-weight: bold;
+}
+#header > p {
+  text-align: center;
+}
+
+
+/* header level 2 defines a section heading */
 h2 {
   font-family: Crimson Text;
   border-bottom-color: #cccccc;
@@ -56,6 +99,7 @@ h2 {
   border-bottom-width: 1px;
 }
 
+/* header level 3 is the subsection */
 h3 {
   font-family: Crimson Text;
 }
