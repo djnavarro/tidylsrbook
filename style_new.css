@@ -43,11 +43,12 @@ p {
   background-image: url("img/jasmine-flat.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   padding-left: 30px;
   padding-right: 30px;
   border-radius: 10px;
+  text-align: center;
 }
 
 /* make an exception for the "preface" and style it
@@ -64,6 +65,7 @@ font-family: Crimson Text;
   border-bottom-color: #cccccc;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  text-align: left;
 }
 
 /* the book header */

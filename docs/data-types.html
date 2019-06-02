@@ -817,7 +817,7 @@ arr[8]
 </div>
 <div id="array-names" class="section level3">
 <h3><span class="header-section-number">A.5.2</span> Array names</h3>
-<p>As with other data structures, arrays can have names for specific elements. In fact, we can assign names to each of the <em>dimensions</em> too. For instance, suppose we have another array – that we affectionately call <code>cubie</code> 🍱 – it is also a three dimensional array, but that has the shape that it does because it represents a (3 genders) <span class="math inline">\(\times\)</span> (4 seasons) <span class="math inline">\(\times\)</span> (2 times) structure. We could specify the dimension names for <code>cubie</code> like this:</p>
+<p>As with other data structures, arrays can have names for specific elements. In fact, we can assign names to each of the <em>dimensions</em> too. For instance, suppose we have another array – that we affectionately call <code>cubie</code> 📦 – it is also a three dimensional array, but that has the shape that it does because it represents a (3 genders) <span class="math inline">\(\times\)</span> (4 seasons) <span class="math inline">\(\times\)</span> (2 times) structure. We could specify the dimension names for <code>cubie</code> like this:</p>
 <pre class="sourceCode r"><code class="sourceCode r">cubie &lt;-<span class="st"> </span><span class="kw">array</span>(
   <span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">24</span>, 
   <span class="dt">dim =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>), 
@@ -973,7 +973,7 @@ class(x)
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;15&quot;</span>,<span class="st">&quot;19&quot;</span>)  <span class="co"># the variable</span>
 <span class="kw">class</span>(x)           <span class="co"># what class is it?</span></code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<p>Obviously, if I want to do mathematical calculations using <code>x</code> in its current state R wil get very sad 😢. It thinks <code>x</code> is text and it won’t allow me to do mathematics with text! To coerce <code>x</code> from “character” to “numeric”, we use the <code>as.numeric</code> function:</p>
+<p>Obviously, if I want to do mathematical calculations using <code>x</code> in its current state R wil get very sad 😿. It thinks <code>x</code> is text and it won’t allow me to do mathematics with text! To coerce <code>x</code> from “character” to “numeric”, we use the <code>as.numeric</code> function:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x)  <span class="co"># coerce the variable</span>
 <span class="kw">class</span>(x)            <span class="co"># what class is it?</span></code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
