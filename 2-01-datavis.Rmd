@@ -389,7 +389,7 @@ my_new_pic <- my_pic +
 my_new_pic
 ```
 
-The possibilities are limited mostly by your imagination, and by common sense. The **ggplot2** system is so rich and flexible that it's easy to go overboard with creating pretty pictures. Always remember that there's a human reader at the other end of your picture, and they're more interested in what your data visualisation can tell them about *the data*, not what it says about your R skills! `r emo::ji("grinning")`
+The possibilities are limited mostly by your imagination, and by common sense. The **ggplot2** system is so rich and flexible that it's easy to go overboard with creating pretty pictures. Always remember that there's a human reader at the other end of your picture, and they're more interested in what your data visualisation can tell them about *the data*, not what it says about your R skills! :-)
 
 ## Saving images
 

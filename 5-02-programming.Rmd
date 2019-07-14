@@ -153,13 +153,13 @@ while(x < 1000) {
 }
 ```
 
-Truly fascinating stuff. `r emo::ji("thinking")`
+Truly fascinating stuff.
 
 ### Mortgage calculator
 
 To give you a sense of how you can use a `while` loop in a more complex situation, let’s write a simple script to simulate the progression of a mortgage. BLEGH COME UP WITH SOMETHING BETTER
 
-A happy ending! `r emo::ji("tada")` `r emo::ji("balloon")` `r emo::ji("cake")` 
+A happy ending! Yaaaaay!
 
 
 
@@ -496,7 +496,7 @@ update_RW <- function(value, alpha=.3, beta=.3, lambda=1) {
 }
 ```
 
-All done! Yay! `r emo::ji("balloon")`
+All done! Yay!
 
 ### Model predictions
 
@@ -655,7 +655,7 @@ lines(
 abline(v = 15, lty = 3)
 ```
 
-That's the blocking effect, right there `r emo::ji("grinning")`. The model learns a strong association between the tone and the shock (blue) but the association it learns between the light and the shock (red) is much weaker.
+That's the blocking effect, right there! The model learns a strong association between the tone and the shock (blue) but the association it learns between the light and the shock (red) is much weaker.
 
 ### Done!
 

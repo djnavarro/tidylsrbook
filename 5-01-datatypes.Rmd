@@ -98,7 +98,7 @@ scale_name
 
 ### Editing vectors
 
-Sometimes you’ll want to change the values stored in a vector. Imagine my surprise when a student points out that `"anxpiety"` is not in fact a real thing. I should probably fix that `r emo::ji("flushed_face")`. One possibility would be to assign the whole vector again from the beginning, using `c`. But that’s a lot of typing. Also, it’s a little wasteful: why should R have to redefine the names for all three scales, when only the second one is wrong? Fortunately, we can tell R to change only the second element, using this trick:
+Sometimes you’ll want to change the values stored in a vector. Imagine my surprise when a student points out that `"anxpiety"` is not in fact a real thing. I should probably fix that! One possibility would be to assign the whole vector again from the beginning, using `c`. But that’s a lot of typing. Also, it’s a little wasteful: why should R have to redefine the names for all three scales, when only the second one is wrong? Fortunately, we can tell R to change only the second element, using this trick:
 
 ```{r}
 scale_name[2] <- "anxiety"
@@ -296,7 +296,7 @@ A nice thing about ordered factors is that some analyses in R automatically trea
 
 ## Data frames / tibbles
 
-We now have three variables that we might plausibly have encountered as the result of some study, `region`, `support` and `RT`.^[Admittedly it would be a strange study that produced only these three variables, but I hope you'll forgive the lack of realism on this point.] At the moment, R has no understanding of how these variables are related to each other. Quite likely they're ordered the same way, so that the data stored in `region[1]`, `support[1]` and `RT[1]` all come from the same person. That would be sensible, but R is a robot `r emo::ji("robot")` and does not possess common sense. To help a poor little robot out (and to make our own lives easier), it's nice to organise these three variable into a tabular format. We saw this in the last section, in which the AFL data was presented as a table. This is where **data frames** -- and the tidyverse analog **tibbles** -- are very useful. 
+We now have three variables that we might plausibly have encountered as the result of some study, `region`, `support` and `RT`.^[Admittedly it would be a strange study that produced only these three variables, but I hope you'll forgive the lack of realism on this point.] At the moment, R has no understanding of how these variables are related to each other. Quite likely they're ordered the same way, so that the data stored in `region[1]`, `support[1]` and `RT[1]` all come from the same person. That would be sensible, but R is a robot and does not possess common sense. To help a poor little robot out (and to make our own lives easier), it's nice to organise these three variable into a tabular format. We saw this in the last section, in which the AFL data was presented as a table. This is where **data frames** -- and the tidyverse analog **tibbles** -- are very useful. 
 
 ### Making a data frame
 
@@ -326,7 +326,7 @@ Constructing a tibble from raw variables is essentially the same as constructing
 tib <- tibble(region, support, RT)
 ```
 
-Alas they are gone, and I will have to try a different method. Fortunately, I can **coerce** my existing data frame `dat` into a tibble using the `as_tibble()` function, and use it to create a tibble called `tib`. I'm very imaginative `r emo::ji("grinning")`
+Alas they are gone, and I will have to try a different method. Fortunately, I can **coerce** my existing data frame `dat` into a tibble using the `as_tibble()` function, and use it to create a tibble called `tib`. I'm very imaginative :-)
 
 ```{r}
 tib <- as_tibble(dat)
@@ -480,7 +480,7 @@ As mentioned above difference between a data frame and a matrix is that, at a fu
 mattie[2,2] <- "five" 
 mattie
 ```
-Oh no I broke `mattie` -- she's all text now! I'm so sorry `mattie`, I still love you `r emo::ji("heart")` 
+Oh no I broke `mattie` -- she's all text now! I'm so sorry `mattie`, I still love you.
 
 ### Other ways to make a matrix
 
@@ -506,7 +506,7 @@ arr <- array(
 arr
 ```
 
-Of course, calling an array `arr` just makes me think of pirates `r emo::ji("skull_and_crossbones")`.
+Of course, calling an array `arr` just makes me think of pirates.
 
 ### Array indexing
 
@@ -529,7 +529,7 @@ arr[8]
 
 ### Array names
 
-As with other data structures, arrays can have names for specific elements. In fact, we can assign names to each of the *dimensions* too. For instance, suppose we have another array -- that we affectionately call `cubie` `r emo::ji("box")` -- it is also a three dimensional array, but that has the shape that it does because it represents a (3 genders) $\times$ (4 seasons) $\times$ (2 times) structure. We could specify the dimension names for `cubie` like this:
+As with other data structures, arrays can have names for specific elements. In fact, we can assign names to each of the *dimensions* too. For instance, suppose we have another array -- that we affectionately call `cubie` -- it is also a three dimensional array, but that has the shape that it does because it represents a (3 genders) $\times$ (4 seasons) $\times$ (2 times) structure. We could specify the dimension names for `cubie` like this:
 ```{r}
 cubie <- array(
   data = 1:24, 
@@ -599,7 +599,7 @@ I find it helps me to think of the list as a container. When we use single brack
 
 In this example `x` is a container (list) containing many pepper sachets (elements). When we type `x[1]` we keep only one of the sachets of pepper, but it's still inside the container. When we type `x[[1]]` we take the sachet out of the container.
 
-The final panel highlights how lists can become more complicated.^[Speaking of complications... Under the hood, data frames and tibbles are secretly lists, so you can use the list indexing methods for them and so, for example, `dat[[3]]` is the same as `dat$RT`. Probably best not to worry too much about that detail right now `r emo::ji("grimace")`] Lists are just fancy containers, and there's no reason why lists can't contain other lists. In the pepper shaker scenario, if each sachet is itself a list, we would need to type `x[[1]][[1]]` to extract the tasty, tasty pepper! `r emo::ji("pepper")`
+The final panel highlights how lists can become more complicated.^[Speaking of complications... Under the hood, data frames and tibbles are secretly lists, so you can use the list indexing methods for them and so, for example, `dat[[3]]` is the same as `dat$RT`. Probably best not to worry too much about that detail right now! Lists are just fancy containers, and there's no reason why lists can't contain other lists. In the pepper shaker scenario, if each sachet is itself a list, we would need to type `x[[1]][[1]]` to extract the tasty, tasty pepper!
 
 ## Dates
 
@@ -662,7 +662,7 @@ x <- c("15","19")  # the variable
 class(x)           # what class is it?
 ```
 
-Obviously, if I want to do mathematical calculations using `x` in its current state R wil get very sad `r emo::ji("sad")`. It thinks `x` is text and it won't allow me to do mathematics with text!  To coerce `x` from "character" to "numeric", we use the `as.numeric` function:
+Obviously, if I want to do mathematical calculations using `x` in its current state R wil get very sad. It thinks `x` is text and it won't allow me to do mathematics with text!  To coerce `x` from "character" to "numeric", we use the `as.numeric` function:
 
 ```{r}
 x <- as.numeric(x)  # coerce the variable
