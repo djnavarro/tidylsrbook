@@ -31,7 +31,10 @@ output:
 
 # Preface {-}
 
-This is a book. It contains things. Lots of exciting things.
+This is a book. It contains things. Lots of exciting things. 
+
+- GitHub: https://github.com/djnavarro/tidylsrbook
+- Issues: https://github.com/djnavarro/tidylsrbook/issues
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
