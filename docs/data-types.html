@@ -4,32 +4,34 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Data types in R | rbook2.utf8.md</title>
-  <meta name="description" content="" />
+  <title>A Data types in R | Learning statistics with R</title>
+  <meta name="description" content="A gentle introduction to statistics and R using the tidyverse" />
   <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Data types in R | rbook2.utf8.md" />
+  <meta property="og:title" content="A Data types in R | Learning statistics with R" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://djnavarro.github.io/tidylsrbook" />
   
-  
-  
-  
+  <meta property="og:description" content="A gentle introduction to statistics and R using the tidyverse" />
+  <meta name="github-repo" content="djnavarro/tidylsrbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Data types in R | rbook2.utf8.md" />
+  <meta name="twitter:title" content="A Data types in R | Learning statistics with R" />
   
-  
+  <meta name="twitter:description" content="A gentle introduction to statistics and R using the tidyverse" />
   
 
+<meta name="author" content="Danielle Navarro" />
 
 
+<meta name="date" content="2019-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="datavis.html">
+<link rel="prev" href="documenting.html">
 <link rel="next" href="programming.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -45,6 +47,8 @@
 
 
 
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Heebo&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style_new.css" type="text/css" />
 
 
 <style type="text/css">
@@ -123,6 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Getting started</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#whywhywhy"><i class="fa fa-check"></i><b>1.1</b> Why statistics?</a></li>
@@ -174,8 +179,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.12" data-path="datavis.html"><a href="datavis.html#saving-images"><i class="fa fa-check"></i><b>3.12</b> Saving images</a></li>
 <li class="chapter" data-level="3.13" data-path="datavis.html"><a href="datavis.html#further-reading"><i class="fa fa-check"></i><b>3.13</b> Further reading</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>4</b> Describing data</a></li>
 <li class="part"><span><b>III Learning from data</b></span></li>
+<li class="chapter" data-level="5" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>5</b> Probability</a></li>
+<li class="chapter" data-level="6" data-path="orthodox.html"><a href="orthodox.html"><i class="fa fa-check"></i><b>6</b> Orthodox theory</a></li>
+<li class="chapter" data-level="7" data-path="bayes.html"><a href="bayes.html"><i class="fa fa-check"></i><b>7</b> Bayesian theory</a></li>
+<li class="chapter" data-level="8" data-path="linearmodels.html"><a href="linearmodels.html"><i class="fa fa-check"></i><b>8</b> Linear models</a></li>
 <li class="part"><span><b>IV Tools of the trade</b></span></li>
+<li class="chapter" data-level="9" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i><b>9</b> Cleaning data</a></li>
+<li class="chapter" data-level="10" data-path="documenting.html"><a href="documenting.html"><i class="fa fa-check"></i><b>10</b> Documenting your work</a></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>A</b> Data types in R</a><ul>
 <li class="chapter" data-level="A.1" data-path="data-types.html"><a href="data-types.html#vectors"><i class="fa fa-check"></i><b>A.1</b> Vectors</a><ul>
@@ -263,7 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning statistics with R</a>
           </h1>
         </div>
 
@@ -1014,7 +1026,7 @@ class(x)
           </div>
         </div>
       </div>
-<a href="datavis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="documenting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="programming.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -1054,7 +1066,8 @@ gitbook.start({
 },
 "download": ["rbook2.pdf"],
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"scroll_highlight": true
 }
 });
 });

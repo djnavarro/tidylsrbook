@@ -284,7 +284,7 @@ citation
 ##         header = header, footer = footer, other = z)
 ##     .citation(rval, package)
 ## }
-## <bytecode: 0x55dd09a55288>
+## <bytecode: 0x55ca81f28980>
 ## <environment: namespace:utils>
 ```
 where the `BLAH BLAH BLAH` goes on for rather a long time, and you don’t know enough R yet to understand what all this gibberish actually means. This incomprehensible output can be quite intimidating to novice users, and unfortunately it’s very easy to forget to type the parentheses; so almost certainly you’ll do this by accident. Do not panic when this happens. Simply ignore the gibberish.

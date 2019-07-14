@@ -606,11 +606,17 @@ Conceptually, the metaphor here is `dataset$variable[value]`. The table below il
 
 
 
-data frame command   data frame output   tibble command   tibble output 
--------------------  ------------------  ---------------  --------------
-dat                  data frame          tib              tibble        
-dat$RT               vector              tib$RT           vector        
-dat$RT[1]            element             tib$RT[1]        element       
+\begin{tabular}{l|l|l|l}
+\hline
+data frame command & data frame output & tibble command & tibble output\\
+\hline
+dat & data frame & tib & tibble\\
+\hline
+dat\$RT & vector & tib\$RT & vector\\
+\hline
+dat\$RT[1] & element & tib\$RT[1] & element\\
+\hline
+\end{tabular}
   
 As you can see, the `$` operator works the same way for pure data frames as for tibbles. This is not quite the case for when using square brackets `[ ]`, as the next section demonstrates... 
   
@@ -735,13 +741,21 @@ the result is a tibble. For the square bracket system the rule is very simple: *
 Annoyingly, this is not the case for a pure data frame like `dat`. For a pure data frame, any time it is possible for R to treat the result as something else, it does: if I were to use the same commands for the data frame `dat`, the results would be different in some cases. This has caused my students (and myself) no end of frustration over the years because everyone forgets about this particular property of data frames and stuff breaks. In the original version of these notes published in *Learning Statistics with R* I had a length explanation of this behaviour. Nowadays I just encourage people to use tibbles instead. For what it's worth, if you are working with pure data frames, here's a summary of what to expect:
 
 
-data frame command   data frame output   tibble command   tibble output 
--------------------  ------------------  ---------------  --------------
-dat[1,1]             element             tib[1,1]         tibble        
-dat[1,]              data frame          tib[1,]          tibble        
-dat[,1]              vector              tib[,1]          tibble        
-dat[2:3,]            data frame          tib[2:3,]        tibble        
-dat[,2:3]            data frame          tib[,2:3]        tibble        
+\begin{tabular}{l|l|l|l}
+\hline
+data frame command & data frame output & tibble command & tibble output\\
+\hline
+dat[1,1] & element & tib[1,1] & tibble\\
+\hline
+dat[1,] & data frame & tib[1,] & tibble\\
+\hline
+dat[,1] & vector & tib[,1] & tibble\\
+\hline
+dat[2:3,] & data frame & tib[2:3,] & tibble\\
+\hline
+dat[,2:3] & data frame & tib[,2:3] & tibble\\
+\hline
+\end{tabular}
   
 I **like** tibbles.^[Just FYI: you can make a pure data frame behave like a tibble. If you use `dat[,1,drop=FALSE]` you can suppress this weird thing and make R return a one-column data frame instead of a vector, but that command is so unbearably cumbersome that everyone forgets to use it.]
 

@@ -1,0 +1,2 @@
+# Bayesian theory {#bayes}
+

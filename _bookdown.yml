@@ -14,11 +14,18 @@ rmd_files:
 - "1-02-startr.Rmd"
 
 - "2-00-exploringdata.Rmd"
-- "2-01-datavis.Rmd"
+- "2-01-visualisation.Rmd"
+- "2-02-descriptives.Rmd"
 
 - "3-00-learningfromdata.Rmd"
+- "3-01-probability.Rmd"
+- "3-02-orthodox.Rmd"
+- "3-03-bayes.Rmd"
+- "3-04-linearmodels.Rmd"
 
-- "4-00-tools.Rmd"            
+- "4-00-tools.Rmd"
+- "4-01-cleaning.Rmd"
+- "4-02-documenting.Rmd"
 
 - "5-00-appendices.Rmd"      
 - "5-01-datatypes.Rmd"

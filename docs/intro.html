@@ -4,32 +4,34 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Introduction | rbook2.utf8.md</title>
-  <meta name="description" content="" />
+  <title>Chapter 1 Introduction | Learning statistics with R</title>
+  <meta name="description" content="A gentle introduction to statistics and R using the tidyverse" />
   <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Introduction | rbook2.utf8.md" />
+  <meta property="og:title" content="Chapter 1 Introduction | Learning statistics with R" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://djnavarro.github.io/tidylsrbook" />
   
-  
-  
-  
+  <meta property="og:description" content="A gentle introduction to statistics and R using the tidyverse" />
+  <meta name="github-repo" content="djnavarro/tidylsrbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Introduction | rbook2.utf8.md" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | Learning statistics with R" />
   
-  
+  <meta name="twitter:description" content="A gentle introduction to statistics and R using the tidyverse" />
   
 
+<meta name="author" content="Danielle Navarro" />
 
 
+<meta name="date" content="2019-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
+<link rel="prev" href="index.html">
 <link rel="next" href="r-start.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -45,6 +47,8 @@
 
 
 
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Heebo&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style_new.css" type="text/css" />
 
 
 <style type="text/css">
@@ -123,6 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Getting started</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#whywhywhy"><i class="fa fa-check"></i><b>1.1</b> Why statistics?</a></li>
@@ -174,8 +179,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.12" data-path="datavis.html"><a href="datavis.html#saving-images"><i class="fa fa-check"></i><b>3.12</b> Saving images</a></li>
 <li class="chapter" data-level="3.13" data-path="datavis.html"><a href="datavis.html#further-reading"><i class="fa fa-check"></i><b>3.13</b> Further reading</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>4</b> Describing data</a></li>
 <li class="part"><span><b>III Learning from data</b></span></li>
+<li class="chapter" data-level="5" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>5</b> Probability</a></li>
+<li class="chapter" data-level="6" data-path="orthodox.html"><a href="orthodox.html"><i class="fa fa-check"></i><b>6</b> Orthodox theory</a></li>
+<li class="chapter" data-level="7" data-path="bayes.html"><a href="bayes.html"><i class="fa fa-check"></i><b>7</b> Bayesian theory</a></li>
+<li class="chapter" data-level="8" data-path="linearmodels.html"><a href="linearmodels.html"><i class="fa fa-check"></i><b>8</b> Linear models</a></li>
 <li class="part"><span><b>IV Tools of the trade</b></span></li>
+<li class="chapter" data-level="9" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i><b>9</b> Cleaning data</a></li>
+<li class="chapter" data-level="10" data-path="documenting.html"><a href="documenting.html"><i class="fa fa-check"></i><b>10</b> Documenting your work</a></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>A</b> Data types in R</a><ul>
 <li class="chapter" data-level="A.1" data-path="data-types.html"><a href="data-types.html#vectors"><i class="fa fa-check"></i><b>A.1</b> Vectors</a><ul>
@@ -263,7 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning statistics with R</a>
           </h1>
         </div>
 
@@ -271,8 +283,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<!--bookdown:title:end-->
-<!--bookdown:title:start-->
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
 <div id="whywhywhy" class="section level2">
@@ -402,7 +412,7 @@ Therefore, some cigarettes are not addictive (Conclusion)</p>
 <p><em>“We are drowning in information, but we are starved for knowledge”</em></p>
 <p>-Various authors, original probably John Naisbitt</p>
 </blockquote>
-<p>When I started writing up my lecture notes I took the 20 most recent news articles posted to the ABC news website. Of those 20 articles, it turned out that 8 of them involved a discussion of something that I would call a statistical topic; 6 of those made a mistake. The most common error, if you’re curious, was failing to report baseline data (e.g., the article mentions that 5% of people in situation X have some characteristic Y, but doesn’t say how common the characteristic is for everyone else!) The point I’m trying to make here isn’t that journalists are bad at statistics (though they almost always are), it’s that a basic knowledge of statistics is very helpful for trying to figure out when someone else is either making a mistake or even lying to you. In fact, one of the biggest things that a knowledge of statistics does to you is cause you to get angry at the newspaper or the internet on a far more frequent basis: you can find a good example of this in Section <a href="#housingpriceexample"><strong>??</strong></a>. In later versions of this book I’ll try to include more anecdotes along those lines.</p>
+<p>When I started writing up my lecture notes I took the 20 most recent news articles posted to the ABC news website. Of those 20 articles, it turned out that 8 of them involved a discussion of something that I would call a statistical topic; 6 of those made a mistake. The most common error, if you’re curious, was failing to report baseline data (e.g., the article mentions that 5% of people in situation X have some characteristic Y, but doesn’t say how common the characteristic is for everyone else!) The point I’m trying to make here isn’t that journalists are bad at statistics (though they sometimes are), it’s that a basic knowledge of statistics is very helpful for trying to figure out when someone else is either making a mistake or even lying to you.</p>
 </div>
 <div id="on-the-limitations-of-statistics" class="section level2">
 <h2><span class="header-section-number">1.5</span> On the limitations of statistics</h2>
@@ -426,8 +436,8 @@ Therefore, some cigarettes are not addictive (Conclusion)</p>
           </div>
         </div>
       </div>
-
-<a href="r-start.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-start.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -466,7 +476,8 @@ gitbook.start({
 },
 "download": ["rbook2.pdf"],
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"scroll_highlight": true
 }
 });
 });

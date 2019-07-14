@@ -629,7 +629,7 @@ print(strength)
 
 You can see in the output that with repeated stimulus presentations, the strength of the association rises quickly. It's a little easier to see what's going on if we draw a picture though:
 
-<img src="5-02-programming_files/figure-html/unnamed-chunk-34-1.png" width="672" />
+![](5-02-programming_files/figure-latex/unnamed-chunk-34-1.pdf)<!-- --> 
 
 I've hidden the R command that produces the plot, because we haven't covered data visualisation yet. However, if you are interested in a sneak peek, the source code for all the analyses in this section are [here](./scripts/rescorla_wagner.R).
 
@@ -687,7 +687,7 @@ print(strength)
 
 Here they are as a pretty picture:
 
-<img src="5-02-programming_files/figure-html/unnamed-chunk-38-1.png" width="672" />
+![](5-02-programming_files/figure-latex/unnamed-chunk-38-1.pdf)<!-- --> 
 
 That looks right to me! Extinction is initially effective at removing the association, but it's effectiveness declines over time, so that by the end of the task there's still some association left.
 
@@ -745,7 +745,7 @@ It's a little more complex this time because we have read off two strength value
 
 As with the previous two examples we could print out `strength_A` and `strength_B`, but realistically no-one likes looking at long lists of numbers so let's just draw the picture. In the plot below, the blue line shows the associative strength to A and the red line shows the associative strength to B:
 
-<img src="5-02-programming_files/figure-html/unnamed-chunk-42-1.png" width="672" />
+![](5-02-programming_files/figure-latex/unnamed-chunk-42-1.pdf)<!-- --> 
 
 That's the blocking effect, right there! The model learns a strong association between the tone and the shock (blue) but the association it learns between the light and the shock (red) is much weaker.
 
