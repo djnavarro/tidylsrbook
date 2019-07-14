@@ -2,10 +2,7 @@
 
 # Introduction {#intro}
 
-```{r,echo=FALSE}
-rm(list=objects()) # start with a clean workspace
-source("knitr_tweaks.R")
-```
+
 
 ## Why statistics? {#whywhywhy}
 

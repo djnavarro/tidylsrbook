@@ -1,6 +1,28 @@
 book_filename: "rbook2"
 output_dir: "docs"
 delete_merged_file: true
+new_session: true
 language:
   ui:
     chapter_name: "Chapter "
+    
+    
+rmd_files:
+- "index.Rmd"
+
+- "1-01-intro.Rmd" 
+- "1-02-startr.Rmd"
+
+- "2-00-exploringdata.Rmd"
+- "2-01-datavis.Rmd"
+
+- "3-00-learningfromdata.Rmd"
+
+- "4-00-tools.Rmd"            
+
+- "5-00-appendices.Rmd"      
+- "5-01-datatypes.Rmd"
+- "5-02-programming.Rmd"
+
+- "6-01-references.Rmd"      
+

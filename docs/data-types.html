@@ -4,27 +4,25 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Data types in R | Learning statistics with R</title>
-  <meta name="description" content="A gentle introduction to statistics and R using the tidyverse" />
+  <title>A Data types in R | rbook2.utf8.md</title>
+  <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Data types in R | Learning statistics with R" />
+  <meta property="og:title" content="A Data types in R | rbook2.utf8.md" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://djnavarro.github.io/tidylsrbook" />
   
-  <meta property="og:description" content="A gentle introduction to statistics and R using the tidyverse" />
-  <meta name="github-repo" content="djnavarro/tidylsrbook" />
+  
+  
+  
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Data types in R | Learning statistics with R" />
+  <meta name="twitter:title" content="A Data types in R | rbook2.utf8.md" />
   
-  <meta name="twitter:description" content="A gentle introduction to statistics and R using the tidyverse" />
+  
   
 
-<meta name="author" content="Danielle Navarro" />
 
 
-<meta name="date" content="2019-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,8 +45,6 @@
 
 
 
-<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Heebo&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style_new.css" type="text/css" />
 
 
 <style type="text/css">
@@ -127,56 +123,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Getting started</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#whywhywhy"><i class="fa fa-check"></i><b>1.1</b> Why statistics?</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#the-curse-of-belief-bias"><i class="fa fa-check"></i><b>1.1.1</b> The curse of belief bias</a></li>
-<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#statistics-in-psychology"><i class="fa fa-check"></i><b>1.1.2</b> Statistics in psychology</a></li>
-<li class="chapter" data-level="1.1.3" data-path="intro.html"><a href="intro.html#statistics-in-everyday-life"><i class="fa fa-check"></i><b>1.1.3</b> Statistics in everyday life</a></li>
-<li class="chapter" data-level="1.1.4" data-path="intro.html"><a href="intro.html#on-the-limitations-of-statistics"><i class="fa fa-check"></i><b>1.1.4</b> On the limitations of statistics</a></li>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#whywhywhy"><i class="fa fa-check"></i><b>1.1</b> Why statistics?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-parable-of-belief-bias"><i class="fa fa-check"></i><b>1.2</b> The parable of belief bias</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#statistics-in-psychology"><i class="fa fa-check"></i><b>1.3</b> Statistics in psychology</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#statistics-in-everyday-life"><i class="fa fa-check"></i><b>1.4</b> Statistics in everyday life</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#on-the-limitations-of-statistics"><i class="fa fa-check"></i><b>1.5</b> On the limitations of statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#why-learn-r"><i class="fa fa-check"></i><b>1.2</b> Why learn R?</a></li>
-<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#first-steps"><i class="fa fa-check"></i><b>1.3</b> First steps</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#installing-r-rstudio"><i class="fa fa-check"></i><b>1.3.1</b> Installing R &amp; RStudio</a></li>
-<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#r-commands"><i class="fa fa-check"></i><b>1.3.2</b> R commands</a></li>
-<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#avoid-typos"><i class="fa fa-check"></i><b>1.3.3</b> Avoid typos</a></li>
-<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#r-is-flexible-with-spacing"><i class="fa fa-check"></i><b>1.3.4</b> R is flexible with spacing?</a></li>
-<li class="chapter" data-level="1.3.5" data-path="intro.html"><a href="intro.html#r-knows-youre-not-finished"><i class="fa fa-check"></i><b>1.3.5</b> R knows you’re not finished?</a></li>
+<li class="chapter" data-level="2" data-path="r-start.html"><a href="r-start.html"><i class="fa fa-check"></i><b>2</b> Getting started in R</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-start.html"><a href="r-start.html#why-learn-r"><i class="fa fa-check"></i><b>2.1</b> Why learn R?</a></li>
+<li class="chapter" data-level="2.2" data-path="r-start.html"><a href="r-start.html#first-steps"><i class="fa fa-check"></i><b>2.2</b> First steps</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="r-start.html"><a href="r-start.html#installing-r-rstudio"><i class="fa fa-check"></i><b>2.2.1</b> Installing R &amp; RStudio</a></li>
+<li class="chapter" data-level="2.2.2" data-path="r-start.html"><a href="r-start.html#r-commands"><i class="fa fa-check"></i><b>2.2.2</b> R commands</a></li>
+<li class="chapter" data-level="2.2.3" data-path="r-start.html"><a href="r-start.html#avoid-typos"><i class="fa fa-check"></i><b>2.2.3</b> Avoid typos</a></li>
+<li class="chapter" data-level="2.2.4" data-path="r-start.html"><a href="r-start.html#r-is-flexible-with-spacing"><i class="fa fa-check"></i><b>2.2.4</b> R is flexible with spacing?</a></li>
+<li class="chapter" data-level="2.2.5" data-path="r-start.html"><a href="r-start.html#r-knows-youre-not-finished"><i class="fa fa-check"></i><b>2.2.5</b> R knows you’re not finished?</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#operations"><i class="fa fa-check"></i><b>1.4</b> Operations</a><ul>
-<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#arithmetic-operations"><i class="fa fa-check"></i><b>1.4.1</b> Arithmetic operations</a></li>
-<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#order-of-operations"><i class="fa fa-check"></i><b>1.4.2</b> Order of operations</a></li>
+<li class="chapter" data-level="2.3" data-path="r-start.html"><a href="r-start.html#operations"><i class="fa fa-check"></i><b>2.3</b> Operations</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="r-start.html"><a href="r-start.html#arithmetic-operations"><i class="fa fa-check"></i><b>2.3.1</b> Arithmetic operations</a></li>
+<li class="chapter" data-level="2.3.2" data-path="r-start.html"><a href="r-start.html#order-of-operations"><i class="fa fa-check"></i><b>2.3.2</b> Order of operations</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#functions"><i class="fa fa-check"></i><b>1.5</b> Functions</a><ul>
-<li class="chapter" data-level="1.5.1" data-path="intro.html"><a href="intro.html#using-functions"><i class="fa fa-check"></i><b>1.5.1</b> Using functions</a></li>
-<li class="chapter" data-level="1.5.2" data-path="intro.html"><a href="intro.html#combining-functions"><i class="fa fa-check"></i><b>1.5.2</b> Combining functions</a></li>
-<li class="chapter" data-level="1.5.3" data-path="intro.html"><a href="intro.html#multiple-arguments"><i class="fa fa-check"></i><b>1.5.3</b> Multiple arguments</a></li>
-<li class="chapter" data-level="1.5.4" data-path="intro.html"><a href="intro.html#argument-names"><i class="fa fa-check"></i><b>1.5.4</b> Argument names</a></li>
-<li class="chapter" data-level="1.5.5" data-path="intro.html"><a href="intro.html#default-values"><i class="fa fa-check"></i><b>1.5.5</b> Default values</a></li>
+<li class="chapter" data-level="2.4" data-path="r-start.html"><a href="r-start.html#functions"><i class="fa fa-check"></i><b>2.4</b> Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="r-start.html"><a href="r-start.html#using-functions"><i class="fa fa-check"></i><b>2.4.1</b> Using functions</a></li>
+<li class="chapter" data-level="2.4.2" data-path="r-start.html"><a href="r-start.html#combining-functions"><i class="fa fa-check"></i><b>2.4.2</b> Combining functions</a></li>
+<li class="chapter" data-level="2.4.3" data-path="r-start.html"><a href="r-start.html#multiple-arguments"><i class="fa fa-check"></i><b>2.4.3</b> Multiple arguments</a></li>
+<li class="chapter" data-level="2.4.4" data-path="r-start.html"><a href="r-start.html#argument-names"><i class="fa fa-check"></i><b>2.4.4</b> Argument names</a></li>
+<li class="chapter" data-level="2.4.5" data-path="r-start.html"><a href="r-start.html#default-values"><i class="fa fa-check"></i><b>2.4.5</b> Default values</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#rstudio-helps"><i class="fa fa-check"></i><b>1.6</b> RStudio helps!</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#tab-autocomplete"><i class="fa fa-check"></i><b>1.6.1</b> Tab autocomplete</a></li>
-<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#the-history-pane"><i class="fa fa-check"></i><b>1.6.2</b> The history pane</a></li>
+<li class="chapter" data-level="2.5" data-path="r-start.html"><a href="r-start.html#rstudio-helps"><i class="fa fa-check"></i><b>2.5</b> RStudio helps!</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="r-start.html"><a href="r-start.html#tab-autocomplete"><i class="fa fa-check"></i><b>2.5.1</b> Tab autocomplete</a></li>
+<li class="chapter" data-level="2.5.2" data-path="r-start.html"><a href="r-start.html#the-history-pane"><i class="fa fa-check"></i><b>2.5.2</b> The history pane</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
-<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#project-oriented-workflow"><i class="fa fa-check"></i><b>1.8</b> Project oriented workflow</a></li>
+<li class="chapter" data-level="2.6" data-path="r-start.html"><a href="r-start.html#exercises"><i class="fa fa-check"></i><b>2.6</b> Exercises</a></li>
+<li class="chapter" data-level="2.7" data-path="r-start.html"><a href="r-start.html#project-oriented-workflow"><i class="fa fa-check"></i><b>2.7</b> Project oriented workflow</a></li>
 </ul></li>
 <li class="part"><span><b>II Exploring data</b></span></li>
-<li class="chapter" data-level="2" data-path="datavis.html"><a href="datavis.html"><i class="fa fa-check"></i><b>2</b> Pretty pictures</a><ul>
-<li class="chapter" data-level="2.1" data-path="datavis.html"><a href="datavis.html#r-graphics"><i class="fa fa-check"></i><b>2.1</b> R graphics</a></li>
-<li class="chapter" data-level="2.2" data-path="datavis.html"><a href="datavis.html#the-data-set"><i class="fa fa-check"></i><b>2.2</b> The data set</a></li>
-<li class="chapter" data-level="2.3" data-path="datavis.html"><a href="datavis.html#histograms"><i class="fa fa-check"></i><b>2.3</b> Histograms</a></li>
-<li class="chapter" data-level="2.4" data-path="datavis.html"><a href="datavis.html#scatter-plot"><i class="fa fa-check"></i><b>2.4</b> Scatter plot</a></li>
-<li class="chapter" data-level="2.5" data-path="datavis.html"><a href="datavis.html#bar-graphs"><i class="fa fa-check"></i><b>2.5</b> Bar graphs</a></li>
-<li class="chapter" data-level="2.6" data-path="datavis.html"><a href="datavis.html#box-plots"><i class="fa fa-check"></i><b>2.6</b> Box plots</a></li>
-<li class="chapter" data-level="2.7" data-path="datavis.html"><a href="datavis.html#violin-plots"><i class="fa fa-check"></i><b>2.7</b> Violin plots</a></li>
-<li class="chapter" data-level="2.8" data-path="datavis.html"><a href="datavis.html#facetted-plots"><i class="fa fa-check"></i><b>2.8</b> Facetted plots</a></li>
-<li class="chapter" data-level="2.9" data-path="datavis.html"><a href="datavis.html#bubble-plots"><i class="fa fa-check"></i><b>2.9</b> Bubble plots</a></li>
-<li class="chapter" data-level="2.10" data-path="datavis.html"><a href="datavis.html#error-bars"><i class="fa fa-check"></i><b>2.10</b> Error bars</a></li>
-<li class="chapter" data-level="2.11" data-path="datavis.html"><a href="datavis.html#other-possibilities"><i class="fa fa-check"></i><b>2.11</b> Other possibilities</a></li>
-<li class="chapter" data-level="2.12" data-path="datavis.html"><a href="datavis.html#saving-images"><i class="fa fa-check"></i><b>2.12</b> Saving images</a></li>
-<li class="chapter" data-level="2.13" data-path="datavis.html"><a href="datavis.html#further-reading"><i class="fa fa-check"></i><b>2.13</b> Further reading</a></li>
+<li class="chapter" data-level="3" data-path="datavis.html"><a href="datavis.html"><i class="fa fa-check"></i><b>3</b> Pretty pictures</a><ul>
+<li class="chapter" data-level="3.1" data-path="datavis.html"><a href="datavis.html#r-graphics"><i class="fa fa-check"></i><b>3.1</b> R graphics</a></li>
+<li class="chapter" data-level="3.2" data-path="datavis.html"><a href="datavis.html#the-data-set"><i class="fa fa-check"></i><b>3.2</b> The data set</a></li>
+<li class="chapter" data-level="3.3" data-path="datavis.html"><a href="datavis.html#histograms"><i class="fa fa-check"></i><b>3.3</b> Histograms</a></li>
+<li class="chapter" data-level="3.4" data-path="datavis.html"><a href="datavis.html#scatter-plot"><i class="fa fa-check"></i><b>3.4</b> Scatter plot</a></li>
+<li class="chapter" data-level="3.5" data-path="datavis.html"><a href="datavis.html#bar-graphs"><i class="fa fa-check"></i><b>3.5</b> Bar graphs</a></li>
+<li class="chapter" data-level="3.6" data-path="datavis.html"><a href="datavis.html#box-plots"><i class="fa fa-check"></i><b>3.6</b> Box plots</a></li>
+<li class="chapter" data-level="3.7" data-path="datavis.html"><a href="datavis.html#violin-plots"><i class="fa fa-check"></i><b>3.7</b> Violin plots</a></li>
+<li class="chapter" data-level="3.8" data-path="datavis.html"><a href="datavis.html#facetted-plots"><i class="fa fa-check"></i><b>3.8</b> Facetted plots</a></li>
+<li class="chapter" data-level="3.9" data-path="datavis.html"><a href="datavis.html#bubble-plots"><i class="fa fa-check"></i><b>3.9</b> Bubble plots</a></li>
+<li class="chapter" data-level="3.10" data-path="datavis.html"><a href="datavis.html#error-bars"><i class="fa fa-check"></i><b>3.10</b> Error bars</a></li>
+<li class="chapter" data-level="3.11" data-path="datavis.html"><a href="datavis.html#other-possibilities"><i class="fa fa-check"></i><b>3.11</b> Other possibilities</a></li>
+<li class="chapter" data-level="3.12" data-path="datavis.html"><a href="datavis.html#saving-images"><i class="fa fa-check"></i><b>3.12</b> Saving images</a></li>
+<li class="chapter" data-level="3.13" data-path="datavis.html"><a href="datavis.html#further-reading"><i class="fa fa-check"></i><b>3.13</b> Further reading</a></li>
 </ul></li>
 <li class="part"><span><b>III Learning from data</b></span></li>
 <li class="part"><span><b>IV Tools of the trade</b></span></li>
@@ -267,7 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning statistics with R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -341,7 +337,7 @@ raw_score</code></pre>
 </div>
 <div id="editing-vectors" class="section level3">
 <h3><span class="header-section-number">A.1.6</span> Editing vectors</h3>
-<p>Sometimes you’ll want to change the values stored in a vector. Imagine my surprise when a student points out that <code>&quot;anxpiety&quot;</code> is not in fact a real thing. I should probably fix that 😳. One possibility would be to assign the whole vector again from the beginning, using <code>c</code>. But that’s a lot of typing. Also, it’s a little wasteful: why should R have to redefine the names for all three scales, when only the second one is wrong? Fortunately, we can tell R to change only the second element, using this trick:</p>
+<p>Sometimes you’ll want to change the values stored in a vector. Imagine my surprise when a student points out that <code>&quot;anxpiety&quot;</code> is not in fact a real thing. I should probably fix that! One possibility would be to assign the whole vector again from the beginning, using <code>c</code>. But that’s a lot of typing. Also, it’s a little wasteful: why should R have to redefine the names for all three scales, when only the second one is wrong? Fortunately, we can tell R to change only the second element, using this trick:</p>
 <pre class="sourceCode r"><code class="sourceCode r">scale_name[<span class="dv">2</span>] &lt;-<span class="st"> &quot;anxiety&quot;</span>
 scale_name</code></pre>
 <pre><code>## [1] &quot;depression&quot; &quot;anxiety&quot;    &quot;stress&quot;</code></pre>
@@ -486,7 +482,7 @@ support</code></pre>
 </div>
 <div id="data-frames-tibbles" class="section level2">
 <h2><span class="header-section-number">A.3</span> Data frames / tibbles</h2>
-<p>We now have three variables that we might plausibly have encountered as the result of some study, <code>region</code>, <code>support</code> and <code>RT</code>.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a> At the moment, R has no understanding of how these variables are related to each other. Quite likely they’re ordered the same way, so that the data stored in <code>region[1]</code>, <code>support[1]</code> and <code>RT[1]</code> all come from the same person. That would be sensible, but R is a robot 🤖 and does not possess common sense. To help a poor little robot out (and to make our own lives easier), it’s nice to organise these three variable into a tabular format. We saw this in the last section, in which the AFL data was presented as a table. This is where <strong>data frames</strong> – and the tidyverse analog <strong>tibbles</strong> – are very useful.</p>
+<p>We now have three variables that we might plausibly have encountered as the result of some study, <code>region</code>, <code>support</code> and <code>RT</code>.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a> At the moment, R has no understanding of how these variables are related to each other. Quite likely they’re ordered the same way, so that the data stored in <code>region[1]</code>, <code>support[1]</code> and <code>RT[1]</code> all come from the same person. That would be sensible, but R is a robot and does not possess common sense. To help a poor little robot out (and to make our own lives easier), it’s nice to organise these three variable into a tabular format. We saw this in the last section, in which the AFL data was presented as a table. This is where <strong>data frames</strong> – and the tidyverse analog <strong>tibbles</strong> – are very useful.</p>
 <div id="making-a-data-frame" class="section level3">
 <h3><span class="header-section-number">A.3.1</span> Making a data frame</h3>
 <p>So how do we create a data frame (or tibble)? One way we’ve already seen: if we import our data from a CSV file, R will create one for you. A second method is to create a data frame directly from some existing variables using the <code>data.frame</code> function. In real world data analysis this method is less common, but it’s very helpful for understanding what a data frame actually is, so that’s what we’ll do in this section.</p>
@@ -524,7 +520,7 @@ dat</code></pre>
 <h3><span class="header-section-number">A.3.2</span> Making a tibble</h3>
 <p>Constructing a tibble from raw variables is essentially the same as constructing a data frame, and the function we use to do this is <code>tibble</code>. If I hadn’t deleted all the raw variables in the previous section, this command would work:</p>
 <pre class="sourceCode r"><code class="sourceCode r">tib &lt;-<span class="st"> </span><span class="kw">tibble</span>(region, support, RT)</code></pre>
-<p>Alas they are gone, and I will have to try a different method. Fortunately, I can <strong>coerce</strong> my existing data frame <code>dat</code> into a tibble using the <code>as_tibble()</code> function, and use it to create a tibble called <code>tib</code>. I’m very imaginative 😀</p>
+<p>Alas they are gone, and I will have to try a different method. Fortunately, I can <strong>coerce</strong> my existing data frame <code>dat</code> into a tibble using the <code>as_tibble()</code> function, and use it to create a tibble called <code>tib</code>. I’m very imaginative :-)</p>
 <pre class="sourceCode r"><code class="sourceCode r">tib &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(dat)
 tib</code></pre>
 <pre><code>## # A tibble: 10 x 3
@@ -753,7 +749,7 @@ mattie</code></pre>
 <pre><code>##      col1 col2   col3
 ## row1 &quot;2&quot;  &quot;3&quot;    &quot;1&quot; 
 ## row2 &quot;5&quot;  &quot;five&quot; &quot;7&quot;</code></pre>
-<p>Oh no I broke <code>mattie</code> – she’s all text now! I’m so sorry <code>mattie</code>, I still love you ❤️</p>
+<p>Oh no I broke <code>mattie</code> – she’s all text now! I’m so sorry <code>mattie</code>, I still love you.</p>
 </div>
 <div id="other-ways-to-make-a-matrix" class="section level3">
 <h3><span class="header-section-number">A.4.3</span> Other ways to make a matrix</h3>
@@ -791,7 +787,7 @@ arr</code></pre>
 ## [1,]   13   16   19   22
 ## [2,]   14   17   20   23
 ## [3,]   15   18   21   24</code></pre>
-<p>Of course, calling an array <code>arr</code> just makes me think of pirates ☠️.</p>
+<p>Of course, calling an array <code>arr</code> just makes me think of pirates.</p>
 <div id="array-indexing" class="section level3">
 <h3><span class="header-section-number">A.5.1</span> Array indexing</h3>
 <p>Array indexing is a straightforward generalisation of matrix indexing, so the same logic applies. Since <code>arr</code> is a three-dimensional <span class="math inline">\(3 \times 4 \times 2\)</span> array, we need three indices to specify an element:</p>
@@ -817,7 +813,7 @@ arr[8]
 </div>
 <div id="array-names" class="section level3">
 <h3><span class="header-section-number">A.5.2</span> Array names</h3>
-<p>As with other data structures, arrays can have names for specific elements. In fact, we can assign names to each of the <em>dimensions</em> too. For instance, suppose we have another array – that we affectionately call <code>cubie</code> 📦 – it is also a three dimensional array, but that has the shape that it does because it represents a (3 genders) <span class="math inline">\(\times\)</span> (4 seasons) <span class="math inline">\(\times\)</span> (2 times) structure. We could specify the dimension names for <code>cubie</code> like this:</p>
+<p>As with other data structures, arrays can have names for specific elements. In fact, we can assign names to each of the <em>dimensions</em> too. For instance, suppose we have another array – that we affectionately call <code>cubie</code> – it is also a three dimensional array, but that has the shape that it does because it represents a (3 genders) <span class="math inline">\(\times\)</span> (4 seasons) <span class="math inline">\(\times\)</span> (2 times) structure. We could specify the dimension names for <code>cubie</code> like this:</p>
 <pre class="sourceCode r"><code class="sourceCode r">cubie &lt;-<span class="st"> </span><span class="kw">array</span>(
   <span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">24</span>, 
   <span class="dt">dim =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>), 
@@ -895,7 +891,7 @@ starks</code></pre>
 <p>I find it helps me to think of the list as a container. When we use single brackets, the result is still inside its container; when we use double brackets we remove it from the container. This intuition is illustrated nicely in the image below, <a href="https://twitter.com/hadleywickham/status/643381054758363136">tweeted</a> by Hadley Wickham:</p>
 <p><img src="./img/data_list_index.png" width=500px></p>
 <p>In this example <code>x</code> is a container (list) containing many pepper sachets (elements). When we type <code>x[1]</code> we keep only one of the sachets of pepper, but it’s still inside the container. When we type <code>x[[1]]</code> we take the sachet out of the container.</p>
-<p>The final panel highlights how lists can become more complicated.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> Lists are just fancy containers, and there’s no reason why lists can’t contain other lists. In the pepper shaker scenario, if each sachet is itself a list, we would need to type <code>x[[1]][[1]]</code> to extract the tasty, tasty pepper! 🌶</p>
+<p>The final panel highlights how lists can become more complicated.^[Speaking of complications… Under the hood, data frames and tibbles are secretly lists, so you can use the list indexing methods for them and so, for example, <code>dat[[3]]</code> is the same as <code>dat$RT</code>. Probably best not to worry too much about that detail right now! Lists are just fancy containers, and there’s no reason why lists can’t contain other lists. In the pepper shaker scenario, if each sachet is itself a list, we would need to type <code>x[[1]][[1]]</code> to extract the tasty, tasty pepper!</p>
 </div>
 </div>
 <div id="dates" class="section level2">
@@ -904,13 +900,13 @@ starks</code></pre>
 <p>To start with, let’s talk about the date. As it happens, modern operating systems are very good at keeping track of the time and date, and can even handle all those annoying timezone issues and daylight savings pretty well. So R takes the quite sensible view that it can just ask the operating system what the date is. We can pull the date using the <code>Sys.Date</code> function:</p>
 <pre class="sourceCode r"><code class="sourceCode r">today &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()  <span class="co"># ask the operating system for the date</span>
 <span class="kw">print</span>(today)         <span class="co"># display the date</span></code></pre>
-<pre><code>## [1] &quot;2019-06-02&quot;</code></pre>
-<p>Okay, that seems straightforward. But, it does rather look like today is just a character string, doesn’t it? That would be a problem, because dates really do have a quasi-numeric character to them, and it would be nice to be able to do basic addition and subtraction with them. Well, fear not. If you type in <code>class(today)</code>, R will tell you that the <code>today</code> variable is a <code>&quot;Date&quot;</code> object. What this means is that, hidden underneath this text string, R has a numeric representation.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a> What that means is that you can in fact add and subtract days. For instance, if we add <code>1</code> to <code>today</code>, R will print out the date for tomorrow:</p>
+<pre><code>## [1] &quot;2019-07-14&quot;</code></pre>
+<p>Okay, that seems straightforward. But, it does rather look like today is just a character string, doesn’t it? That would be a problem, because dates really do have a quasi-numeric character to them, and it would be nice to be able to do basic addition and subtraction with them. Well, fear not. If you type in <code>class(today)</code>, R will tell you that the <code>today</code> variable is a <code>&quot;Date&quot;</code> object. What this means is that, hidden underneath this text string, R has a numeric representation.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> What that means is that you can in fact add and subtract days. For instance, if we add <code>1</code> to <code>today</code>, R will print out the date for tomorrow:</p>
 <pre class="sourceCode r"><code class="sourceCode r">today <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre>
-<pre><code>## [1] &quot;2019-06-03&quot;</code></pre>
+<pre><code>## [1] &quot;2019-07-15&quot;</code></pre>
 <p>Let’s see what happens when we add 365 days:</p>
 <pre class="sourceCode r"><code class="sourceCode r">today <span class="op">+</span><span class="st"> </span><span class="dv">365</span></code></pre>
-<pre><code>## [1] &quot;2020-06-01&quot;</code></pre>
+<pre><code>## [1] &quot;2020-07-13&quot;</code></pre>
 <p>R provides a number of functions for working with dates, but I don’t want to talk about them in any detail, other than to say that the <strong>lubridate</strong> package (part of the tidyverse) makes things a lot easier than they used to be. A little while back I wrote a <a href="http://djnavarro.net/post/2018-05-02-lubridate/">blog post about lubridate</a> and may fold it into these notes one day.</p>
 <!--
 
@@ -973,7 +969,7 @@ class(x)
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;15&quot;</span>,<span class="st">&quot;19&quot;</span>)  <span class="co"># the variable</span>
 <span class="kw">class</span>(x)           <span class="co"># what class is it?</span></code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<p>Obviously, if I want to do mathematical calculations using <code>x</code> in its current state R wil get very sad 😿. It thinks <code>x</code> is text and it won’t allow me to do mathematics with text! To coerce <code>x</code> from “character” to “numeric”, we use the <code>as.numeric</code> function:</p>
+<p>Obviously, if I want to do mathematical calculations using <code>x</code> in its current state R wil get very sad. It thinks <code>x</code> is text and it won’t allow me to do mathematics with text! To coerce <code>x</code> from “character” to “numeric”, we use the <code>as.numeric</code> function:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x)  <span class="co"># coerce the variable</span>
 <span class="kw">class</span>(x)            <span class="co"># what class is it?</span></code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
@@ -1010,8 +1006,7 @@ class(x)
 <li id="fn26"><p>You can suppress this behaviour by using a command like <code>mattie[,3,drop=FALSE]</code>. It’s unpleasant though. Also be warned: data frames do this too when you select one column using square brackets. Tibbles don’t. One of the reasons I like tibbles actually.<a href="data-types.html#fnref26" class="footnote-back">↩</a></p></li>
 <li id="fn27"><p>I won’t go into details, but note that you can refer the elements of a matrix by specifying only a single index. For a <span class="math inline">\(3\times 4\)</span> matrix <code>M</code>, <code>M[2,2]</code> and <code>M[5]</code> refer to the same cell. This method of indexing assumes column-wise ordering regardless of whether the matrix <code>M</code> was originally created in column-wise or row-wise fashion.<a href="data-types.html#fnref27" class="footnote-back">↩</a></p></li>
 <li id="fn28"><p>To see this, compare <code>is.matrix(arr)</code> to <code>is.matrix(arr[,,2])</code><a href="data-types.html#fnref28" class="footnote-back">↩</a></p></li>
-<li id="fn29"><p>Speaking of complications… Under the hood, data frames and tibbles are secretly lists, so you can use the list indexing methods for them and so, for example, <code>dat[[3]]</code> is the same as <code>dat$RT</code>. Probably best not to worry too much about that detail right now 😬<a href="data-types.html#fnref29" class="footnote-back">↩</a></p></li>
-<li id="fn30"><p>Date objects are coded internally as the number of days that have passed since January 1, 1970.<a href="data-types.html#fnref30" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p>Date objects are coded internally as the number of days that have passed since January 1, 1970.<a href="data-types.html#fnref29" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1059,8 +1054,7 @@ gitbook.start({
 },
 "download": ["rbook2.pdf"],
 "toc": {
-"collapse": "subsection",
-"scroll_highlight": true
+"collapse": "subsection"
 }
 });
 });

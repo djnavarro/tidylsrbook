@@ -1,7 +1,7 @@
 --- 
 title: "Learning statistics with R"
 author: "Danielle Navarro"
-date: "`r format(Sys.Date(), format='%d %B %Y')`"
+date: "14 July 2019"
 url: 'https\://djnavarro.github.io/tidylsrbook'
 github-repo: "djnavarro/tidylsrbook"
 site: bookdown::bookdown_site
@@ -33,14 +33,7 @@ output:
 
 This is a book. It contains things. Lots of exciting things.
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
 
-```{r, include=FALSE}
-options(tinytex.verbose = TRUE)
-```
+
+
 
