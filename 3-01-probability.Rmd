@@ -1,19 +1,14 @@
 # Probability {#probability}
 
+Up to this point, this book has been mostly focused on practicalities of the data analysis process. How do we work with a data set? How can we summarise it? How do we visualise it? These are among the most important jobs we have to undertake when doing real life data analysis, so I've talked about them a lot. However, statistics is a bigger topic than this. One of the most powerful tools it provides is a method for making *inferences* about data, and using data to making *decisions* in a justifiable manner. 
 
->*[God] has afforded us only the twilight ... of Probability.* 
->
-> -- John Locke
+Suppose you have decided to run a survey to measure community attitudes towards, oh, I don't know... let's make it lizards. Do people in your community like lizards? Conveniently, you happen to have a big database of all the people in your community, ... but alas the population is large and your budget is small. So you select 100 people from the community completely at random and ask them a simple question: "do you like lizards, yes or no?" When you finish this exercise it turns out that 73 people say "yes I like lizards" and 27 people said "no I don't like lizards". Cool, cool.
 
-Up to this point in the book, we've discussed some of the key ideas in experimental design, and we've talked a little about how you can summarise a data set.  To a lot of people, this is all there is to statistics: it's about calculating averages, collecting all the numbers, drawing pictures, and putting them all in a report somewhere. Kind of like stamp collecting, but with numbers. However, statistics covers much more than that. In fact, descriptive statistics is one of the smallest parts of statistics, and one of the least powerful. The bigger and more useful part of statistics is that it provides tools that let you make *inferences* about data. 
+So now that you have the data, is it reasonable to claim that 73% of community members like lizards? That doesn't sound right, but why not? Well, let's imagine that there are 10000 people this community, but you've only surveyed 100 of them. So there are 9900 people whose opinions you don't know. That's quite a lot of unknowns! It would be quite foolish to claim that the remaining 9900 people are *exactly* like the 100 people you spoke to, and so it would be unreasonable to claim that the correct answer is exactly 73%.
 
-Once you start thinking about statistics in these terms -- that statistics is there to help us draw inferences from data -- you start seeing examples of it everywhere. For instance, here's a tiny extract from a newspaper article in the Sydney Morning Herald (30 Oct 2010):
+Okay, let's think about it another way. Would it be fair to say that the percentage of people in this community who like lizards is somewhere between 0.73% and 99.73%? Well, yes, technically speaking that's true, but somehow that doesn't feel very satisfying. After all, when you took your survey you observed 73 out of 100 people who like lizards, and the only way that could happen if the true percentate were 0.73% would be if there are *zero* lizard-likers to be found in the entirety of the 9900 people you didn't survey. Somehow, in your random sample of 100 people you managed to find *every single person* who likes lizards? That doesn't sound very plausible, does it? 
 
-> "I have a tough job," the Premier said in response to a poll which found her government is now the most unpopular Labor administration in polling history, with a primary vote of just 23 per cent.
-
-This kind of remark is entirely unremarkable in the papers or in everyday life, but let's have a think about what it entails. A polling company has conducted a survey, usually a pretty big one because they can afford it. I'm too lazy to track down the original survey, so let's just imagine that they called 1000 NSW voters at random, and 230 (23\%) of those claimed that they intended to vote for the ALP. For the 2010 Federal election, the Australian Electoral Commission reported 4,610,795 enrolled voters in NSW; so the opinions of the remaining 4,609,795 voters (about 99.98\% of voters) remain unknown to us. Even assuming that no-one lied to the polling company the only thing we can say with 100\% confidence is that the true ALP primary vote is somewhere between 230/4610795 (about 0.005\%) and 4610025/4610795 (about 99.83\%). So, on what basis is it legitimate for the polling company, the newspaper, and the readership to conclude that the ALP primary vote is only about 23\%?
-
-The answer to the question is pretty obvious: if I call 1000 people at random, and 230 of them say they intend to vote for the ALP, then it seems very unlikely that these are the *only* 230 people out of the entire voting public who actually intend to do so. In other words, we assume that the data collected by the polling company is pretty representative of the population at large. But how representative? Would we be surprised to discover that the true ALP primary vote is actually 24\%? 29\%? 37\%? At this point everyday intuition starts to break down a bit. No-one would be surprised by 24\%, and everybody would be surprised by 37\%, but it's a bit hard to say whether 29\% is plausible. We need some more powerful tools than just looking at the numbers and guessing.
+Intuitively, it seems reasonable to guess that the right answer must be "near(ish) to 73%". As a matter of commonsense reasoning, we would't be surprised if the true answer turned out to be 69% or 80%, but we would be very surprised indeed if the answer was 21%. But exactly *how* surprised should we be? Given the data we have observed, what beliefs should we have about the larger population? What decisions can we justify? It is at this point that our commonsense intuitions start to break down: we need some new tools. 
 
 **_Inferential statistics_** provides the tools that we need to answer these sorts of questions, and since these kinds of questions lie at the heart of the scientific enterprise, they take up the lions share of every introductory course on statistics and research methods. However, the theory of statistical inference is built on top of **_probability theory_**. And it is to probability theory that we must now turn. This discussion of probability theory is basically background: there's not a lot of statistics per se in this chapter, and you don't need to understand this material in as much depth as the other chapters in this part of the book. Nevertheless, because probability theory does underpin so much of statistics, it's worth covering some of the basics. 
 
@@ -133,9 +128,14 @@ In any case, while I personally prefer the Bayesian view, the majority of statis
 
 
  
- 
- 
 ## Basic probability theory{#basicprobability}
+
+> Oh, you've got green eyes
+> Oh, you've got blue eyes
+> Oh, you've got grey eyes
+> &nbsp; &nbsp; -- New Order, *Temptation*
+
+
 
 Ideological arguments between Bayesians and frequentists notwithstanding, it turns out that people mostly agree on the rules that probabilities should obey. There are lots of different ways of arriving at these rules. The most commonly used approach is based on the work of Andrey Kolmogorov, one of the great Soviet mathematicians of the 20th century. I won't go into a lot of detail, but I'll try to give you a bit of a sense of how it works. And in order to do so, I'm going to have to talk about my pants.
 
