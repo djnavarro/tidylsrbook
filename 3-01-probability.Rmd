@@ -47,10 +47,14 @@ and what I'm trying to do is work out which "model of the world" I should put my
  
 ## Basic probability theory{#basicprobability}
 
-> Oh, you've got green eyes <br>
-> Oh, you've got blue eyes <br>
-> Oh, you've got grey eyes <br>
-> &nbsp; &nbsp; -- New Order, *Temptation*
+```{r echo=FALSE, results='asis'}
+flavour_quote(
+  "Oh, you've got green eyes", 
+  "Oh, you've got blue eyes", 
+  "Oh, you've got grey eyes",
+  auth = "New Order, *Temptation*"
+)
+```
 
 
 
