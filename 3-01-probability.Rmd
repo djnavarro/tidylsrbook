@@ -4,7 +4,7 @@
 source("common.R")
 ```
 
-Up to this point, this book has been mostly focused on practicalities of the data analysis process. How do we work with a data set? How can we summarise it? How do we visualise it? These are among the most important jobs we have to undertake when doing real life data analysis, so I've talked about them a lot. However, statistics is a bigger topic than this. One of the most powerful tools it provides is a method for making *inferences* about data, and using data to making *decisions* in a justifiable manner. 
+Up to this point, this book has focused on practicalities of the data analysis process. How do we work with a data set? How can we summarise it? How do we visualise it? These are among the most important jobs we have to undertake when doing real life data analysis, so I've talked about them a lot. However, statistics is a bigger topic than this. One of the most powerful tools it provides is a method for making *inferences* about data, and using data to making *decisions* in a justifiable manner. 
 
 Suppose you have decided to run a survey to measure community attitudes towards, oh, I don't know... let's make it lizards. Do people in your community like lizards? Conveniently, you happen to have a big database of all the people in your community, ... but alas the population is large and your budget is small. So you select 100 people from the community completely at random and ask them a simple question: "do you like lizards, yes or no?" When you finish this exercise it turns out that 73 people say "yes I like lizards" and 27 people said "no I don't like lizards". Cool, cool.
 
